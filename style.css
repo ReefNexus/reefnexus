@@ -25,3 +25,8 @@ body {
 .navbar-inverse .navbar-nav > li > a:hover {
   color: white;
 }
+
+#map {
+  height: 425px;
+  width: 64%;
+}
