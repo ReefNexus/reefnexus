@@ -8,14 +8,17 @@ body {
 
 }
 
+h3 {
+  text-align: center;
+}
+
 .navbar-brand {
-  font-size: large;
-  color: white;
+  padding-top: 4px;
 }
 
 .navbar-inverse {
   color: white;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -24,4 +27,17 @@ body {
 
 .navbar-inverse .navbar-nav > li > a:hover {
   color: white;
+}
+
+.map {
+  background-image: url('oahu.jpg');
+  margin: 15px;
+  height: 550px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-horizontal {
+  margin: 15px;
 }
