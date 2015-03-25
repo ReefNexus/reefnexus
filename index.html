@@ -8,6 +8,16 @@
   <!--  Load site-specific customizations after bootstrap. -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <!-- Google Maps APIs -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+  <script type="text/javascript" src="infobox.js"></script>
+
+  <script type="text/javascript" src="scripts.js"></script>
+
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
@@ -42,7 +52,8 @@
   <div class="row">
     <div class="col-md-8">
       <div class="well well-sm"><h3>Select a coastal area</h3>
-        <div class="map">&nbsp</div>
+        <div id="map" class="center-block">
+        </div>
       </div>
     </div>
 
