@@ -23,10 +23,14 @@ A login system will be implemented where users can view the fishes that they hav
 ## Deliverable 1
 Users will be able to add to the database of where they saw a particular fish.  In the fish database, the user will be able to search for a fish given certain parameters.  However, the fish database won't be implemented until later.  Another functionality is that given a location on an image of Oahu, our application will be able to display the fishes found at that location and its sighting rate.  Users will be able to sign in to add fishes, check their sighting and see a record of their record activity.
 ## Deliverable 2
-Adding to the previous functionality of the application, the users will be able to (...).  In addition, we will have update documentation for other developers to build and use our application.  We will use the Play Framework for our application and incorporate integration testing.
+Adding to the previous functionality of the application, the users will be able to
 ## Deliverable 3
-Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.  (...).  Just like with our previous deliverable, we will update our documentation and do testing on our application.
+Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
 ## Mockup
+
+Home Page:
+This page offers the main feature of viewing fish sighting rates for a user's current location.  Clicking on the map or having the GPS find your location will list the details on the right pane.  Additionally, the obnoxious add button will allow users to add fish they have sighted at the current location.  
+
 Home Page (Desktop View)
 
 <img src="mockuppics/home.JPG" width="700px"/>
@@ -34,6 +38,9 @@ Home Page (Desktop View)
 Home Page (Mobile View)
 
 <img src="mockuppics/homesmall.JPG" width="700px"/>
+
+Add Fish Page:
+The add fish function brings the user to this page, which requires several parameters.  First is the location, which will automatically be filled out if the user started from the home page.  The second parameter is the fish species itself, and there will be autocomplete so users will actively see a list of fish according to what they type in (common name and scientific name).  The third function will be for users who want to add a picture of the fish they sighted.  If a user cannot identify the fish, they can add a picture which will be available for others to see and confirm on the database page.
 
 Add Fish Page (Desktop View)
 
@@ -43,6 +50,9 @@ Add Fish Page (Mobile View)
 
 <img src="mockuppics/addfishsmall.JPG" width="700px"/>
 
+Database Page: 
+This page will allow users to search for fish in the database.  As of now, the available parameters will be common name, scientific name, family name, and location.  A second informational pane on the page will contain a list of fish that are curently unidentified but were seen by others.  Users will have the option to identify the fish should they know it.  
+
 Database Page (Desktop View)
 
 <img src="mockuppics/database.JPG" width="700px"/>
@@ -51,6 +61,9 @@ Database Page (Mobile View)
 
 <img src="mockuppics/databasesmall.JPG" width="700px"/>
 
+Login Page:
+Page where members can log in and complete various tasks and observe their recent activity.
+
 Login Page (Desktop View)
 
 <img src="mockuppics/login.JPG" width="700px"/>
@@ -58,6 +71,9 @@ Login Page (Desktop View)
 Login Page (Mobile View)
 
 <img src="mockuppics/loginsmall.JPG" width="700px"/>
+
+User Page:
+This is the page users are greeted with when they log in.  Available tasks are listed in the left pane, whereas recent activity by the user will be presented in the middle-right pane.  One of the main draws for a user to register as a member is to view the fish that they have added themselves, so they may be able to reference them later.  Many of the later deliverables will add user features that will be listed on this page.  
 
 User Page (Desktop View)
 
