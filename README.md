@@ -21,11 +21,16 @@ As for the reef fish database, it will contain a good amount of common reef fish
 A login system will be implemented where users can view the fishes that they have sighted themselves.  Although right now the options are limited for members, there will be communial features added that will make the application more community friendly.  These options are discussed in the deliverables.
 
 ## Deliverable 1
-Users will be able to add to the database of where they saw a particular fish.  In the fish database, the user will be able to search for a fish given certain parameters.  However, the fish database won't be implemented until later.  Another functionality is that given a location on an image of Oahu, our application will be able to display the fishes found at that location and its sighting rate.  Users will be able to sign in to add fishes, check their sighting and see a record of their record activity.
+Users will be able to add to the database of where they saw a particular fish.  In the fish database, the user will be able to search for a fish given certain parameters.  A second main functionality is given a user-specified area or their current location (For the first deliverable, the area is limited to Oahu), our application will be able to display the fish found at that location and its sighting rate.  Users will also have an option to register a member and sign in to review their personal sightings and see a record of their recent activity.  
+
 ## Deliverable 2
-Adding to the previous functionality of the application, the users will be able to
+Users will be able to add a picture of a fish, and if a name is not specified for the fish, then other members of the community will be able to review and identify the fish for the database.  Members of the site will also be allowed to add a new species of fish to the database should the database not already contain that species.  
+
 ## Deliverable 3
-Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
+* These functionalities were suggested by Dr. Johnson
+Pick-a-fish UI:   Swipe through fish pictures, tap the one that resembles the one you just saw.
+Describe-a-fish UI:  Textually enter a description of the fish, others can annotate with the identification.
+
 ## Mockup
 
 Currently unavailable: Location description page, User's fish collection
