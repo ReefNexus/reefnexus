@@ -20,4 +20,4 @@ Adding to the previous functionality of the application, the users will be able 
 ## Deliverable 3
 Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
 ## Mockup
-<img src="mockuppics\home.JPG" width="700px"/>
+<img src="mockuppics/home.JPG" width="700px"/>
