@@ -50,6 +50,17 @@ Home Page (Mobile View)
 
 <img src="mockuppics/homesmall.JPG" width="700px"/>
 
+Location Database Page:
+This page will provide detailed information on each location, and users will be directed here from the home page if they decide to view more details.  Clicking on the button "view more details" will extend the list of fish species.  By default, the top ten most abundant species will show on the page.  There will also be a search function on this page for locations (currently unavailable).
+
+Location Database (Desktop View)
+
+<img src="mockuppics/location.JPG" width="700px"/>
+
+Location Database (Mobile View)
+
+<img src="mockuppics/locationsmall.JPG" width="700px" />
+
 Add Fish Page:
 The add fish function brings the user to this page, which requires several parameters.  First is the location, which will automatically be filled out if the user started from the home page.  The second parameter is the fish species itself, and there will be autocomplete so users will actively see a list of fish according to what they type in (common name and scientific name).  The third function will be for users who want to add a picture of the fish they sighted.  If a user cannot identify the fish, they can add a picture which will be available for others to see and confirm on the database page.
 
