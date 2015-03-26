@@ -21,3 +21,12 @@ Adding to the previous functionality of the application, the users will be able 
 Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
 ## Mockup
 <img src="mockuppics/home.JPG" width="700px"/>
+<img src="mockuppics/homesmall.JPG" width="700px"/>
+<img src="mockuppics/addfish.JPG" width="700px"/>
+<img src="mockuppics/addfishsmall.JPG" width="700px"/>
+<img src="mockuppics/database.JPG" width="700px"/>
+<img src="mockuppics/databasesmall.JPG" width="700px"/>
+<img src="mockuppics/login.JPG" width="700px"/>
+<img src="mockuppics/loginsmall.JPG" width="700px"/>
+<img src="mockuppics/user.JPG" width="700px"/>
+<img src="mockuppics/usersmall.JPG" width="700px"/>
