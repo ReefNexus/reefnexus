@@ -37,7 +37,7 @@ Snap-a-fish UI:  Take a picture of the fish, upload it. If the image file has ge
 
 ## Mockup
 
-Currently unavailable: Location description page, User's fish collection
+Currently unavailable: User's fish collection
 
 Home Page:
 This page offers the main feature of viewing fish sighting rates for a user's current location.  Clicking on the map or having the GPS find your location will list the details on the right pane.  Additionally, the obnoxious add button will allow users to add fish they have sighted at the current location.  
@@ -52,6 +52,8 @@ Home Page (Mobile View)
 
 Location Database Page:
 This page will provide detailed information on each location, and users will be directed here from the home page if they decide to view more details.  Clicking on the button "view more details" will extend the list of fish species.  By default, the top ten most abundant species will show on the page.  There will also be a search function on this page for locations (currently unavailable).
+
+Note: The "Location Database" is present in the following navbar, but since it is the latest addition it is not present in the previous screenshots.
 
 Location Database (Desktop View)
 
@@ -74,8 +76,6 @@ Add Fish Page (Mobile View)
 
 Database Page: 
 This page will allow users to search for fish in the database.  As of now, the available parameters will be common name, scientific name, family name, and location.  A second informational pane on the page will contain a list of fish that are currently unidentified but were seen by others.  Users will have the option to identify the fish should they know it.
-
-There will also be an option to search for locations and view their respective statistics.  This is currently not available in the mockup.
 
 Database Page (Desktop View)
 
