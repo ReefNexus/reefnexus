@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ff880c-d428-463e-84c3-0795c72d78f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mockuppics/logo.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mockuppics/location.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mockuppics/locationsmall.JPG" />
     </list>
     <ignored path="reefnexus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +33,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="102" />
+    <option name="x" value="-201" />
+    <option name="y" value="115" />
     <option name="width" value="1864" />
     <option name="height" value="1098" />
   </component>
@@ -62,6 +63,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -96,8 +99,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,7 +363,7 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="102" width="1864" height="1098" extended-state="0" />
+    <frame x="-201" y="115" width="1864" height="1098" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
