@@ -20,13 +20,42 @@ Adding to the previous functionality of the application, the users will be able 
 ## Deliverable 3
 Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
 ## Mockup
+Home Page (Desktop View)
+
 <img src="mockuppics/home.JPG" width="700px"/>
+
+Home Page (Mobile View)
+
 <img src="mockuppics/homesmall.JPG" width="700px"/>
+
+Add Fish Page (Desktop View)
+
 <img src="mockuppics/addfish.JPG" width="700px"/>
+
+Add Fish Page (Mobile View)
+
 <img src="mockuppics/addfishsmall.JPG" width="700px"/>
+
+Database Page (Desktop View)
+
 <img src="mockuppics/database.JPG" width="700px"/>
+
+Database Page (Mobile View)
+
 <img src="mockuppics/databasesmall.JPG" width="700px"/>
+
+Login Page (Desktop View)
+
 <img src="mockuppics/login.JPG" width="700px"/>
+
+Login Page (Mobile View)
+
 <img src="mockuppics/loginsmall.JPG" width="700px"/>
+
+User Page (Desktop View)
+
 <img src="mockuppics/user.JPG" width="700px"/>
+
+User Page (Mobile View)
+
 <img src="mockuppics/usersmall.JPG" width="700px"/>
