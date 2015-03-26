@@ -16,9 +16,9 @@ The ultimate goal of the application is to provide ocean-enthusiasts with inform
 ## Deliverable 1
 Users will be able to add to the database of where they saw a particular fish.  In the fish database, the user will be able to search for a fish given certain parameters.  However, the fish database won't be implemented until later.  Another functionality is that given a location on an image of Oahu, our application will be able to display the fishes found at that location and its sighting rate.  Users will be able to sign in to add fishes, check their sighting and see a record of their record activity.
 ## Deliverable 2
-Adding to the previous functionality of the application, the users will be able to
+Adding to the previous functionality of the application, the users will be able to (...).  In addition, we will have update documentation for other developers to build and use our application.  We will use the Play Framework for our application and incorporate integration testing.
 ## Deliverable 3
-Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
+Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.  (...).  Just like with our previous deliverable, we will update our documentation and do testing on our application.
 ## Mockup
 Home Page (Desktop View)
 
