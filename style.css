@@ -30,7 +30,7 @@ h3 {
 }
 
 .map {
-  background-image: url('oahu.jpg');
+  background-image: url('mockuppics/oahu.jpg');
   margin: 15px;
   height: 550px;
   background-size: contain;
@@ -43,9 +43,12 @@ h3 {
 }
 
 #map {
-  height: 425px;
   width: 100%;
   height: 519px;
+}
+
+.location-map {
+  height: 100px;
 }
 
 .location-detail {
@@ -58,6 +61,10 @@ h3 {
 .table a:not(.btn) {
   text-decoration: none;
   color: white;
+}
+
+.table img {
+  width: 120px;
 }
 
 .user-options {
@@ -96,8 +103,30 @@ img {
   border-radius: 3px;
   margin-top: 30px;
   background: #444444;
+  padding: 15px;
 }
 
-.unknown-fish {
+
+.location {
+  border-radius: 3px;
+  margin-top: 30px;
+  background: #444444;
   padding: 15px;
+}
+
+.hanaumamap {
+  padding-top: 10px;
+}
+
+.more-fish > .btn {
+  border-radius: 3px;
+  font-size: 20px;
+  background: #00bc8d;
+  width: 100%;
+  height: 50px;
+}
+
+.more-fish > .btn:hover {
+  background: #49d8b4;
+  text-decoration: none;
 }
