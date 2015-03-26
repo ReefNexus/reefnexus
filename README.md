@@ -1,5 +1,5 @@
 # reefnexus
-<img src="relative path" width="500px"/>
+<img src="mockuppics/logo.JPG" width="500px"/>
 ## Overview
 Although there are many fish databases available, there are few applications that quickly lets an individual observe the reef fish ecology occurring in their local area.  Reef Nexus is a crowd-sourced application aimed towards divers and fishermen which stores the location of fish species, based on a user's own encounter/knowledge with that particular species.  The initial application will survey the Hawaiian Islands, and the database will have a full list of Hawaiian reef fish.  A user can create an account where they can choose and store a list of fishes they have encountered and the location of where they encountered them.  It will be saved in their own list for reference.  Those without accounts can enter a species location, but they will not be able to save a list.
 
@@ -20,4 +20,4 @@ Adding to the previous functionality of the application, the users will be able 
 ## Deliverable 3
 Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
 ## Mockup
-<img src="relative path to mockup image" width="700px"/>
+<img src="mockuppics\home.JPG" width="700px"/>
