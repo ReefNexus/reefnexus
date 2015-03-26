@@ -28,6 +28,8 @@ Adding to the previous functionality of the application, the users will be able 
 Adding to the application's functionality will be a fully functional database with the detailed information about the reef fishes.
 ## Mockup
 
+Currently unavailable: Location description page, User's fish collection
+
 Home Page:
 This page offers the main feature of viewing fish sighting rates for a user's current location.  Clicking on the map or having the GPS find your location will list the details on the right pane.  Additionally, the obnoxious add button will allow users to add fish they have sighted at the current location.  
 
