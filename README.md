@@ -62,7 +62,9 @@ Add Fish Page (Mobile View)
 <img src="mockuppics/addfishsmall.JPG" width="700px"/>
 
 Database Page: 
-This page will allow users to search for fish in the database.  As of now, the available parameters will be common name, scientific name, family name, and location.  A second informational pane on the page will contain a list of fish that are curently unidentified but were seen by others.  Users will have the option to identify the fish should they know it.  
+This page will allow users to search for fish in the database.  As of now, the available parameters will be common name, scientific name, family name, and location.  A second informational pane on the page will contain a list of fish that are curently unidentified but were seen by others.  Users will have the option to identify the fish should they know it.
+
+There will also be an option to search for locations and view their respective statistics.  This is currently not available in the mockup.
 
 Database Page (Desktop View)
 
