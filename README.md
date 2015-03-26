@@ -30,7 +30,9 @@ Users will be able to add a picture of a fish, and if a name is not specified fo
 These functionalities were suggested by Dr. Johnson:
 
 Pick-a-fish UI:   Swipe through fish pictures, tap the one that resembles the one you just saw.
+
 Describe-a-fish UI:  Textually enter a description of the fish, others can annotate with the identification.
+
 Snap-a-fish UI:  Take a picture of the fish, upload it. If the image file has geo-location and time data, extract and automatically annotate the entry with time of viewing and location.
 
 ## Mockup
