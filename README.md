@@ -53,6 +53,8 @@ Home Page (Mobile View)
 Location Database Page:
 This page will provide detailed information on each location, and users will be directed here from the home page if they decide to view more details.  Clicking on the button "view more details" will extend the list of fish species.  By default, the top ten most abundant species will show on the page.  There will also be a search function on this page for locations (currently unavailable).
 
+Note: This was the newest page added, so the "Location Database" in the navbar is only observed in the next screenshot.
+
 Location Database (Desktop View)
 
 <img src="mockuppics/location.JPG" width="700px"/>
