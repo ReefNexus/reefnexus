@@ -1,4 +1,4 @@
-name := """ics-play-bootstrap"""
+name := """reefnexus"""
 
 version := "1.0-SNAPSHOT"
 

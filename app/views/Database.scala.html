@@ -1,0 +1,71 @@
+@(message: String)
+
+@Main("Database") {
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-md-8">
+        <div class="well well-sm">
+          <h3>Search for fish</h3>
+
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="common" class="col-sm-2 control-label">Common Name</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="common" placeholder="Hawaiian Longfin Anthias">
+              </div>
+              <label for="family" class="col-sm-2 control-label">Family</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="family" placeholder="Serranidae">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="genus" class="col-sm-2 control-label">Genus</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="genus" placeholder="Pseudanthias">
+              </div>
+              <label for="species" class="col-sm-2 control-label">Species</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="species" placeholder="hawaiiensis">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="location" class="col-sm-2 control-label">Location</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="location" placeholder="Kahe Point">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Search</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="well well-sm">
+          <h3>Unknown fish</h3>
+
+          <div class="unknown-fish">
+            <img src=@routes.Assets.at("images/trumpet.jpg")>
+            <p>Makaha Beach - <a href="#">Confirm fish</a></p>
+
+            <img src=@routes.Assets.at("images/parrot.jpg")>
+            <p>Waikiki Beach - <a href="#">Confirm fish</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+}
