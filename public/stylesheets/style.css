@@ -29,15 +29,6 @@ h3 {
   color: white;
 }
 
-.map {
-  background-image: url('mockuppics/oahu.jpg');
-  margin: 15px;
-  height: 550px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .form-horizontal {
   margin: 15px;
 }
