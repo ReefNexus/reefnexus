@@ -106,7 +106,7 @@ function initialize() {
 
       for (var i = 0; i < coordinates.length; i++) {
         centerLatitude += coordinates[i].lat();
-        centerLongitude += ctioordinates[i].lng();
+        centerLongitude += coordinates[i].lng();
       }
 
       centerLatitude /= coordinates.length;
