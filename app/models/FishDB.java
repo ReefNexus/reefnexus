@@ -1,7 +1,7 @@
 package models;
 
 /**
- * Created by Weng on 4/6/2015.
+ * Internal in-memory repository for Fishes.
  */
 public class FishDB {
 }
