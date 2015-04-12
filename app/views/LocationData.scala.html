@@ -1,0 +1,14 @@
+@(message: String, locationName: String, fishCounts: Map[Long, Long])
+
+@Main("LocationData") {
+  <div id="location-data">
+    <div id="location-name">@locationName</div>
+    <!-- For each fish in the location, fill in the following -->
+    @for(fishID <- fishCounts.keySet()) {
+      <div class="fish-data">
+        <div class="fish-name">@FishDB.getFish(fishID).getCommonName()</div>
+        <div class="fish-count">@fishCounts.get(fishID)</div>
+      </div>
+    }
+  </div>
+}

@@ -63,20 +63,6 @@ var overlayNames = [
 var overlays = [];
 
 /*
- * Creates an InfoBox based on the given index.
- *
- * Parameters:
- *   index    The integer equal to the index of the overlay to make the InfoBox for.
- *
- */
-
-function createInfoBox(index) {
-
-  // When clicked on, center the map on the overlay and display its InfoBox
-
-}
-
-/*
  * Initializes the map, making sure to save the map as a global variable for later reference.
  *
  */
@@ -90,16 +76,60 @@ function initialize() {
   for (var i = 0; i < overlayCoordinates.length; i++) {
     var coordinates = overlayCoordinates[i];
     var newOverlay = new google.maps.Polygon({paths: coordinates,
-                                              strokeColor: "#FF0000",
+                                              strokeColor: "#000000",
                                               strokeOpacity: 0.8,
                                               strokeWeight: 2,
-                                              fillColor: "#FF0000",
+                                              fillColor: "#000000",
                                               fillOpacity: 0.35});
     newOverlay.setMap(this.map);
     overlays.push(newOverlay);
 
+    // Show the data for the region that was clicked on
     google.maps.event.addListener(newOverlay, 'click', function() {
       var index = overlays.indexOf(this);
+      var overlayName = overlayNames[index];
+      var totalFish = 0;
+
+      // Update the location name on the right of the page
+      $(".location-detail > h4 > a").text(overlayName);
+
+      // Clear the table of fish data
+      $(".location-detail > table > tbody").html("");
+
+      $.ajax({type: "GET", url: "/locationData",
+              data: "name=" + overlayName.replace(" ", "_"), success: function(data) {
+        var wrapper = $("<div></div>").html(data);
+        var totalFishCount = 0;
+
+        // For each .fish-data
+        $(wrapper).find(".fish-data").each(function()
+        {
+          // Add row to the table containing the .fish-name and .fish-count values
+          var row = $("<tr>").attr("class", "fish-data");
+          var fishCountColumn = $("<td>").text($(this).find(".fish-count").text())
+                                         .attr("class", "fish-count");
+          var fishNameColumn = $("<td>").text($(this).find(".fish-name").text())
+                                        .attr("class", "fish-name");
+
+          row.append(fishCountColumn, fishNameColumn);
+
+          $(".location-detail > table > tbody").append(row);
+
+          // Add value of .fish-count to totalFish
+          totalFishCount += parseInt($(fishCountColumn).text());
+        });
+
+        // For each row in the table, append the percentage (in addition to the total number of fish)
+        $(".location-detail > table > tbody").children().each(function() {
+          var fishCountColumn = $(this).find(".fish-count").first();
+          var fishCount = $(fishCountColumn).text();
+
+          $(fishCountColumn).text(fishCount + " (" + ((parseInt(fishCount) * 100.0) / totalFishCount).toFixed(2) + "%)");
+        });
+      }});
+
+      // Below is the previous solution that created an InfoBox
+/*
       var coordinates = overlayCoordinates[index];
       var centerLatitude = 0;
       var centerLongitude = 0;
@@ -133,6 +163,7 @@ function initialize() {
                                  enableEventPropagation: false});
 
       infoBox.open(this.map, marker);
+*/
     });
   }
 
