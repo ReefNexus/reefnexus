@@ -13,18 +13,6 @@ public class LocationDB {
   private static Map<Long, Location> locations = new HashMap<>();
 
   /**
-   * Adds fishes to a location.
-   *
-   * Since Fish are now added within the Location class itself, this method does not have to be implemented.
-   *
-   */
-
-  @Deprecated
-  public static void addFishes() {
-
-  }
-
-  /**
    * Adds a Location to the database.
    *
    * @param location    The Location to add to the database.

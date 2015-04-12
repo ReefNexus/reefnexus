@@ -9,8 +9,8 @@ import java.util.Map;
 public class Location {
 
   private String name;
-  private long xCoordinates;
-  private long yCoordinates;
+  private long longitude;
+  private long latitude;
   private String description;
   private String goodFor;
   private String image;
@@ -20,27 +20,28 @@ public class Location {
   /**
    * Creates a new Location.
    *
-   * @param name            The String containing the name of the new Location.
-   * @param xCoordinates    The long equal to the x-coordinate of the new Location;
+   * @param name          The String containing the name of the new Location.
+   * @param longitude    The long equal to the x-coordinate of the new Location;
    *                        change to a list of coordinate pairs.
-   * @param yCoordinates    The long equal to the y-coordinate of the new Location;
-   *                        change to a list of coordinate pairs.
-   * @param description     The String containing the description of the new Location.
-   * @param goodFor         https://www.youtube.com/watch?v=01-2pNCZiNk
+   * @param latitude The long equal to the y-coordinate of the new Location;
+   *                     change to a list of coordinate pairs.
+   * @param description  The String containing the description of the new Location.
+   * @param goodFor        https://www.youtube.com/watch?v=01-2pNCZiNk
    * @param image           The String containing the path to an image of this Location.
    *
    */
 
-  public Location(String name, long xCoordinates, long yCoordinates, String description, String goodFor, String image) {
+  public Location(String name, long longitude, long latitude, String description, String goodFor, String image) {
     this.name = name;
-    this.xCoordinates = xCoordinates;
-    this.yCoordinates = yCoordinates;
+    this.longitude = longitude;
+    this.latitude = latitude;
     this.description = description;
     this.goodFor = goodFor;
     this.image = image;
 
     this.fishCounts = new HashMap<>();
   }
+
 
   /**
    * Returns the name of this Location.
@@ -60,8 +61,9 @@ public class Location {
    *
    */
 
+  @Deprecated
   public long getXCoordinates() {
-    return this.xCoordinates;
+    return this.longitude;
   }
 
   /**
@@ -72,7 +74,7 @@ public class Location {
    */
 
   public long getYCoordinates() {
-    return this.yCoordinates;
+    return this.latitude;
   }
 
   /**
@@ -92,18 +94,15 @@ public class Location {
    * @return A String containing the description of what this Location is used for.
    *
    */
-
   public String getGoodFor() {
     return this.goodFor;
   }
 
   /**
-   * Returns the path to the image for this Location.
+   * Returns the image path of the location.
    *
-   * @return A String containing the path to an image of this Location.
-   *
+   * @return The image path.
    */
-
   public String getImage() {
     return this.image;
   }

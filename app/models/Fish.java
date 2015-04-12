@@ -1,117 +1,111 @@
 package models;
 
+import java.util.ArrayList;
+
 /**
  * Model for fish data.
  */
 public class Fish {
 
+  private long id = 1;
   private String commonName;
   private String genus;
   private String species;
   private String family;
-  private String location;
+  private ArrayList<Location> locations;
   private String image;
   private long numAdded = 0;
 
-  private long id = 1;
-
   /**
-   * Creates a new Fish.
+   * Creates an instance of a fish.
    *
-   * @param commonName    The String containing the name of the new Fish.
-   * @param genus         The String containing the genus of the new Fish.
-   * @param species       The String containing the species of the new Fish.
-   * @param family        The String containing the family of the new Fish.
-   * @param location      The String containing the location of the new Fish.
-   * @param image         The String containing an image of the new Fish.
-   * @param id            The long equal to the ID for the new Fish.
+   * @param id The id.
+   * @param commonName The common name of the fish.
+   * @param genus The genus of the fish.
+   * @param species The species of the fish.
+   * @param family The family of the fish.
+   * @param location The location of the fish.
+   * @param image The image path of the fish.
    */
-
-  public Fish(String commonName, String genus, String species, String family, String location, String image, long id) {
+  public Fish(long id, String commonName, String genus, String species, String family,
+              Location location, String image) {
+    this.id = id;
     this.commonName = commonName;
     this.genus = genus;
     this.species = species;
     this.family = family;
-    this.location = location;
+    this.locations = new ArrayList<>();
+    this.locations.add(location);
     this.image = image;
-
-    this.id = id;
   }
 
   /**
-   * Returns the genus of this Fish.
+   * Returns the id.
    *
-   * @return A String containing the genus of this Fish.
-   * 
+   * @return The id.
    */
+  public long getId() {
+    return id;
+  }
 
+  /**
+   * Returns the common name.
+   *
+   * @return The common name.
+   */
+  public String getCommonName() {
+    return commonName;
+  }
+
+  /**
+   * Returns the genus.
+   *
+   * @return The genus.
+   */
   public String getGenus() {
     return this.genus;
   }
 
   /**
-   * Returns the name of this Fish.
+   * Returns the species.
    *
-   * @return A String containing the name of this Fish.
-   *
+   * @return The species
    */
-
-  public String getCommonName() {
-    return this.commonName;
-  }
-
-  /**
-   * Returns the species of this Fish.
-   *
-   * @return A String containing the species of this Fish.
-   *
-   */
-
   public String getSpecies() {
     return this.species;
   }
 
   /**
-   * Returns the family of this Fish.
+   * Returns the family.
    *
-   * @return A String containing the family of this Fish.
-   *
+   * @return The family.
    */
-
   public String getFamily() {
     return this.family;
   }
 
   /**
-   * Returns the location of this Fish.
+   * Returns the locations of the fish.
    *
-   * @return A String containing the location of this Fish.
-   *
+   * @return The locations of the fish.
    */
-
-  public String getLocation() {
-    return this.location;
+  public ArrayList<Location> getLocations() {
+    return locations;
   }
 
   /**
-   * Returns the path to the image for this Fish.
+   * Returns the path to the fish image.
    *
-   * @return A String containing the path to the image for this Fish.
-   *
+   * @return The path to the fish image.
    */
-
   public String getImage() {
     return this.image;
   }
 
   /**
-   * Returns the ID number of this Fish.
-   *
-   * @return A long equal to the ID number of this Fish.
-   *
+   * Increments the count of the fish.
    */
-
-  public long getId() {
-    return this.id;
+  public void addNum() {
+    numAdded++;
   }
 }

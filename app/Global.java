@@ -4,6 +4,7 @@ import models.Location;
 import models.LocationDB;
 import play.Application;
 import play.GlobalSettings;
+import views.formdata.FishFormData;
 
 /**
  * Seeds the database with fake data.
@@ -24,14 +25,22 @@ public class Global extends GlobalSettings {
   public void onStart(Application app) {
     Location waikikiBeach = new Location("Waikiki Beach", 0, 0, "description", "good for", "image path");
 
-    FishDB.addFish(new Fish("Hawaiian Sergeant", "genus", "species", "family", "location", "image", 0));
-    FishDB.addFish(new Fish("Christmas Wrasse", "genus", "species", "family", "location", "image", 0));
-    FishDB.addFish(new Fish("Ember Parrotfish", "genus", "species", "family", "location", "image", 0));
-    FishDB.addFish(new Fish("Yellowstripe Goatfish", "genus", "species", "family", "location", "image", 0));
-    FishDB.addFish(new Fish("Brown Tang", "genus", "species", "family", "location", "image", 0));
-    FishDB.addFish(new Fish("Bluestripe Snapper", "genus", "species", "family", "location", "image", 0));
-    FishDB.addFish(new Fish("Reef Triggerfish", "genus", "species", "family", "location", "image", 0));
-    FishDB.addFish(new Fish("Indo-Pacific Sergeant", "genus", "species", "family", "location", "image", 0));
+    FishDB.addFish(new FishFormData(new Fish(0, "Hawaiian Sergeant", "genus", "species",
+                                             "family", waikikiBeach, "image")));
+    FishDB.addFish(new FishFormData(new Fish(0, "Christmas Wrasse", "genus", "species",
+                                             "family", waikikiBeach, "image")));
+    FishDB.addFish(new FishFormData(new Fish(0, "Ember Parrotfish", "genus", "species",
+                                             "family", waikikiBeach, "image")));
+    FishDB.addFish(new FishFormData(new Fish(0, "Yellowstripe Goatfish", "genus", "species",
+                                             "family", waikikiBeach, "image")));
+    FishDB.addFish(new FishFormData(new Fish(0, "Brown Tang", "genus", "species",
+                                             "family", waikikiBeach, "image")));
+    FishDB.addFish(new FishFormData(new Fish(0, "Bluestripe Snapper", "genus", "species",
+                                             "family", waikikiBeach, "image")));
+    FishDB.addFish(new FishFormData(new Fish(0, "Reef Triggerfish", "genus", "species",
+                                             "family", waikikiBeach, "image")));
+    FishDB.addFish(new FishFormData(new Fish(0, "Indo-Pacific Sergeant", "genus", "species",
+                                             "family", waikikiBeach, "image")));
 
     // Initial add
     waikikiBeach.addNumberOfFish(FishDB.getFish("Hawaiian Sergeant"), 150);
