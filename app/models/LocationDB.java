@@ -5,7 +5,4 @@ package models;
  */
 public class LocationDB {
 
-  public static void addFishes() {
-
-  }
 }
