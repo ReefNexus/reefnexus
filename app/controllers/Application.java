@@ -1,13 +1,15 @@
 package controllers;
 
+import models.User;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.Index;
-import views.html.Database;
 import views.html.AddFish;
+import views.html.Database;
+import views.html.Index;
 import views.html.Location;
 import views.html.Login;
-import views.html.User;
+import views.html.Profile;
 
 /**
  * Provides controllers for this application.
@@ -55,15 +57,42 @@ public class Application extends Controller {
    * @return The Login.
    */
   public static Result login() {
-    return ok(Login.render("Login"));
+    return ok(Login.render(Form.form(LoginCred.class)));
   }
 
   /**
    * Returns the page on which to display user information.
    *
-   * @return The User.
+   * @return The Profile.
    */
-  public static Result user() {
-    return ok(User.render("User"));
+  public static Result profile() {
+    return ok(Profile.render("Profile"));
+  }
+
+  public static Result authenticate() {
+    Form<LoginCred> loginForm = Form.form(LoginCred.class).bindFromRequest();
+    if (loginForm.hasErrors()) {
+      return badRequest(Login.render(loginForm));
+    } else {
+      session().clear();
+      session("email", loginForm.get().email);
+      return redirect(
+          controllers.routes.Application.index()
+      );
+    }
+  }
+
+  public static class LoginCred {
+
+    public String email;
+    public String password;
+
+    public String validate() {
+      if (User.authenticate(email, password) == null) {
+        return "Invalid user or password";
+      }
+      return null;
+    }
+
   }
 }
