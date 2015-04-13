@@ -28,10 +28,10 @@ function initialize() {
     var newOverlay = new google.maps.Polygon({
       paths: coordinates,
       strokeColor: "#000000",
-      strokeOpacity: 0.8,
+      strokeOpacity: 0.0,
       strokeWeight: 2,
       fillColor: "#000000",
-      fillOpacity: 0.35
+      fillOpacity: 0.0
     });
     newOverlay.setMap(this.map);
     overlays.push(newOverlay);
@@ -77,7 +77,7 @@ function initialize() {
             var fishCountColumn = $(this).find(".fish-count").first();
             var fishCount = $(fishCountColumn).text();
 
-            $(fishCountColumn).text(fishCount + " (" + ((parseInt(fishCount) * 100.0) / totalFishCount).toFixed(2) + "%)");
+            $(fishCountColumn).text(((parseInt(fishCount) * 100.0) / totalFishCount).toFixed(2) + "%");
           });
         }, error: function () {
           $(".location-detail > h4 > a").text("Location not found")

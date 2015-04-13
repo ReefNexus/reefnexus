@@ -22,6 +22,7 @@ public class Location {
 
   private List<String> coordinates;
 
+
   /**
    * Creates a new Location.
    *
@@ -218,4 +219,5 @@ public class Location {
 
     Collections.addAll(this.coordinates, toAdd);
   }
+
 }
