@@ -72,27 +72,6 @@ var overlayCoordinates = [
 ];
 
 /*
- * The overlay names.
- */
-var overlayNames = [
-  "Kaka'ako to Ala Moana",
-    "Waikiki",
-    "Diamond Head",
-    "Kahala",
-    "Maunalua Bay",
-    "Haunama Bay",
-    "Koko Head",
-    "Sandy to Kaloko",
-    "Makapu'u",
-    "Waimanalo Bay",
-    "Lanikai",
-    "Kailua Bay",
-    "MCBH",
-    "South Kaneohe Bay",
-    "North Kaneohe Bay"
-];
-
-/*
  * The actual overlays.
  */
 var overlays = [];
@@ -129,13 +108,11 @@ function initialize() {
       var overlayName = overlayNames[index];
       var totalFish = 0;
 
-
       // Clear the table of fish data
       $(".location-detail > table > tbody").html("");
 
-      $.ajax({
-        type: "GET", url: "/locationData",
-        data: "name=" + overlayName.replace(" ", "_"), success: function (data) {
+      $.ajax({type: "GET", url: "/locationData",
+              data: "name=" + overlayName.replace(" ", "_"), success: function (data) {
           var wrapper = $("<div></div>").html(data);
           var totalFishCount = 0;
 
