@@ -9,52 +9,87 @@
  * The overlay coordinates.
  */
 var overlayCoordinates = [
-  [new google.maps.LatLng(21.281866, -157.846104),
-   new google.maps.LatLng(21.271783, -157.846104),
-   new google.maps.LatLng(21.271783, -157.823311),
-   new google.maps.LatLng(21.281866, -157.823311)],
-  [new google.maps.LatLng(21.271783, -157.823311),
-   new google.maps.LatLng(21.271783, -157.822216),
-   new google.maps.LatLng(21.265099, -157.822216),
-   new google.maps.LatLng(21.265099, -157.823311)],
-  [new google.maps.LatLng(21.274787, -157.825805),
-   new google.maps.LatLng(21.274787, -157.821755),
-   new google.maps.LatLng(21.262355, -157.821755),
-   new google.maps.LatLng(21.262355, -157.825805)],
-  [new google.maps.LatLng(21.260995, -157.821358),
-   new google.maps.LatLng(21.260995, -157.818584),
-   new google.maps.LatLng(21.257675, -157.818584),
-   new google.maps.LatLng(21.257675, -157.821358)],
-  [new google.maps.LatLng(21.257605, -157.818386),
-   new google.maps.LatLng(21.257605, -157.816010),
-   new google.maps.LatLng(21.256645, -157.816010),
-   new google.maps.LatLng(21.256645, -157.818386)],
-  [new google.maps.LatLng(21.256655, -157.815961),
-   new google.maps.LatLng(21.256655, -157.814486),
-   new google.maps.LatLng(21.256000, -157.814486),
-   new google.maps.LatLng(21.256000, -157.815961)],
-  [new google.maps.LatLng(21.255263, -157.809417),
-   new google.maps.LatLng(21.255263, -157.803344),
-   new google.maps.LatLng(21.255903, -157.803344),
-   new google.maps.LatLng(21.255903, -157.809417)],
-  [new google.maps.LatLng(21.256983, -157.798168),
-   new google.maps.LatLng(21.256983, -157.795410),
-   new google.maps.LatLng(21.256683, -157.795410),
-   new google.maps.LatLng(21.256683, -157.798168)]
+  [new google.maps.LatLng(21.27242,-157.85048),
+    new google.maps.LatLng(21.28667,-157.87744),
+    new google.maps.LatLng(21.30733,-157.85931),
+    new google.maps.LatLng(21.29588,-157.83243)],
+  [new google.maps.LatLng(21.27242,-157.85048),
+    new google.maps.LatLng(21.25439,-157.82759),
+    new google.maps.LatLng(21.26882,-157.81185),
+    new google.maps.LatLng(21.29588,-157.83243)],
+  [new google.maps.LatLng(21.24642,-157.79096),
+    new google.maps.LatLng(21.25439,-157.82759),
+    new google.maps.LatLng(21.26882,-157.81185),
+    new google.maps.LatLng(21.26177,-157.79286)],
+  [new google.maps.LatLng(21.24642,-157.79096),
+    new google.maps.LatLng(21.26191,-157.75283),
+    new google.maps.LatLng(21.28334,-157.75988),
+    new google.maps.LatLng(21.26177,-157.79286)],
+  [new google.maps.LatLng(21.25402,-157.70281),
+    new google.maps.LatLng(21.26191,-157.75283),
+    new google.maps.LatLng(21.28334,-157.75988),
+    new google.maps.LatLng(21.29272,-157.70162)],
+  [new google.maps.LatLng(21.25402,-157.70281),
+    new google.maps.LatLng(21.26479,-157.68108),
+    new google.maps.LatLng(21.27934,-157.69096),
+    new google.maps.LatLng(21.29272,-157.70162)],
+  [new google.maps.LatLng(21.27634,-157.66942),
+    new google.maps.LatLng(21.26479,-157.68108),
+    new google.maps.LatLng(21.27934,-157.69096),
+    new google.maps.LatLng(21.28896,-157.68042)],
+  [new google.maps.LatLng(21.27634,-157.66942),
+    new google.maps.LatLng(21.29292,-157.64739),
+    new google.maps.LatLng(21.30205,-157.65626),
+    new google.maps.LatLng(21.28896,-157.68042)],
+  [new google.maps.LatLng(21.31121,-157.6326),
+    new google.maps.LatLng(21.29292,-157.64739),
+    new google.maps.LatLng(21.31798,-157.68034),
+    new google.maps.LatLng(21.33973,-157.66248)],
+  [new google.maps.LatLng(21.38276,-157.69225),
+    new google.maps.LatLng(21.36008,-157.7346),
+    new google.maps.LatLng(21.31798,-157.68034),
+    new google.maps.LatLng(21.33973,-157.66248)],
+  [new google.maps.LatLng(21.38276,-157.69225),
+    new google.maps.LatLng(21.36008,-157.7346),
+    new google.maps.LatLng(21.38577,-157.74299),
+    new google.maps.LatLng(21.40504,-157.69956)],
+  [new google.maps.LatLng(21.44508,-157.70942),
+    new google.maps.LatLng(21.42338,-157.75313),
+    new google.maps.LatLng(21.38577,-157.74299),
+    new google.maps.LatLng(21.40504,-157.69956)],
+  [new google.maps.LatLng(21.44508,-157.70942),
+    new google.maps.LatLng(21.42322,-157.75331),
+    new google.maps.LatLng(21.45105,-157.79424),
+    new google.maps.LatLng(21.48828,-157.71758)],
+  [new google.maps.LatLng(21.39203,-157.78598),
+    new google.maps.LatLng(21.42322,-157.75331),
+    new google.maps.LatLng(21.45105,-157.79424),
+    new google.maps.LatLng(21.43907,-157.83328)],
+  [new google.maps.LatLng(21.52303,-157.87035),
+    new google.maps.LatLng(21.5447,-157.81613),
+    new google.maps.LatLng(21.45105,-157.79424),
+    new google.maps.LatLng(21.43907,-157.83328)],
 ];
 
 /*
  * The overlay names.
  */
 var overlayNames = [
-  "Waikiki Beach",
-  "Queen Beach",
-  "Sans Souci Beach",
-  "Kaluahole Beach",
-  "Makalei Beach",
-  "Leahi Beach",
-  "Diamond Head Beach",
-  "Cromwells"
+  "Kaka'ako to Ala Moana",
+    "Waikiki",
+    "Diamond Head",
+    "Kahala",
+    "Maunalua Bay",
+    "Haunama Bay",
+    "Koko Head",
+    "Sandy to Kaloko",
+    "Makapu'u",
+    "Waimanalo Bay",
+    "Lanikai",
+    "Kailua Bay",
+    "MCBH",
+    "South Kaneohe Bay",
+    "North Kaneohe Bay"
 ];
 
 /*
@@ -69,23 +104,27 @@ var overlays = [];
 
 function initialize() {
   this.map = new google.maps.Map(document.getElementById("map"),
-      {zoom: 10,
-        center: new google.maps.LatLng(21.477, -157.967)});
+      {
+        zoom: 10,
+        center: new google.maps.LatLng(21.477, -157.967)
+      });
 
   // Sets up the overlays
   for (var i = 0; i < overlayCoordinates.length; i++) {
     var coordinates = overlayCoordinates[i];
-    var newOverlay = new google.maps.Polygon({paths: coordinates,
-                                              strokeColor: "#000000",
-                                              strokeOpacity: 0.8,
-                                              strokeWeight: 2,
-                                              fillColor: "#000000",
-                                              fillOpacity: 0.35});
+    var newOverlay = new google.maps.Polygon({
+      paths: coordinates,
+      strokeColor: "#000000",
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: "#000000",
+      fillOpacity: 0.35
+    });
     newOverlay.setMap(this.map);
     overlays.push(newOverlay);
 
     // Show the data for the region that was clicked on
-    google.maps.event.addListener(newOverlay, 'click', function() {
+    google.maps.event.addListener(newOverlay, 'click', function () {
       var index = overlays.indexOf(this);
       var overlayName = overlayNames[index];
       var totalFish = 0;
@@ -94,10 +133,11 @@ function initialize() {
       // Clear the table of fish data
       $(".location-detail > table > tbody").html("");
 
-      $.ajax({type: "GET", url: "/locationData",
-              data: "name=" + overlayName.replace(" ", "_"), success: function(data) {
-        var wrapper = $("<div></div>").html(data);
-        var totalFishCount = 0;
+      $.ajax({
+        type: "GET", url: "/locationData",
+        data: "name=" + overlayName.replace(" ", "_"), success: function (data) {
+          var wrapper = $("<div></div>").html(data);
+          var totalFishCount = 0;
 
         // Update the location name on the right of the page
         $(".location-detail > h4 > a").text($(wrapper).find("#location-name").text())
@@ -113,18 +153,18 @@ function initialize() {
           var fishNameColumn = $("<td>").text($(this).find(".fish-name").text())
                                         .attr("class", "fish-name");
 
-          row.append(fishCountColumn, fishNameColumn);
+            row.append(fishCountColumn, fishNameColumn);
 
-          $(".location-detail > table > tbody").append(row);
+            $(".location-detail > table > tbody").append(row);
 
-          // Add value of .fish-count to totalFish
-          totalFishCount += parseInt($(fishCountColumn).text());
-        });
+            // Add value of .fish-count to totalFish
+            totalFishCount += parseInt($(fishCountColumn).text());
+          });
 
-        // For each row in the table, append the percentage (in addition to the total number of fish)
-        $(".location-detail > table > tbody").children().each(function() {
-          var fishCountColumn = $(this).find(".fish-count").first();
-          var fishCount = $(fishCountColumn).text();
+          // For each row in the table, append the percentage (in addition to the total number of fish)
+          $(".location-detail > table > tbody").children().each(function () {
+            var fishCountColumn = $(this).find(".fish-count").first();
+            var fishCount = $(fishCountColumn).text();
 
           $(fishCountColumn).text(fishCount + " (" + ((parseInt(fishCount) * 100.0) / totalFishCount).toFixed(2) + "%)");
         });
@@ -132,48 +172,11 @@ function initialize() {
         $(".location-detail > h4 > a").text("Location not found")
                                       .attr("href", "#");
       }});
-
-      // Below is the previous solution that created an InfoBox
-/*
-      var coordinates = overlayCoordinates[index];
-      var centerLatitude = 0;
-      var centerLongitude = 0;
-
-      for (var i = 0; i < coordinates.length; i++) {
-        centerLatitude += coordinates[i].lat();
-        centerLongitude += coordinates[i].lng();
-      }
-
-      centerLatitude /= coordinates.length;
-      centerLongitude /= coordinates.length;
-
-      var marker = new google.maps.Marker({position: new google.maps.LatLng(centerLatitude, centerLongitude),
-                                           map: this.map});
-      marker.setMap(null);
-
-      var overlayName = overlayNames[index];
-
-      var infoBox = new InfoBox({content: "<span>" + overlayName + "</span>",
-                                 disableAutoPan: false,
-                                 pixelOffset: new google.maps.Size(-140, 0),
-                                 zIndex: null,
-                                 boxStyle: {background: "#FFFFFF",
-                                            color: "#000000",
-                                            opacity: 0.90},
-                                 closeBoxMargin: "2px 2px 2px 2px",
-                                 closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
-                                 infoBoxClearance: new google.maps.Size(1, 1),
-                                 isHidden: false,
-                                 pane: "floatPane",
-                                 enableEventPropagation: false});
-
-      infoBox.open(this.map, marker);
-*/
     });
   }
 
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   initialize();
 });

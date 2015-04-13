@@ -30,11 +30,12 @@
               <p><u><a href="#detail">Click to see more details...</a></u></p>
             </div>
 
-            <div class="add-fish">
-              <button class="btn"><p>Add fish</p>
-
-                <p>to location</p></button>
-            </div>
+            <form action="@routes.Application.addFish()">
+              <div class="add-fish">
+                <button class="btn"><p>Add fish</p>
+                  <p>to location</p></button>
+              </div>
+            </form>
           </div>
 
 
