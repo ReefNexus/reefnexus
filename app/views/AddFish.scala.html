@@ -1,36 +1,39 @@
-@(message: String)
+@(locationForm: Form[views.formdata.LocationFormData])
 
-  @Main("AddFish") {
-    <div class="container">
-      <div class="row">
+@import bootstrap3._
+@import helper._
 
-        <div class="col-md-3"></div>
+@Main("AddFish") {
+  <div class="container">
+    <h3>Adding fish...</h3>
 
-        <div class="col-md-6">
-          <div class="well well-sm">
-            <h3>Adding fish...</h3>
+    @form(routes.Application.addFishToLoc(), 'class -> "form-horizontal") {
+      <input type="hidden"
+      name="@locationForm("id").name"
+      id="@locationForm("id").id"
+      value="@locationForm("id").value">
 
-            <form class ="fish-form">
-              <div class="form-group">
-                <label for="current-location">Current location (required):</label>
-                <input type="text" class="form-control" id="current-location" placeholder="Enter location">
-              </div>
-              <div class="form-group">
-                <label for="fish-sighted">Fish sighted (required if no picture is uploaded):</label>
-                <input type="text" class="form-control" id="fight-sighted" placeholder="Select fish">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputFile">Upload a picture of your fish:</label>
-                <input type="file" id="exampleInputFile">
-              </div>
+      @text(locationForm("location"),
+        label = "Location",
+        placeholder = "Waikiki",
+        help = "")
 
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+      @text(locationForm("fish"),
+        label = "Fish",
+        placeholder = "Reef Triggerfish",
+        help = "")
 
-          </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button id="submit" type="submit" class="btn btn-default">Add</button>
         </div>
-
-        <div class="col-md-3"></div>
       </div>
-    </div>
-  }
+    }
+  </div>
+
+  <script type="text/javascript">
+  document.getElementById ( "current-location" ).value = window.location.search ;
+
+  </script>
+
+}

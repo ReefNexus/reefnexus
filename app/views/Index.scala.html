@@ -44,13 +44,14 @@
               <tbody>
               </tbody>
             </table>
-            <p><u><a href="#detail">Click to see more details...</a></u></p>
+            <p><u><a href="#">Click to see more details...</a></u></p>
           </div>
 
-          <form action="@routes.Application.addFish()">
+          <form method=GET action="@routes.Application.addFish()">
             <div class="add-fish">
               <button class="btn"><p>Add fish</p>
                 <p>to location</p></button>
+              <input type="hidden" name="Id" value="Waikiki">
             </div>
           </form>
         </div>

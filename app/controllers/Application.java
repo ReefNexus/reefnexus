@@ -5,6 +5,7 @@ import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.formdata.LocationFormData;
 import views.html.AddFish;
 import views.html.Database;
 import views.html.Index;
@@ -35,7 +36,8 @@ public class Application extends Controller {
    * @return The AddPage.
    */
   public static Result addFish() {
-    return ok(AddFish.render("Add Fish"));
+    Form<LocationFormData> formData = Form.form(LocationFormData.class);
+    return ok(AddFish.render(formData));
   }
 
   /**
@@ -82,12 +84,25 @@ public class Application extends Controller {
    * else a badRequest.
    */
 
+  public static Result addFishToLoc() {
+    Form<LocationFormData> formData = Form.form(LocationFormData.class).bindFromRequest();
+
+    if (formData.hasErrors()) {
+      System.out.println("Error occurred!");
+      return badRequest(AddFish.render(formData));
+    } else {
+      LocationFormData data = formData.get();
+      LocationDB.addFish(data);
+      System.out.format("Received %s %s \n", data.location, data.fish);
+      return ok(AddFish.render(formData));
+    }
+  }
+
   public static Result authenticate() {
     Form<LoginCred> loginForm = Form.form(LoginCred.class).bindFromRequest();
     if (loginForm.hasErrors()) {
       return badRequest(Login.render(loginForm));
-    }
-    else {
+    } else {
       session().clear();
       session("email", loginForm.get().email);
       return redirect(
@@ -115,6 +130,7 @@ public class Application extends Controller {
       Map<Long, Long> fishCounts = toShow.getFishCounts();
       return ok(LocationData.render("Location Data", name.replaceAll("_", " "), fishCounts));
     }
+
   }
 
   public static class LoginCred {

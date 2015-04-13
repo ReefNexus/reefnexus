@@ -45,24 +45,24 @@ function initialize() {
       // Clear the table of fish data
       $(".location-detail > table > tbody").html("");
 
-      $.ajax({type: "GET", url: "/locationData",
-              data: "name=" + overlayName.replace(" ", "_"), success: function (data) {
+      $.ajax({
+        type: "GET", url: "/locationData",
+        data: "name=" + overlayName.replace(" ", "_"), success: function (data) {
           var wrapper = $("<div></div>").html(data);
           var totalFishCount = 0;
 
-        // Update the location name on the right of the page
-        $(".location-detail > h4 > a").text($(wrapper).find("#location-name").text())
-                                      .attr("href", $(wrapper).find("#location-url").text());
+          // Update the location name on the right of the page
+          $(".location-detail > h4 > a").text($(wrapper).find("#location-name").text())
+              .attr("href", $(wrapper).find("#location-url").text());
 
-        // For each .fish-data
-        $(wrapper).find(".fish-data").each(function()
-        {
-          // Add row to the table containing the .fish-name and .fish-count values
-          var row = $("<tr>").attr("class", "fish-data");
-          var fishCountColumn = $("<td>").text($(this).find(".fish-count").text())
-                                         .attr("class", "fish-count");
-          var fishNameColumn = $("<td>").text($(this).find(".fish-name").text())
-                                        .attr("class", "fish-name");
+          // For each .fish-data
+          $(wrapper).find(".fish-data").each(function () {
+            // Add row to the table containing the .fish-name and .fish-count values
+            var row = $("<tr>").attr("class", "fish-data");
+            var fishCountColumn = $("<td>").text($(this).find(".fish-count").text())
+                .attr("class", "fish-count");
+            var fishNameColumn = $("<td>").text($(this).find(".fish-name").text())
+                .attr("class", "fish-name");
 
             row.append(fishCountColumn, fishNameColumn);
 
@@ -77,45 +77,55 @@ function initialize() {
             var fishCountColumn = $(this).find(".fish-count").first();
             var fishCount = $(fishCountColumn).text();
 
-          $(fishCountColumn).text(fishCount + " (" + ((parseInt(fishCount) * 100.0) / totalFishCount).toFixed(2) + "%)");
-        });
-      }, error: function() {
-        $(".location-detail > h4 > a").text("Location not found")
-                                      .attr("href", "#");
-      }});
+            $(fishCountColumn).text(fishCount + " (" + ((parseInt(fishCount) * 100.0) / totalFishCount).toFixed(2) + "%)");
+          });
+        }, error: function () {
+          $(".location-detail > h4 > a").text("Location not found")
+              .attr("href", "#");
+        }
+      });
     });
   }
 
 }
 
-function userLocation(){
-  if (navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(getPosition,showError);
+/*
+ * Focus on user's current location.
+ */
+
+function userLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getPosition, showError);
   }
-  else{
+  else {
     alert("Geolocation is not supported by this browser.");
   }
 }
 
-function getPosition(position)
-{
+/*
+ * Obtain user's current coordinates
+ */
+
+function getPosition(position) {
   UserLatitude = position.coords.latitude;
   UserLongitude = position.coords.longitude;
   showPosition(UserLatitude, UserLongitude);
 }
 
-function showPosition(userLatitude, userLongitude){
-  lat= userLatitude;
-  lon= userLongitude;
-  latlon=new google.maps.LatLng(lat, lon);
+/*
+ * Pan to user's current location.
+ */
+
+function showPosition(userLatitude, userLongitude) {
+  lat = userLatitude;
+  lon = userLongitude;
+  latlon = new google.maps.LatLng(lat, lon);
 
   google.maps.event.trigger(map.panTo(latlon), 'click');
 }
 
-function showError(error)
-{
-  switch(error.code)
-  {
+function showError(error) {
+  switch (error.code) {
     case error.PERMISSION_DENIED:
       alert("User denied the request for Geolocation.");
       break;

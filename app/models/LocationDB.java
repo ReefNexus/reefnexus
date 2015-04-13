@@ -1,5 +1,7 @@
 package models;
 
+import views.formdata.LocationFormData;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -84,5 +86,9 @@ public class LocationDB {
     }
 
     return id;
+  }
+
+  public static void addFish(LocationFormData formData) {
+    LocationDB.getLocation(formData.location).addNumberOfFish(FishDB.getFish(formData.fish), 1);
   }
 }

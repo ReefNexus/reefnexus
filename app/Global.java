@@ -71,68 +71,74 @@ public class Global extends GlobalSettings {
     Location mcbh = new Location("MCBH", 0, 0, "description", "good for", "image path");
     Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "description", "good for", "image path");
     Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "description", "good for", "image path");
+    Location testLoc = new Location("Test", 0, 0, "description", "good for", "image path");
+
 
     // Set up coordinates
-    kakaako.setCoordinates(new String[] {"21.27242,-157.85048",
-                                         "21.28667,-157.87744",
-                                         "21.30733,-157.85931",
-                                         "21.29588,-157.83243"});
-    waikikiBeach.setCoordinates(new String[] {"21.27242,-157.85048",
-                                              "21.25439,-157.82759",
-                                              "21.26882,-157.81185",
-                                              "21.29588,-157.83243"});
-  diamondHead.setCoordinates(new String[] {"21.24642,-157.79096",
-                                           "21.25439,-157.82759",
-                                           "21.26882,-157.81185",
-                                           "21.26177,-157.79286"});
-  kahala.setCoordinates(new String[] {"21.24642,-157.79096",
-                                      "21.26191,-157.75283",
-                                      "21.28334,-157.75988",
-                                      "21.26177,-157.79286"});
-    maunaluaBay.setCoordinates(new String[] {"21.25402,-157.70281",
-                                           "21.26191,-157.75283",
-                                           "21.28334,-157.75988",
-                                           "21.29272,-157.70162"});
-  haunamaBay.setCoordinates(new String[] {"21.25402,-157.70281",
-                                          "21.26479,-157.68108",
-                                          "21.27934,-157.69096",
-                                          "21.29272,-157.70162"});
-  kokoHead.setCoordinates(new String[] {"21.27634,-157.66942",
-                                        "21.26479,-157.68108",
-                                        "21.27934,-157.69096",
-                                        "21.28896,-157.68042"});
-  sandyToKaloko.setCoordinates(new String[] {"21.27634,-157.66942",
-                                             "21.29292,-157.64739",
-                                             "21.30205,-157.65626",
-                                             "21.28896,-157.68042"});
-  makapuu.setCoordinates(new String[] {"21.31121,-157.6326",
-                                       "21.29292,-157.64739",
-                                       "21.31798,-157.68034",
-                                       "21.33973,-157.66248"});
-  waimanaloBay.setCoordinates(new String[] {"21.38276,-157.69225",
-                                            "21.36008,-157.7346",
-                                            "21.31798,-157.68034",
-                                            "21.33973,-157.66248"});
-  lanikai.setCoordinates(new String[] {"21.38276,-157.69225",
-                                       "21.36008,-157.7346",
-                                       "21.38577,-157.74299",
-                                       "21.40504,-157.69956"});
-  kailuaBay.setCoordinates(new String[] {"21.44508,-157.70942",
-                                         "21.42338,-157.75313",
-                                         "21.38577,-157.74299",
-                                         "21.40504,-157.69956"});
-  mcbh.setCoordinates(new String[] {"21.44508,-157.70942",
-                                    "21.42322,-157.75331",
-                                    "21.45105,-157.79424",
-                                    "21.48828,-157.71758"});
-  southKaneoheBay.setCoordinates(new String[] {"21.39203,-157.78598",
-                                               "21.42322,-157.75331",
-                                               "21.45105,-157.79424",
-                                               "21.43907,-157.83328"});
-  northKaneoheBay.setCoordinates(new String[] {"21.52303,-157.87035",
-                                               "21.5447,-157.81613",
-                                               "21.45105,-157.79424",
-                                               "21.43907,-157.83328"});
+    kakaako.setCoordinates(new String[]{"21.27242,-157.85048",
+        "21.28667,-157.87744",
+        "21.30733,-157.85931",
+        "21.29588,-157.83243"});
+    waikikiBeach.setCoordinates(new String[]{"21.27242,-157.85048",
+        "21.25439,-157.82759",
+        "21.26882,-157.81185",
+        "21.29588,-157.83243"});
+    diamondHead.setCoordinates(new String[]{"21.24642,-157.79096",
+        "21.25439,-157.82759",
+        "21.26882,-157.81185",
+        "21.26177,-157.79286"});
+    kahala.setCoordinates(new String[]{"21.24642,-157.79096",
+        "21.26191,-157.75283",
+        "21.28334,-157.75988",
+        "21.26177,-157.79286"});
+    maunaluaBay.setCoordinates(new String[]{"21.25402,-157.70281",
+        "21.26191,-157.75283",
+        "21.28334,-157.75988",
+        "21.29272,-157.70162"});
+    haunamaBay.setCoordinates(new String[]{"21.25402,-157.70281",
+        "21.26479,-157.68108",
+        "21.27934,-157.69096",
+        "21.29272,-157.70162"});
+    kokoHead.setCoordinates(new String[]{"21.27634,-157.66942",
+        "21.26479,-157.68108",
+        "21.27934,-157.69096",
+        "21.28896,-157.68042"});
+    sandyToKaloko.setCoordinates(new String[]{"21.27634,-157.66942",
+        "21.29292,-157.64739",
+        "21.30205,-157.65626",
+        "21.28896,-157.68042"});
+    makapuu.setCoordinates(new String[]{"21.31121,-157.6326",
+        "21.29292,-157.64739",
+        "21.31798,-157.68034",
+        "21.33973,-157.66248"});
+    waimanaloBay.setCoordinates(new String[]{"21.38276,-157.69225",
+        "21.36008,-157.7346",
+        "21.31798,-157.68034",
+        "21.33973,-157.66248"});
+    lanikai.setCoordinates(new String[]{"21.38276,-157.69225",
+        "21.36008,-157.7346",
+        "21.38577,-157.74299",
+        "21.40504,-157.69956"});
+    kailuaBay.setCoordinates(new String[]{"21.44508,-157.70942",
+        "21.42338,-157.75313",
+        "21.38577,-157.74299",
+        "21.40504,-157.69956"});
+    mcbh.setCoordinates(new String[]{"21.44508,-157.70942",
+        "21.42322,-157.75331",
+        "21.45105,-157.79424",
+        "21.48828,-157.71758"});
+    southKaneoheBay.setCoordinates(new String[]{"21.39203,-157.78598",
+        "21.42322,-157.75331",
+        "21.45105,-157.79424",
+        "21.43907,-157.83328"});
+    northKaneoheBay.setCoordinates(new String[]{"21.52303,-157.87035",
+        "21.5447,-157.81613",
+        "21.45105,-157.79424",
+        "21.43907,-157.83328"});
+    testLoc.setCoordinates(new String[]{"21.30117,-157.8261",
+        "21.3086,-157.81764",
+        "21.30223,-157.80531",
+        "21.2936,-157.81582"});
 
     // Add the locations to the database
     LocationDB.addLocation(kakaako);
@@ -150,5 +156,6 @@ public class Global extends GlobalSettings {
     LocationDB.addLocation(mcbh);
     LocationDB.addLocation(southKaneoheBay);
     LocationDB.addLocation(northKaneoheBay);
+    LocationDB.addLocation(testLoc);
   }
 }

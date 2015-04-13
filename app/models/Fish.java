@@ -11,6 +11,7 @@ public class Fish {
   private String commonName;
   private String genus;
   private String species;
+  private String scientific;
   private String family;
   private ArrayList<Location> locations;
   private String image;
@@ -37,6 +38,8 @@ public class Fish {
     this.locations = new ArrayList<>();
     this.locations.add(location);
     this.image = image;
+
+    this.scientific = genus + " " + species;
   }
 
   /**
@@ -73,6 +76,15 @@ public class Fish {
    */
   public String getSpecies() {
     return this.species;
+  }
+
+  /**
+   * Returns the scientific name.
+   *
+   * @return The species
+   */
+  public String getScientific() {
+    return this.scientific;
   }
 
   /**
