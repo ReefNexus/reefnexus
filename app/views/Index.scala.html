@@ -1,45 +1,53 @@
 @(message: String)
 
-  @Main("Home") {
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="well well-sm"><h3>Select a coastal area or view <a id="user-location" href="#" onclick="userLocation();return false;">current location</a></h3>
+@Main("Home") {
+  <script type="text/javascript">
+    var overlayNames = [
+      @for(location <- LocationDB.getLocations) {
+        @Html("\"" + location.getName() + "\", ")
+      }
+    ];
+  </script>
 
-            <div id="map" class="center-block">
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="well well-sm"><h3>Select a coastal area or view <a id="user-location" href="#" onclick="userLocation()">current location</a></h3>
+
+          <div id="map" class="center-block">
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="well well-sm"><h3>Location detail</h3>
-
-
-            <div class="location-detail">
-              <h4 id="location-name"><a href="#"></a></h4>
-
-              <table class="table table-condensed">
-                <thead>
-                  <tr>
-                    <th><u>Sighting Rate</u></th>
-                    <th><u>Fish</u></th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-              <p><u><a href="#detail">Click to see more details...</a></u></p>
-            </div>
-
-            <form action="@routes.Application.addFish()">
-              <div class="add-fish">
-                <button class="btn"><p>Add fish</p>
-                  <p>to location</p></button>
-              </div>
-            </form>
-          </div>
-
-
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="well well-sm"><h3>Location detail</h3>
+
+
+          <div class="location-detail">
+            <h4 id="location-name"><a href="#"></a></h4>
+
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th><u>Sighting Rate</u></th>
+                  <th><u>Fish</u></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <p><u><a href="#detail">Click to see more details...</a></u></p>
+          </div>
+
+          <form action="@routes.Application.addFish()">
+            <div class="add-fish">
+              <button class="btn"><p>Add fish</p>
+                <p>to location</p></button>
+            </div>
+          </form>
+        </div>
+
+
+      </div>
     </div>
-  }
+  </div>
+}

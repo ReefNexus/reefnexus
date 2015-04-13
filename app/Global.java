@@ -21,7 +21,7 @@ public class Global extends GlobalSettings {
 
   @Override
   public void onStart(Application app) {
-    Location waikikiBeach = new Location("Waikiki Beach", 0, 0, "description", "good for", "image path");
+    Location waikikiBeach = new Location("Waikiki", 0, 0, "description", "good for", "image path");
 
     FishDB.addFish(new FishFormData(new Fish(0, "Hawaiian Sergeant", "genus", "species",
         "family", waikikiBeach, "image")));
@@ -56,7 +56,21 @@ public class Global extends GlobalSettings {
     waikikiBeach.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 6);
     waikikiBeach.addNumberOfFish(FishDB.getFish("Bluestripe Snapper"), 2);
 
-    // Add the location to the database
+    // Add the locations to the database
+    LocationDB.addLocation(new Location("Kaka'ako to Ala Moana", 0, 0, "description", "good for", "image path"));
     LocationDB.addLocation(waikikiBeach);
+    LocationDB.addLocation(new Location("Diamond Head", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Kahala", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Maunalua Bay", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Haunama Bay", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Koko Head", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Sandy to Kaloko", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Makapu'u", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Waimanalo Bay", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Lanikai", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("Kailua Bay", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("MCBH", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("South Kaneohe Bay", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(new Location("North Kaneohe Bay", 0, 0, "description", "good for", "image path"));
   }
 }

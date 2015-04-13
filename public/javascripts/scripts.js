@@ -76,6 +76,7 @@ var overlayCoordinates = [
 ];
 
 /*
+<<<<<<< HEAD
  * The overlay names.
  */
 var overlayNames = [
@@ -98,6 +99,8 @@ var overlayNames = [
 ];
 
 /*
+=======
+>>>>>>> origin/map-overlays
  * The actual overlays.
  */
 var overlays = [];
@@ -134,13 +137,11 @@ function initialize() {
       var overlayName = overlayNames[index];
       var totalFish = 0;
 
-
       // Clear the table of fish data
       $(".location-detail > table > tbody").html("");
 
-      $.ajax({
-        type: "GET", url: "/locationData",
-        data: "name=" + overlayName.replace(" ", "_"), success: function (data) {
+      $.ajax({type: "GET", url: "/locationData",
+              data: "name=" + overlayName.replace(" ", "_"), success: function (data) {
           var wrapper = $("<div></div>").html(data);
           var totalFishCount = 0;
 
