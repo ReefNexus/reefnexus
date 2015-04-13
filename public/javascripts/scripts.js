@@ -96,6 +96,7 @@ function initialize() {
 function userLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getPosition, showError);
+
   }
   else {
     alert("Geolocation is not supported by this browser.");
@@ -121,6 +122,7 @@ function showPosition(userLatitude, userLongitude) {
   lon = userLongitude;
   latlon = new google.maps.LatLng(lat, lon);
 
+  map.setZoom(15);
   google.maps.event.trigger(map.panTo(latlon), 'click');
 }
 
