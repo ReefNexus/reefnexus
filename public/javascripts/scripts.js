@@ -88,6 +88,49 @@ function initialize() {
 
 }
 
+function userLocation(){
+  if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(getPosition,showError);
+  }
+  else{
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function getPosition(position)
+{
+  UserLatitude = position.coords.latitude;
+  UserLongitude = position.coords.longitude;
+  showPosition(UserLatitude, UserLongitude);
+}
+
+function showPosition(userLatitude, userLongitude){
+  lat= userLatitude;
+  lon= userLongitude;
+  latlon=new google.maps.LatLng(lat, lon);
+
+  google.maps.event.trigger(map.panTo(latlon), 'click');
+}
+
+function showError(error)
+{
+  switch(error.code)
+  {
+    case error.PERMISSION_DENIED:
+      alert("User denied the request for Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Location information is unavailable.")
+      break;
+    case error.TIMEOUT:
+      alert("The request to get user location timed out.")
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("An unknown error occurred.")
+      break;
+  }
+}
+
 $(document).ready(function () {
   initialize();
 });
