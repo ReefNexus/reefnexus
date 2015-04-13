@@ -9,11 +9,8 @@
             <h3>No location found</h3>
 
             <div class="location">
-              <u><p>Description</p></u>
+              <u><p>Coastal areas of interest:</p></u>
 
-              <u><p>Good for</p></u>
-
-              <u><p>Coordinates</p></u>
             </div>
           </div>
         </div>
@@ -47,17 +44,11 @@
           <div class="well well-sm">
             <h3>@LocationDB.getLocation(id).getName()</h3>
             <img src=@routes.Assets.at(LocationDB.getLocation(id).getImage())>
-            <img class="hanaumamap" src=@routes.Assets.at("images/hanaumamap.jpg")>
 
             <div class="location">
-              <u><p>Description</p></u>
+              <u><p>Coastal areas of interest:</p></u>
               <p>@LocationDB.getLocation(id).getDescription()</p>
 
-              <u><p>Good for</p></u>
-              <p>@LocationDB.getLocation(id).getGoodFor()</p>
-
-              <u><p>Coordinates</p></u>
-              <p>@LocationDB.getLocation(id).getLatitude() N, @LocationDB.getLocation(id).getLongitude() W</p>
             </div>
           </div>
         </div>
@@ -81,7 +72,7 @@
                     <span>(@("%.2f".format((LocationDB.getLocation(id).getFishCounts().get(fish) * 100.0) / LocationDB.getLocation(id).totalFishCount())) %)</span>
                   </td>
                   <td><a href="">@FishDB.getFish(fish).getCommonName()</a></td>
-                  <td><img src=@routes.Assets.at(FishDB.getFish(fish).getImage())</ td>
+                  <td><img src=@routes.Assets.at(FishDB.getFish(fish).getImage())></td>
                 </tr>
               }
               </tbody>

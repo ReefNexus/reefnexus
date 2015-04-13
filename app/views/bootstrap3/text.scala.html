@@ -1,9 +1,8 @@
 @(field: Field, id: String = "", label: String = "CHANGEME", value: String = "", placeholder: String = "", help: String = "")
 
-  <div class="form-group @if(field.hasErrors) {has-error}">
-    <label class="col-sm-2 control-label">@label</label>
-    <div class="col-sm-10">
-      <input type="text" 
+  <div class="fish-form @if(field.hasErrors) {has-error}">
+    <label class="control-label">@label</label>
+      <input type="text"
              class="form-control" 
              id="@id"
              name="@field.name"
@@ -11,5 +10,4 @@
              placeholder="@placeholder" />
       <span class="help-block">@help</span>
       <span class="help-block">@{field.error.map { error => error.message }}</span>
-    </div>
   </div>

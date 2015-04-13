@@ -21,24 +21,24 @@ public class Global extends GlobalSettings {
 
   @Override
   public void onStart(Application app) {
-    Location waikikiBeach = new Location("Waikiki", 0, 0, "description", "good for", "image path");
+    Location waikikiBeach = new Location("Waikiki", 0, 0, "Waikiki Beach, Queen's Surf Beach, Kuhio Beach Park, Kaimana Beach", "", "images/waikiki.jpg");
 
     FishDB.addFish(new FishFormData(new Fish(0, "Hawaiian Sergeant", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/damsel.jpg")));
     FishDB.addFish(new FishFormData(new Fish(0, "Christmas Wrasse", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/wrasse2.jpg")));
     FishDB.addFish(new FishFormData(new Fish(0, "Ember Parrotfish", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/parrot2.jpg")));
     FishDB.addFish(new FishFormData(new Fish(0, "Yellowstripe Goatfish", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/goat.jpg")));
     FishDB.addFish(new FishFormData(new Fish(0, "Brown Tang", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/surgeon.jpg")));
     FishDB.addFish(new FishFormData(new Fish(0, "Bluestripe Snapper", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/snapper.jpg")));
     FishDB.addFish(new FishFormData(new Fish(0, "Reef Triggerfish", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/trigger.jpg")));
     FishDB.addFish(new FishFormData(new Fish(0, "Indo-Pacific Sergeant", "genus", "species",
-        "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "images/damsel2.jpg")));
 
     // Initial add
     waikikiBeach.addNumberOfFish(FishDB.getFish("Hawaiian Sergeant"), 150);
@@ -71,7 +71,6 @@ public class Global extends GlobalSettings {
     Location mcbh = new Location("MCBH", 0, 0, "description", "good for", "image path");
     Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "description", "good for", "image path");
     Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "description", "good for", "image path");
-    Location testLoc = new Location("Test", 0, 0, "description", "good for", "image path");
 
 
     // Set up coordinates
@@ -135,10 +134,6 @@ public class Global extends GlobalSettings {
         "21.5447,-157.81613",
         "21.45105,-157.79424",
         "21.43907,-157.83328"});
-    testLoc.setCoordinates(new String[]{"21.30117,-157.8261",
-        "21.3086,-157.81764",
-        "21.30223,-157.80531",
-        "21.2936,-157.81582"});
 
     // Add the locations to the database
     LocationDB.addLocation(kakaako);
@@ -156,6 +151,5 @@ public class Global extends GlobalSettings {
     LocationDB.addLocation(mcbh);
     LocationDB.addLocation(southKaneoheBay);
     LocationDB.addLocation(northKaneoheBay);
-    LocationDB.addLocation(testLoc);
   }
 }

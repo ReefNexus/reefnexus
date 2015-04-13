@@ -5,39 +5,52 @@
 
 @Main("AddFish") {
   <div class="container">
-    <h3>Adding fish...</h3>
+    <div class="row">
 
-    @form(routes.Application.addFishToLoc(), 'class -> "form-horizontal") {
-      <input type="hidden"
-      name="@locationForm("id").name">
+      <div class="col-md-3"></div>
 
-      @text(locationForm("location"),
-        id = "current-location",
-        label = "Location",
-        value = "",
-        placeholder = "Waikiki",
-        help = "")
+      <div class="col-md-6">
+        <div class="well well-sm">
+          <h3>Adding fish...</h3>
+          @form(routes.Application.addFishToLoc(), 'class -> "form-horizontal") {
+            <input type="hidden"
+            name="@locationForm("id").name">
 
-      @text(locationForm("fish"),
-        label = "Fish",
-        placeholder = "Reef Triggerfish",
-        help = "")
+            @text(locationForm("location"),
+              id = "current-location",
+              label = "Current Location (required)",
+              value = "",
+              placeholder = "Waikiki",
+              help = "")
 
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button id="submit" type="submit" class="btn btn-default">Add</button>
+            @text(locationForm("fish"),
+              label = "Fish sighted (required if no picture is uploaded)",
+              placeholder = "Reef Triggerfish",
+              help = "")
+
+            <div class="fish-form">
+              <label for="exampleInputFile">Upload a picture of your fish:</label>
+              <input type="file" id="exampleInputFile">
+            </div>
+
+            <div class="fish-form">
+                <button id="submit" type="submit" class="btn btn-default">Add</button>
+            </div>
+          }
         </div>
       </div>
-    }
+      <div class="col-md-3"></div>
+    </div>
   </div>
+
 
   <script type="text/javascript">
 
-  function getURLParameter(name) {
-  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+  function getURLParameter ( name ) {
+  return decodeURIComponent ( ( new RegExp ( '[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)' ).exec ( location.search ) ||[, "" ] )[ 1 ].replace ( /\+/g, '%20' ) ) || null
   }
 
-  document.getElementById ( "current-location" ).value = getURLParameter('Location') ;
+  document.getElementById ( "current-location" ).value = getURLParameter ( 'Location' ) ;
 
   </script>
 
