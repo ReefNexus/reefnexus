@@ -71,7 +71,12 @@
                     <span>@LocationDB.getLocation(id).getFishCounts().get(fish) fish</span>
                     <span class="percent">(@("%.2f".format((LocationDB.getLocation(id).getFishCounts().get(fish) * 100.0) / LocationDB.getLocation(id).totalFishCount())) %)</span>
                   </td>
-                  <td><a href="">@FishDB.getFish(fish).getCommonName()</a></td>
+                  <td>
+                    <form method=GET action="@routes.Application.fishProfile()">
+                      <button class="fish-button">@FishDB.getFish(fish).getCommonName()</button>
+                      <input id="fish-id" type="hidden" name="Fish" value=@FishDB.getFish(fish).getId()>
+                  </form>
+                  </td>
                   <td><img src=@routes.Assets.at(FishDB.getFish(fish).getImage())></td>
                 </tr>
               }
@@ -86,4 +91,5 @@
       </div>
     </div>
   }
+
 }

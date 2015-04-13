@@ -1,0 +1,25 @@
+@(message: String)
+
+@Main("Fish Profile") {
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well well-sm">
+          <h3 id = "fishHeader">@FishDB.getFish(20).getCommonName</h3>
+          <img src=@routes.Assets.at(FishDB.getFish(20).getImage())>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="well well-sm">
+          <h3>Fish Statistics</h3>
+          <h4>Common Name: Oval ButterflyFish</h4>
+          <h4>Scientific Name: Chaetodon lunulatus</h4>
+          <h4>Family: Chaetodontidae</h4>
+
+        </div>
+      </div>
+    </div>
+  </div>
+}

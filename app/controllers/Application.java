@@ -8,6 +8,7 @@ import play.mvc.Result;
 import views.formdata.LocationFormData;
 import views.html.AddFish;
 import views.html.Database;
+import views.html.FishProfile;
 import views.html.Index;
 import views.html.LocationData;
 import views.html.Login;
@@ -38,6 +39,15 @@ public class Application extends Controller {
   public static Result addFish() {
     Form<LocationFormData> formData = Form.form(LocationFormData.class);
     return ok(AddFish.render(formData));
+  }
+
+  /**
+   * Returns the page on fish profile.
+   *
+   * @return The AddPage.
+   */
+  public static Result fishProfile() {
+    return ok(FishProfile.render("Fish Profile"));
   }
 
   /**
@@ -94,7 +104,7 @@ public class Application extends Controller {
       LocationFormData data = formData.get();
       LocationDB.addFish(data);
       System.out.format("Received %s %s \n", data.location, data.fish);
-      return ok(AddFish.render(formData));
+      return ok(views.html.Location.render("Location", LocationDB.getId(data.location)));
     }
   }
 
