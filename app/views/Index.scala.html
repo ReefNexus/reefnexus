@@ -2,26 +2,31 @@
 
 @Main("Home") {
   <script type="text/javascript">
-    var overlayCoordinates = [
-      @for(location <- LocationDB.getLocations) {
-        @Html("[")
-        @for(coordinatePair <- location.getCoordinates) {
-          @Html("new google.maps.LatLng(" + coordinatePair + "),")
-        }
-        @Html("],")
+  var overlayCoordinates =[
+    @for(location <- LocationDB.getLocations) {
+      @Html("[")
+      @for(coordinatePair <- location.getCoordinates) {
+        @Html("new google.maps.LatLng(" + coordinatePair + "), ")
       }
-    ];
-    var overlayNames = [
-      @for(location <- LocationDB.getLocations) {
-        @Html("\"" + location.getName() + "\", ")
-      }
-    ];
+      @Html("],")
+    }
+  ] ;
+  var overlayNames =[
+    @for(location <- LocationDB.getLocations) {
+      @Html("\"" + location.getName() + "\", ")
+    }
+  ] ;
+
+  function getLocation ( ) {
+  document.getElementById ( "grab-location" ).value = document.getElementById ( "location-name" ).textContent ;
+  }
   </script>
 
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <div class="well well-sm"><h3>Select a coastal area or view <a id="user-location" href="#" onclick="userLocation()">current location</a></h3>
+        <div class="well well-sm"><h3>
+          Select a coastal area or view <a id="user-location" href="#" onclick="userLocation ( )">current location</a></h3>
 
           <div id="map" class="center-block">
           </div>
@@ -44,14 +49,13 @@
               <tbody>
               </tbody>
             </table>
-            <p><u><a href="#">Click to see more details...</a></u></p>
           </div>
 
           <form method=GET action="@routes.Application.addFish()">
             <div class="add-fish">
-              <button class="btn"><p>Add fish</p>
+              <button class="btn" onclick="getLocation ( )"><p>Add fish</p>
                 <p>to location</p></button>
-              <input type="hidden" name="Id" value="Waikiki">
+              <input id="grab-location" type="hidden" name="Location">
             </div>
           </form>
         </div>

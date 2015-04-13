@@ -9,12 +9,12 @@
 
     @form(routes.Application.addFishToLoc(), 'class -> "form-horizontal") {
       <input type="hidden"
-      name="@locationForm("id").name"
-      id="@locationForm("id").id"
-      value="@locationForm("id").value">
+      name="@locationForm("id").name">
 
       @text(locationForm("location"),
+        id = "current-location",
         label = "Location",
+        value = "",
         placeholder = "Waikiki",
         help = "")
 
@@ -32,7 +32,12 @@
   </div>
 
   <script type="text/javascript">
-  document.getElementById ( "current-location" ).value = window.location.search ;
+
+  function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+  }
+
+  document.getElementById ( "current-location" ).value = getURLParameter('Location') ;
 
   </script>
 
