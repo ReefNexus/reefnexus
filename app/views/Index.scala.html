@@ -2,6 +2,15 @@
 
 @Main("Home") {
   <script type="text/javascript">
+    var overlayCoordinates = [
+      @for(location <- LocationDB.getLocations) {
+        @Html("[")
+        @for(coordinatePair <- location.getCoordinates) {
+          @Html("new google.maps.LatLng(" + coordinatePair + "),")
+        }
+        @Html("],")
+      }
+    ];
     var overlayNames = [
       @for(location <- LocationDB.getLocations) {
         @Html("\"" + location.getName() + "\", ")

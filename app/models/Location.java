@@ -1,6 +1,9 @@
 package models;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,6 +20,8 @@ public class Location {
 
   private Map<Long, Long> fishCounts;
 
+  private List<String> coordinates;
+
   /**
    * Creates a new Location.
    *
@@ -26,7 +31,7 @@ public class Location {
    * @param latitude    The long equal to the y-coordinate of the new Location;
    *                    change to a list of coordinate pairs.
    * @param description The String containing the description of the new Location.
-   * @param goodFor     https://www.youtube.com/watch?v=01-2pNCZiNk
+   * @param goodFor     The String containing a list of activities humans can engage in at the new location.
    * @param image       The String containing the path to an image of this Location.
    */
 
@@ -39,6 +44,7 @@ public class Location {
     this.image = image;
 
     this.fishCounts = new HashMap<>();
+    this.coordinates = new LinkedList<>();
   }
 
 
@@ -183,5 +189,33 @@ public class Location {
     }
 
     return sum;
+  }
+
+  /**
+   * Returns the List of coordinates that form the bounds of this Location.
+   *
+   * For convenience, these coordinates are represented as Strings rather than floating point values.
+   *
+   * @return A List<String> containing the coordinates of this Location.
+   */
+
+  public List<String> getCoordinates() {
+    return this.coordinates;
+  }
+
+  /**
+   * Sets the coordinates of this Location.
+   *
+   * For convenience, these coordinates are represented as Strings rather than floating point values.
+   *
+   * @param toAdd    The array of Strings that will form the bounds of this Location.
+   *                 A List of Strings would be semantically more appropriate,
+   *                 but this is more convenient for the time being.
+   */
+
+  public void setCoordinates(String[] toAdd) {
+    this.coordinates.clear();
+
+    Collections.addAll(this.coordinates, toAdd);
   }
 }
