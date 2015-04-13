@@ -8,14 +8,12 @@ import play.test.WithApplication;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static play.test.Helpers.fakeApplication;
-import static play.test.Helpers.inMemoryDatabase;
 
 public class ModelsTest extends WithApplication {
 
   @Before
   public void setUp() {
-    start(fakeApplication(inMemoryDatabase()));
+    //start(fakeApplication(inMemoryDatabase()));
   }
 
   @Test

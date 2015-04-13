@@ -69,6 +69,10 @@ var overlayCoordinates = [
     new google.maps.LatLng(21.5447,-157.81613),
     new google.maps.LatLng(21.45105,-157.79424),
     new google.maps.LatLng(21.43907,-157.83328)],
+  [new google.maps.LatLng(21.30117,-157.8261),
+    new google.maps.LatLng(21.30117,-157.8261),
+    new google.maps.LatLng(21.30223,-157.80531),
+    new google.maps.LatLng(21.2936,-157.81582)],
 ];
 
 /*
@@ -89,7 +93,8 @@ var overlayNames = [
     "Kailua Bay",
     "MCBH",
     "South Kaneohe Bay",
-    "North Kaneohe Bay"
+    "North Kaneohe Bay",
+    "test"
 ];
 
 /*
@@ -175,6 +180,49 @@ function initialize() {
     });
   }
 
+}
+
+function userLocation(){
+  if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(getPosition,showError);
+  }
+  else{
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function getPosition(position)
+{
+  UserLatitude = position.coords.latitude;
+  UserLongitude = position.coords.longitude;
+  showPosition(UserLatitude, UserLongitude);
+}
+
+function showPosition(userLatitude, userLongitude){
+  lat= userLatitude;
+  lon= userLongitude;
+  latlon=new google.maps.LatLng(lat, lon);
+
+  google.maps.event.trigger(map.panTo(latlon), 'click');
+}
+
+function showError(error)
+{
+  switch(error.code)
+  {
+    case error.PERMISSION_DENIED:
+      alert("User denied the request for Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Location information is unavailable.")
+      break;
+    case error.TIMEOUT:
+      alert("The request to get user location timed out.")
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("An unknown error occurred.")
+      break;
+  }
 }
 
 $(document).ready(function () {
