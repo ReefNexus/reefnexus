@@ -58,6 +58,7 @@ public class Global extends GlobalSettings {
 
     // Add the locations to the database
     LocationDB.addLocation(new Location("Kaka'ako to Ala Moana", 0, 0, "description", "good for", "image path"));
+    LocationDB.addLocation(waikikiBeach);
     LocationDB.addLocation(new Location("Diamond Head", 0, 0, "description", "good for", "image path"));
     LocationDB.addLocation(new Location("Kahala", 0, 0, "description", "good for", "image path"));
     LocationDB.addLocation(new Location("Maunalua Bay", 0, 0, "description", "good for", "image path"));
