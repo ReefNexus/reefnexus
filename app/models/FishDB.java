@@ -25,7 +25,7 @@ public class FishDB {
     if (idValue == 0 && !fishes.containsKey(idValue)) {
       idValue = ++currentId;
     }
-    
+
     if (fishes.containsKey(idValue)) {
       ArrayList<Location> fishLocations = fishes.get(idValue).getLocations();
       if (!fishLocations.contains(formData.location)) {
@@ -43,11 +43,9 @@ public class FishDB {
   /**
    * Gets the Fish with the given name.
    *
-   * @param toFind    The String containing the name of the Fish to retrieve.
-   *
+   * @param toFind The String containing the name of the Fish to retrieve.
    * @return The Fish with the given name if it exists;
-   *         null if no fish with the given name could be found.
-   *
+   * null if no fish with the given name could be found.
    */
 
   public static Fish getFish(String toFind) {

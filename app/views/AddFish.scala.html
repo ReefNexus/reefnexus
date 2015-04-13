@@ -1,36 +1,36 @@
 @(message: String)
 
-@Main("AddFish") {
-  <div class="container">
-    <div class="row">
+  @Main("AddFish") {
+    <div class="container">
+      <div class="row">
 
-      <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
 
-      <div class="col-md-6">
-        <div class="well well-sm">
-          <h3>Adding fish...</h3>
+        <div class="col-md-6">
+          <div class="well well-sm">
+            <h3>Adding fish...</h3>
 
-          <form class ="fish-form">
-            <div class="form-group">
-              <label for="exampleloc">Current location (required):</label>
-              <input type="text" class="form-control" id="exampleloc" placeholder="Enter location">
-            </div>
-            <div class="form-group">
-              <label for="examplefish">Fish sighted (required if no picture is uploaded):</label>
-              <input type="text" class="form-control" id="examplefish" placeholder="Select fish">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputFile">Upload a picture of your fish:</label>
-              <input type="file" id="exampleInputFile">
-            </div>
+            <form class ="fish-form">
+              <div class="form-group">
+                <label for="exampleloc">Current location (required):</label>
+                <input type="text" class="form-control" id="exampleloc" placeholder="Enter location">
+              </div>
+              <div class="form-group">
+                <label for="examplefish">Fish sighted (required if no picture is uploaded):</label>
+                <input type="text" class="form-control" id="examplefish" placeholder="Select fish">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">Upload a picture of your fish:</label>
+                <input type="file" id="exampleInputFile">
+              </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
 
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+      </div>
     </div>
-  </div>
-}
+  }

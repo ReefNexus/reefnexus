@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * Internal in-memory repository for Locations.
- *
+ * <p>
  * Note that Locations themselves are immutable once created.
  */
 public class LocationDB {
@@ -15,8 +15,7 @@ public class LocationDB {
   /**
    * Adds a Location to the database.
    *
-   * @param location    The Location to add to the database.
-   *
+   * @param location The Location to add to the database.
    */
 
   public static void addLocation(Location location) {
@@ -26,11 +25,9 @@ public class LocationDB {
   /**
    * Returns the Location with the given ID.
    *
-   * @param id    The long equal to the ID of the Location to retrieve.
-   *
+   * @param id The long equal to the ID of the Location to retrieve.
    * @return The Location with the given ID;
-   *         null if no Location exists with the given ID.
-   *
+   * null if no Location exists with the given ID.
    */
 
   public static Location getLocation(long id) {
@@ -40,11 +37,9 @@ public class LocationDB {
   /**
    * Returns the Location with the given name.
    *
-   * @param name    The long equal to the name of the Location to retrieve.
-   *
+   * @param name The String containing the name of the Location to retrieve.
    * @return The Location with the given name;
-   *         null if no Location exists with the given name.
-   *
+   * null if no Location exists with the given name.
    */
 
   public static Location getLocation(String name) {
@@ -63,10 +58,31 @@ public class LocationDB {
    * Returns a List of all Locations in this LocationDB.
    *
    * @return A Collection<Location> containing all Locations in the LocationDB.
-   *
    */
 
   public static Collection<Location> getLocations() {
     return LocationDB.locations.values();
+  }
+
+  /**
+   * Returns the ID of the Location with the given name.
+   * <p>
+   * This may cause some security issues; further discussion is necessary to determine whether this is an issue.
+   *
+   * @param name The String containing the name of the Location to identify.
+   * @return A long equal to the ID number for the Location with the given name.
+   */
+
+  public static long getId(String name) {
+    long id = 0;
+
+    for (long l : LocationDB.locations.keySet()) {
+      if ((LocationDB.locations.get(l) != null) && (LocationDB.locations.get(l) != null)
+          && (LocationDB.locations.get(l).getName().equalsIgnoreCase(name.replaceAll("_", " ")))) {
+        id = l;
+      }
+    }
+
+    return id;
   }
 }

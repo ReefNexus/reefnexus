@@ -69,11 +69,11 @@ public class FishFormData {
    * Creates default fish during loading.
    *
    * @param commonName The common name of the fish.
-   * @param genus The genus of the fish.
-   * @param species The species of the fish.
-   * @param family The family of the fish.
-   * @param location The location of the fish.
-   * @param image The species type.
+   * @param genus      The genus of the fish.
+   * @param species    The species of the fish.
+   * @param family     The family of the fish.
+   * @param location   The location of the fish.
+   * @param image      The species type.
    */
   public FishFormData(String commonName, String genus, String species, String family,
                       Location location, String image) {

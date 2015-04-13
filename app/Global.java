@@ -8,17 +8,15 @@ import views.formdata.FishFormData;
 
 /**
  * Seeds the database with fake data.
- *
+ * <p>
  * Created by Branden Ogata on 4/11/2015.
- *
  */
 
 public class Global extends GlobalSettings {
   /**
    * Populates FishDB and LocationDB.
    *
-   * @param app    The Application to start.
-   *
+   * @param app The Application to start.
    */
 
   @Override
@@ -26,21 +24,21 @@ public class Global extends GlobalSettings {
     Location waikikiBeach = new Location("Waikiki Beach", 0, 0, "description", "good for", "image path");
 
     FishDB.addFish(new FishFormData(new Fish(0, "Hawaiian Sergeant", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
     FishDB.addFish(new FishFormData(new Fish(0, "Christmas Wrasse", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
     FishDB.addFish(new FishFormData(new Fish(0, "Ember Parrotfish", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
     FishDB.addFish(new FishFormData(new Fish(0, "Yellowstripe Goatfish", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
     FishDB.addFish(new FishFormData(new Fish(0, "Brown Tang", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
     FishDB.addFish(new FishFormData(new Fish(0, "Bluestripe Snapper", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
     FishDB.addFish(new FishFormData(new Fish(0, "Reef Triggerfish", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
     FishDB.addFish(new FishFormData(new Fish(0, "Indo-Pacific Sergeant", "genus", "species",
-                                             "family", waikikiBeach, "image")));
+        "family", waikikiBeach, "image")));
 
     // Initial add
     waikikiBeach.addNumberOfFish(FishDB.getFish("Hawaiian Sergeant"), 150);

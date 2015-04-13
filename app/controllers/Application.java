@@ -1,14 +1,16 @@
 package controllers;
 
 import models.LocationDB;
+import models.User;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.Index;
-import views.html.Database;
 import views.html.AddFish;
+import views.html.Database;
+import views.html.Index;
 import views.html.LocationData;
 import views.html.Login;
-import views.html.User;
+import views.html.Profile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +22,7 @@ public class Application extends Controller {
 
   /**
    * Returns the home page.
+   *
    * @return The resulting home page.
    */
   public static Result index() {
@@ -47,10 +50,11 @@ public class Application extends Controller {
   /**
    * Returns the page on which to display fish locations.
    *
+   * @param id The long equal to the ID number of the location to display.
    * @return The Location.
    */
-  public static Result location() {
-    return ok(views.html.Location.render("Location"));
+  public static Result location(long id) {
+    return ok(views.html.Location.render("Location", id));
   }
 
   /**
@@ -59,23 +63,43 @@ public class Application extends Controller {
    * @return The Login.
    */
   public static Result login() {
-    return ok(Login.render("Login"));
+    return ok(Login.render(Form.form(LoginCred.class)));
   }
 
   /**
    * Returns the page on which to display user information.
    *
-   * @return The User.
+   * @return The Profile.
    */
-  public static Result user() {
-    return ok(User.render("User"));
+  public static Result profile() {
+    return ok(Profile.render("Profile"));
+  }
+
+  /**
+   * Authenticates the user login.
+   *
+   * @return The page to go to if successful;
+   * else a badRequest.
+   */
+
+  public static Result authenticate() {
+    Form<LoginCred> loginForm = Form.form(LoginCred.class).bindFromRequest();
+    if (loginForm.hasErrors()) {
+      return badRequest(Login.render(loginForm));
+    }
+    else {
+      session().clear();
+      session("email", loginForm.get().email);
+      return redirect(
+          controllers.routes.Application.index()
+      );
+    }
   }
 
   /**
    * Returns the page on which to display location information.
    *
-   * @param name    The String equal to the name of the Location data to get and display.
-   *
+   * @param name The String equal to the name of the Location data to get and display.
    * @return The User.
    */
   public static Result locationData(String name) {
@@ -84,12 +108,26 @@ public class Application extends Controller {
     // If invalid, display error
     if (toShow == null) {
       return badRequest(LocationData.render("Invalid request for " + name.replaceAll("_", " "),
-                                            name.replaceAll("_", " ") + " not found", new HashMap<Long, Long>()));
+          name.replaceAll("_", " ") + " not found", new HashMap<Long, Long>()));
     }
     // Else return the LocationData page
     else {
       Map<Long, Long> fishCounts = toShow.getFishCounts();
       return ok(LocationData.render("Location Data", name.replaceAll("_", " "), fishCounts));
     }
+  }
+
+  public static class LoginCred {
+
+    public String email;
+    public String password;
+
+    public String validate() {
+      if (User.authenticate(email, password) == null) {
+        return "Invalid user or password";
+      }
+      return null;
+    }
+
   }
 }

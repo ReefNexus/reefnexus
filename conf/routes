@@ -6,10 +6,11 @@
 GET     /                           controllers.Application.index()
 GET     /addFish                    controllers.Application.addFish()
 GET     /database                   controllers.Application.database()
-GET     /location                   controllers.Application.location()
+GET     /location                   controllers.Application.location(id: Long ?= 0)
 GET     /login                      controllers.Application.login()
-GET     /user                       controllers.Application.user()
 GET     /locationData               controllers.Application.locationData(name: String)
+GET     /profile                    controllers.Application.profile()
+POST    /login                      controllers.Application.authenticate()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET        /assets/*file        controllers.Assets.at(path="/public", file)

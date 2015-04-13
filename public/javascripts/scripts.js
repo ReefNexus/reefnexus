@@ -90,8 +90,6 @@ function initialize() {
       var overlayName = overlayNames[index];
       var totalFish = 0;
 
-      // Update the location name on the right of the page
-      $(".location-detail > h4 > a").text(overlayName);
 
       // Clear the table of fish data
       $(".location-detail > table > tbody").html("");
@@ -100,6 +98,10 @@ function initialize() {
               data: "name=" + overlayName.replace(" ", "_"), success: function(data) {
         var wrapper = $("<div></div>").html(data);
         var totalFishCount = 0;
+
+        // Update the location name on the right of the page
+        $(".location-detail > h4 > a").text($(wrapper).find("#location-name").text())
+                                      .attr("href", $(wrapper).find("#location-url").text());
 
         // For each .fish-data
         $(wrapper).find(".fish-data").each(function()
@@ -126,6 +128,9 @@ function initialize() {
 
           $(fishCountColumn).text(fishCount + " (" + ((parseInt(fishCount) * 100.0) / totalFishCount).toFixed(2) + "%)");
         });
+      }, error: function() {
+        $(".location-detail > h4 > a").text("Location not found")
+                                      .attr("href", "#");
       }});
 
       // Below is the previous solution that created an InfoBox
