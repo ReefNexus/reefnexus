@@ -8,14 +8,7 @@
 
       <div class="col-md-8">
         <div class="well well-sm">
-        @helper.form(routes.Application.authenticate) {
           <h3>Log In</h3>
-
-          @if(form.hasGlobalErrors) {
-            <p class="error">
-            @form.globalError.message
-            </p>
-          }
 
           <form class="form-horizontal">
             <div class="form-group">
@@ -47,7 +40,6 @@
               </div>
             </div>
           </form>
-        }
         </div>
       </div>
 
