@@ -5,11 +5,11 @@ Reef Nexus is a web application that offers insight on the relative occurrence o
 
 <img src="public/images/mainpage.PNG"/>
 
-<b>Additional features:<b>
+<b>Additional features:</b>
 - Comprehensive fish database which includes species-specific information 
 - Option for users to log in to add and view their own sightings
 
-<b>Features to be implemeneted:<b>
+<b>Features to be implemeneted:</b>
 - An easy identification feature which allows users to easily identify a fish which they cannot
 - Ability for other users to identify an unidentified fish
 
