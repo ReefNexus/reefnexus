@@ -29,7 +29,7 @@ Although there are many fish databases available, there are few applications tha
 - <a href="https://github.com/wengdg/reefnexus/wiki/Developer-Guide">Developer Guide</a>
 - <a href="https://github.com/wengdg/reefnexus/wiki/User-Guide">Navigating Reef Nexus</a>
 - <a href="http://wengdg.github.io/reefnexus/">Reef Nexus GitHub Page</a>
-- <a href="https://github.com/wengdg/reefnexus/wiki/Contact-Us>Contact Us Directly</a>
+- <a href="https://github.com/wengdg/reefnexus/wiki/Contact-Us">Contact Us Directly</a>
 
 ##Contributing and Contact
 - Please submit issues or improvements to the <a href="https://github.com/wengdg/reefnexus/issues">Reef Nexus issues page</a>. 
