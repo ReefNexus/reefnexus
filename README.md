@@ -25,7 +25,7 @@ Although there are many fish databases available, there are few applications tha
 <b>The application is currently being demoed within the main Hawaiian Islands</b>
 
 ##Documentation and Useful Links
-- <a href="https://www.reefnexus.com">Reef Nexus Application</a>
+- <a href="http://www.reefnexus.com">Reef Nexus Application</a>
 - <a href="https://github.com/wengdg/reefnexus/wiki/Developer-Guide">Developer Guide</a>
 - <a href="https://github.com/wengdg/reefnexus/wiki/User-Guide">Navigating Reef Nexus</a>
 - <a href="http://wengdg.github.io/reefnexus/">Reef Nexus GitHub Page</a>
