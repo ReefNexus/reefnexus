@@ -33,7 +33,7 @@ Although there are many fish databases available, there are few applications tha
 
 ##Contributing and Contact
 - Please submit issues or improvements to the <a href="https://github.com/wengdg/reefnexus/issues">Reef Nexus issues page</a>. 
-- To directly get in contact with the Reef Nexus team, please visit our <a href="https://github.com/wengdg/reefnexus/wiki/Contact-Us>contact page</a>.
+- To directly get in contact with the Reef Nexus team, please visit our <a href="https://github.com/wengdg/reefnexus/wiki/Contact-Us">contact page</a>.
 
 ##Licenses
 - Reef Nexus is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a> license.
