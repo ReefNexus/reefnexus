@@ -208,7 +208,7 @@ public class Global extends GlobalSettings {
 
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Longnose Hawkfish"), 3213);
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Fisher's Seahorse"), 1334331);
-    southKaneoheBay.addNumberOfFish(FishDB.getFish("Moorish Idol"),4324324);
+    southKaneoheBay.addNumberOfFish(FishDB.getFish("Moorish Idol"), 4324324);
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Hawaiian Freckled Frogfish"), 158682);
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Hawaiian Yellow Anthias"), 324);
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Great Barracuda"), 3453);

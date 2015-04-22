@@ -9,13 +9,22 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+/**
+ * Testing class to test user authentication.
+ */
 public class ModelsTest extends WithApplication {
 
+  /**
+   * Set up in memory database.
+   */
   @Before
   public void setUp() {
     //start(fakeApplication(inMemoryDatabase()));
   }
 
+  /**
+   * Create and retrieve a user.
+   */
   @Test
   public void createAndRetrieveUser() {
     new User("bob@gmail.com", "Bob", "secret").save();
@@ -24,6 +33,9 @@ public class ModelsTest extends WithApplication {
     assertEquals("Bob", bob.name);
   }
 
+  /**
+   * Authenticate a user.
+   */
   @Test
   public void tryAuthenticateUser() {
     new User("bob@gmail.com", "Bob", "secret").save();

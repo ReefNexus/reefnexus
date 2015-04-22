@@ -52,7 +52,10 @@ public class FishDB {
     Fish found = null;
 
     for (Fish f : FishDB.fishes.values()) {
-      if (((f.getCommonName() != null) && (f.getCommonName().equalsIgnoreCase(toFind))) || ((f.getScientific() != null) && (f.getScientific().equalsIgnoreCase(toFind)))) {
+      if (((f.getCommonName() != null)
+          && (f.getCommonName().equalsIgnoreCase(toFind)))
+          || ((f.getScientific() != null)
+          && (f.getScientific().equalsIgnoreCase(toFind)))) {
         found = f;
       }
     }

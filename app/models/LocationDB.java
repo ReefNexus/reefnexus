@@ -88,6 +88,10 @@ public class LocationDB {
     return id;
   }
 
+  /**
+   * Add one sighted fish to location database.
+   * @param formData The form to take in data.
+   */
   public static void addFish(LocationFormData formData) {
     LocationDB.getLocation(formData.location).addNumberOfFish(FishDB.getFish(formData.fish), 1);
   }

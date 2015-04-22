@@ -100,7 +100,8 @@ public class Application extends Controller {
     if (formData.hasErrors()) {
       System.out.println("Error occurred!");
       return badRequest(AddFish.render(formData));
-    } else {
+    }
+    else {
       LocationFormData data = formData.get();
       LocationDB.addFish(data);
       System.out.format("Received %s %s \n", data.location, data.fish);
@@ -108,11 +109,17 @@ public class Application extends Controller {
     }
   }
 
+  /**
+   * Method to authenticate user.
+   *
+   * @return Redirect to home page.
+   */
   public static Result authenticate() {
     Form<LoginCred> loginForm = Form.form(LoginCred.class).bindFromRequest();
     if (loginForm.hasErrors()) {
       return badRequest(Login.render(loginForm));
-    } else {
+    }
+    else {
       session().clear();
       session("email", loginForm.get().email);
       return redirect(
@@ -143,11 +150,26 @@ public class Application extends Controller {
 
   }
 
+  /**
+   * Class to hold user credentials.
+   */
   public static class LoginCred {
 
+    /**
+     * User email.
+     */
     public String email;
+
+    /**
+     * User password.
+     */
     public String password;
 
+    /**
+     * Validate user credentials.
+     *
+     * @return null.
+     */
     public String validate() {
       if (User.authenticate(email, password) == null) {
         return "Invalid user or password";
