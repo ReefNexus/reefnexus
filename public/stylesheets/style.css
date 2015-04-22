@@ -137,3 +137,8 @@ img {
 h4 {
   color: #49d8b4;
 }
+
+.footer > .container > .row > .col-md-12 > .well {
+  background-color: transparent;
+  text-align: center;
+}
