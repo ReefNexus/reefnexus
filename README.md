@@ -27,7 +27,7 @@
 - <a href="https://github.com/wengdg/reefnexus/wiki/User-Guide">Navigating Reef Nexus</a>
 
 ##Contributing and Contact
-- 
+- Please submit issues or improvements to the <a href="https://github.com/wengdg/reefnexus/issues">Reef Nexus issues page</a>. 
 
 ##Licenses
 - Reef Nexus is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a> license.
