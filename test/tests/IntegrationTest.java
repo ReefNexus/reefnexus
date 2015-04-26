@@ -34,6 +34,12 @@ public class IntegrationTest {
         IndexPage index = new IndexPage(browser.getDriver(), PORT);
         browser.goTo(index);
         index.isAt();
+
+        // AddFish page
+        AddFishPage addFish = new AddFishPage(browser.getDriver(), PORT);
+        browser.goTo(addFish);
+        addFish.isAt();
+
       }
     });
   }
