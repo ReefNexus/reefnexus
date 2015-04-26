@@ -4,9 +4,13 @@ import org.junit.Test;
 import play.libs.F.Callback;
 import play.test.TestBrowser;
 import tests.pages.AddFishPage;
+import tests.pages.DatabasePage;
+import tests.pages.FishProfilePage;
 import tests.pages.IndexPage;
+import tests.pages.LocationPage;
+import tests.pages.LoginPage;
+import tests.pages.ProfilePage;
 
-import static org.fest.assertions.Assertions.assertThat;
 import static play.test.Helpers.HTMLUNIT;
 import static play.test.Helpers.fakeApplication;
 import static play.test.Helpers.inMemoryDatabase;
@@ -39,6 +43,34 @@ public class IntegrationTest {
         AddFishPage addFish = new AddFishPage(browser.getDriver(), PORT);
         browser.goTo(addFish);
         addFish.isAt();
+
+        // Database page
+        DatabasePage database = new DatabasePage(browser.getDriver(), PORT);
+        browser.goTo(database);
+        database.isAt();
+
+        // FishProfile page
+        FishProfilePage fishProfile = new FishProfilePage(browser.getDriver(), PORT);
+        browser.goTo(fishProfile);
+        fishProfile.isAt();
+
+        // Location page
+        LocationPage location = new LocationPage(browser.getDriver(), PORT);
+        browser.goTo(location);
+        location.isAt();
+
+        // Login page
+        LoginPage login = new LoginPage(browser.getDriver(), PORT);
+        browser.goTo(login);
+        login.isAt();
+
+        // Need to examine how to test LocationData; if no ID provided, then the request is bad,
+        //                                           if ID provided, need to ensure that the ID is valid in test DB
+
+        // Profile page
+        ProfilePage profile = new ProfilePage(browser.getDriver(), PORT);
+        browser.goTo(profile);
+        profile.isAt();
 
       }
     });
