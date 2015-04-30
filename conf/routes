@@ -11,7 +11,6 @@ GET         /location            controllers.Application.location(id: Long ?= 0)
 GET         /login               controllers.Application.login()
 GET         /locationData        controllers.Application.locationData(name: String)
 GET         /profile             controllers.Application.profile()
-POST        /login               controllers.Application.authenticate()
 POST        /addFish             controllers.Application.addFishToLoc()
 POST        /fishProfile         controllers.Application.fishProfile()
 

@@ -1,11 +1,11 @@
-.header-img {
-  background-image: url('../images/header.png');
-  background-size: cover;
-  height: 200px;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0 0 100px;
 }
 
 h3 {
@@ -13,16 +13,42 @@ h3 {
 }
 
 .navbar-brand {
-  padding-top: 2px;
+  padding-top: 45px;
+  padding-right: 0px;
+}
+
+.navbar-header {
+  height: 110px;
 }
 
 .navbar-inverse {
-  color: white;
-  font-size: 22px;
+  z-index: 1;
+  font-size: 24px;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.navbar-inverse .navbar-collapse {
+  border: 0;
+}
+
+.navbar-inverse .navbar-toggle {
+  margin-top: 40px;
+  border: 0;
+  border-radius: 0px;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: #00bc8d;
+}
+
+.navbar-inverse .navbar-nav {
+  margin-left: 20px;
+  margin-top: 50px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: white;
+  color: black;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
@@ -35,18 +61,23 @@ h3 {
 
 #map {
   width: 100%;
-  height: 519px;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
 }
 
-.location-map {
-  height: 100px;
+.well {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0px;
 }
 
 .location-detail {
   padding: 10px 20px;
   line-height: .90;
-  background: #444444;
-  border-radius: 3px;
+}
+
+.location-detail-container {
+  padding-top: 200px;
 }
 
 .table a:not(.btn) {
@@ -71,7 +102,6 @@ img {
 }
 
 .add-fish > .btn {
-  border-radius: 3px;
   font-size: 30px;
   background: #00bc8d;
   padding: 10px 20px 10px 20px;
@@ -79,6 +109,7 @@ img {
   width: 100%;
   height: 125px;
   line-height: 30px;
+  border-radius: 0px;
 }
 
 .add-fish > .btn:hover {
@@ -138,7 +169,15 @@ h4 {
   color: #49d8b4;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .footer > .container > .row > .col-md-12 > .well {
   background-color: transparent;
   text-align: center;
+  color: black;
 }
+
