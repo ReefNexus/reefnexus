@@ -48,7 +48,8 @@ public class LocationDB {
     Location location = null;
 
     for (Location l : LocationDB.locations.values()) {
-      if ((l != null) && (l.getName() != null) && (l.getName().equalsIgnoreCase(name.replaceAll("_", " ")))) {
+      if ((l != null) && (l.getName() != null) && (name != null)
+          && (l.getName().equalsIgnoreCase(name.replaceAll("_", " ")))) {
         location = l;
       }
     }

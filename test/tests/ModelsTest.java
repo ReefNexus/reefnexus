@@ -1,8 +1,6 @@
 package tests;
 
 import models.User;
-import org.junit.Before;
-import org.junit.Test;
 import play.test.WithApplication;
 
 import static org.junit.Assert.assertEquals;

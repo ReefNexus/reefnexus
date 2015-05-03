@@ -6,6 +6,7 @@
 GET         /                    controllers.Application.index()
 GET         /addFish             controllers.Application.addFish()
 GET         /database            controllers.Application.database()
+GET         /fishInLocation      controllers.Application.fishInLocation(locationName: String)
 GET         /fishProfile         controllers.Application.fishProfile()
 GET         /location            controllers.Application.location(id: Long ?= 0)
 GET         /login               controllers.Application.login()

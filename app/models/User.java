@@ -18,7 +18,7 @@ public class User extends Model {
       String.class, User.class
   );
 
-  /** User credentials **/
+  /** User credentials. **/
   @Id
   /** User email. **/
   public String email;
