@@ -1,64 +1,74 @@
 @(message: String)
 
-@Main("Home") {
-  <script type="text/javascript">
-  var overlayCoordinates =[
-    @for(location <- LocationDB.getLocations) {
-      @Html("[")
-      @for(coordinatePair <- location.getCoordinates) {
-        @Html("new google.maps.LatLng(" + coordinatePair + "), ")
+  @Main("Home") {
+    <script type="text/javascript">
+    var overlayCoordinates =[
+      @for(location <- LocationDB.getLocations) {
+        @Html("[")
+        @for(coordinatePair <- location.getCoordinates) {
+          @Html("new google.maps.LatLng(" + coordinatePair + "), ")
+        }
+        @Html("],")
       }
-      @Html("],")
+    ] ;
+    var overlayNames =[
+      @for(location <- LocationDB.getLocations) {
+        @Html("\"" + location.getName() + "\", ")
+      }
+    ] ;
+
+    function getLocation ( ) {
+    document.getElementById ( "grab-location" ).value = document.getElementById ( "location-name" ).textContent ;
     }
-  ] ;
-  var overlayNames =[
-    @for(location <- LocationDB.getLocations) {
-      @Html("\"" + location.getName() + "\", ")
-    }
-  ] ;
+    </script>
 
-  function getLocation ( ) {
-  document.getElementById ( "grab-location" ).value = document.getElementById ( "location-name" ).textContent ;
-  }
-  </script>
+      <div class="container location-container">
+        <div class="row">
 
-  <div class="location-detail-container">
-  <div class="container ">
-    <div class="row">
-
-      <div class="col-md-8">
-      &nbsp
-      </div>
-      <div class="col-md-4">
-        <div class="well well-sm"><h3>Location detail</h3>
-
-
-          <div class="location-detail">
-            <h4 id="location-name"><a href="#"></a></h4>
-
-            <table class="table table-condensed">
-              <thead>
-                <tr>
-                  <th><u>Sighting Rate</u></th>
-                  <th><u>Fish</u></th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
+          <div class="col-md-8">
+            &nbsp
           </div>
+          <div class="col-md-4">
+            <div class="well well-sm location-well">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a class="collapsed" id="location-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Location Detail
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      <div class="location-detail">
+                        <h4 id="location-name"><a href="#"></a></h4>
 
-          <form method=GET action="@routes.Application.addFish()">
-            <div class="add-fish">
-              <button class="btn" onclick="getLocation ( )"><p>Add fish</p>
-                <p>to location</p></button>
-              <input id="grab-location" type="hidden" name="Location">
+                        <table class="table table-condensed">
+                          <thead>
+                            <tr>
+                              <th><u>Sighting Rate</u></th>
+                              <th><u>Fish</u></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                      <form method=GET action="@routes.Application.addFish()">
+                        <div class="add-fish">
+                          <button class="btn" onclick="getLocation ( )"><p>Add fish</p>
+                            <p>to location</p></button>
+                          <input id="grab-location" type="hidden" name="Location">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </form>
-        </div>
 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  </div>
-}
+  }

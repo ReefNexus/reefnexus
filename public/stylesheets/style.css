@@ -1,3 +1,5 @@
+/** General **/
+
 html {
   position: relative;
   min-height: 100%;
@@ -12,20 +14,39 @@ h3 {
   text-align: center;
 }
 
-.navbar-brand {
-  padding-top: 45px;
-  padding-right: 0px;
+h4 {
+  color: #49d8b4;
 }
 
-.navbar-header {
-  height: 110px;
+.well {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  margin-bottom: 0px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer > .container > .row > .col-md-12 > .well {
+  background-color: transparent;
+  text-align: center;
+  color: black;
+}
+
+/** Navbar **/
+
+.navbar-brand {
+  padding-top: 47px;
 }
 
 .navbar-inverse {
   z-index: 1;
   font-size: 24px;
   border-radius: 0px;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .navbar-inverse .navbar-collapse {
@@ -43,11 +64,11 @@ h3 {
 }
 
 .navbar-inverse .navbar-nav {
-  margin-left: 20px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
+  margin-left: 20px;
   color: black;
 }
 
@@ -55,9 +76,17 @@ h3 {
   color: white;
 }
 
+/** Forms **/
+
 .form-horizontal {
   margin: 15px;
 }
+
+.fish-form {
+  padding: 10px;
+}
+
+/** Home Page **/
 
 #map {
   width: 100%;
@@ -66,19 +95,46 @@ h3 {
   background-size: cover;
 }
 
-.well {
+.panel-default .panel-heading {
+  background-color: rgba(70, 69, 69, 0.4);
+  text-align: center;
+}
+
+.panel-default {
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 0px;
+  border: 0;
 }
 
-.location-detail {
-  padding: 10px 20px;
-  line-height: .90;
+.panel-group .panel-heading+.panel-collapse > .panel-body {
+  border: 0;
 }
 
-.location-detail-container {
-  padding-top: 200px;
+.location-well {
+  background-color: transparent;
+  padding: 0px;
 }
+
+.location-container {
+  padding-top: 70px;
+  background-color: transparent;
+}
+
+.add-fish > .btn {
+  font-size: 30px;
+  background-color: rgba(0, 188, 141, 0.5);
+  padding: 10px 20px 10px 20px;
+  width: 100%;
+  height: 125px;
+  line-height: 30px;
+  border-radius: 3px;
+}
+
+.add-fish > .btn:hover {
+  background: #49d8b4;
+  text-decoration: none;
+}
+
+/** Location page **/
 
 .table a:not(.btn) {
   text-decoration: none;
@@ -88,6 +144,8 @@ h3 {
 .table img {
   width: 120px;
 }
+
+/** Profile page**/
 
 .user-options {
   border-radius: 3px;
@@ -101,25 +159,7 @@ img {
   max-width: 100%;
 }
 
-.add-fish > .btn {
-  font-size: 30px;
-  background: #00bc8d;
-  padding: 10px 20px 10px 20px;
-  margin-top: 10px;
-  width: 100%;
-  height: 125px;
-  line-height: 30px;
-  border-radius: 0px;
-}
-
-.add-fish > .btn:hover {
-  background: #49d8b4;
-  text-decoration: none;
-}
-
-.fish-form {
-  padding: 10px;
-}
+/** Fish database page **/
 
 .unknown-fish {
   border-radius: 3px;
@@ -128,16 +168,13 @@ img {
   padding: 15px;
 }
 
+/** Location database page **/
 
 .location {
   border-radius: 3px;
   margin-top: 30px;
   background: #444444;
   padding: 15px;
-}
-
-.hanaumamap {
-  padding-top: 10px;
 }
 
 .more-fish > .btn {
@@ -160,24 +197,12 @@ img {
 .fish-button {
   background-color: transparent;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
   outline:none;
 }
 
-h4 {
-  color: #49d8b4;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer > .container > .row > .col-md-12 > .well {
-  background-color: transparent;
-  text-align: center;
-  color: black;
+.col-md-4 {
+  padding: 0px;
 }
 

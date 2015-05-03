@@ -19,7 +19,8 @@ function initialize() {
   this.map = new google.maps.Map(document.getElementById("map"),
       {
         zoom: 11,
-        center: new google.maps.LatLng(21.477, -157.967)
+        center: new google.maps.LatLng(21.477, -157.967),
+        disableDefaultUI: true
       });
 
   // Sets up the overlays
@@ -38,6 +39,7 @@ function initialize() {
 
     // Show the data for the region that was clicked on
     google.maps.event.addListener(newOverlay, 'click', function () {
+
       var index = overlays.indexOf(this);
       var overlayName = overlayNames[index];
       var totalFish = 0;
@@ -87,6 +89,16 @@ function initialize() {
     });
   }
 
+}
+
+/*
+ * Expand collapsible element on clicking location
+ */
+
+function locationExpand() {
+  $('#collapseOne').collapse({
+    toggle: true
+  });
 }
 
 /*
