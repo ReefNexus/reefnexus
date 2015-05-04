@@ -15,8 +15,16 @@ $(document).ready(function () {
           success: function (data) {
     var wrapper = $("<div></div>").html(data);
     $("#select-by-image").append($(wrapper).find("#fish-selection"));
+
+    // When the user clicks on a fish image, submit the form with the corresponding fish name
+    $(".fish-image").click(function() {
+      $("#fish-name-input").val($(this).parent().find(".fish-name").text());
+      $("#submit").click();
+    });
+
   },
   error: function() {
     $(".fish-input-type-header").hide();
   }});
+
 });
