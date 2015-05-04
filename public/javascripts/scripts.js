@@ -16,6 +16,7 @@ var overlays = [];
  */
 
 function initialize() {
+
   this.map = new google.maps.Map(document.getElementById("map"),
       {
         zoom: 11,
@@ -88,17 +89,10 @@ function initialize() {
       });
     });
   }
-
 }
 
-/*
- * Expand collapsible element on clicking location
- */
+function collapseLocation() {
 
-function locationExpand() {
-  $('#collapseOne').collapse({
-    toggle: true
-  });
 }
 
 /*
@@ -157,4 +151,5 @@ function showError(error) {
 
 $(document).ready(function () {
   initialize();
+  collapseLocation();
 });
