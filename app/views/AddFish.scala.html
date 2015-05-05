@@ -11,7 +11,10 @@
 
       <div class="col-md-6">
         <div class="well well-sm">
-          <h3>Adding fish...</h3>
+          <h2>Adding fish...</h2>
+          <h3 class="fish-input-type-header">Select from the images below...</h3>
+          <div id="select-by-image"></div>
+          <h3 class="fish-input-type-header">If your fish is not shown above...</h3>
           @form(routes.Application.addFishToLoc(), 'class -> "form-horizontal") {
             <input type="hidden"
             name="@locationForm("id").name">
@@ -24,6 +27,7 @@
               help = "")
 
             @text(locationForm("fish"),
+              id = "fish-name-input",
               label = "Fish sighted (required if no picture is uploaded).  Enter the scientific name for best results.",
               placeholder = "Reef Triggerfish",
               help = "")
@@ -40,16 +44,4 @@
       <div class="col-md-3"></div>
     </div>
   </div>
-
-
-  <script type="text/javascript">
-
-  function getURLParameter ( name ) {
-  return decodeURIComponent ( ( new RegExp ( '[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)' ).exec ( location.search ) ||[, "" ] )[ 1 ].replace ( /\+/g, '%20' ) ) || null
-  }
-
-  document.getElementById ( "current-location" ).value = getURLParameter ( 'Location' ) ;
-
-  </script>
-
 }

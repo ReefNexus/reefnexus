@@ -7,6 +7,7 @@ import play.mvc.Result;
 import views.formdata.LocationFormData;
 import views.html.AddFish;
 import views.html.Database;
+import views.html.FishInLocation;
 import views.html.FishProfile;
 import views.html.Index;
 import views.html.LocationData;
@@ -84,6 +85,29 @@ public class Application extends Controller {
    */
   public static Result profile() {
     return ok(Profile.render("Profile"));
+  }
+
+  /**
+   * Returns the page on which to display fish images and labels.
+   *
+   * @param locationName    The String containing the name of the Location to retrieve images for.
+   *
+   * @return The FishInLocation.
+   *
+   */
+
+  public static Result fishInLocation(String locationName) {
+    models.Location toShow = LocationDB.getLocation(locationName.replaceAll("_", " "));
+
+    // If invalid, display error
+    if (toShow == null) {
+      return badRequest(FishInLocation.render("Invalid request for " + locationName.replaceAll("_", " "),
+                                              locationName.replaceAll("_", " ") + " not found"));
+    }
+    // Else return the LocationData page
+    else {
+      return ok(FishInLocation.render("Fish In Location", locationName.replaceAll("_", " ")));
+    }
   }
 
   /**

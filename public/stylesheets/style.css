@@ -214,3 +214,11 @@ img {
   padding: 0px;
 }
 
+.footer > .container > .row > .col-md-12 > .well {
+  background-color: transparent;
+  text-align: center;
+}
+
+.fish-selection {
+  vertical-align: middle;
+}
