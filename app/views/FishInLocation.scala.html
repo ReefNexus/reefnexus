@@ -5,7 +5,7 @@
     @for(fishID <- LocationDB.getLocation(locationName).getFishCounts().keySet()) {
       <div class="thumbnail">
         <img class="fish-image" src=@routes.Assets.at(FishDB.getFish(fishID).getImage())>
-        <span class="fish-name caption center-block">@FishDB.getFish(fishID).getCommonName()</span>
+        <div class="fish-name caption center-block">@FishDB.getFish(fishID).getCommonName()</div>
       </div>
     }
   </div>

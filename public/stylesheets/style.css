@@ -136,6 +136,11 @@ h4 {
   margin: 0;
 }
 
+#location-name > a:hover {
+  margin: 0;
+  text-decoration: none;
+}
+
 .add-fish > .btn {
   font-size: 30px;
   background-color: rgba(0, 188, 141, 0.5);
@@ -232,17 +237,21 @@ img {
 
 .thumbnail {
   float: left;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  margin: 2px;
   border: 0px;
+  height: 220px;
+  width: 220px;
 }
 
 .thumbnail > img {
   margin: 0px;
-  max-width: 200px;
 }
 
 .thumbnail:hover {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .add-fish-well {

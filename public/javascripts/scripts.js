@@ -59,6 +59,9 @@ function initialize() {
           $(".location-header > h4 > a").text($(wrapper).find("#location-name").text())
               .attr("href", $(wrapper).find("#location-url").text());
 
+          $(".location-detail > h4 > a").text("Click here to view more detail...")
+              .attr("href", $(wrapper).find("#location-url").text());
+
           // For each .fish-data
           $(wrapper).find(".fish-data").each(function () {
             // Add row to the table containing the .fish-name and .fish-count values

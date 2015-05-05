@@ -34,20 +34,19 @@
             <div class="panel panel-default">
               <div class="panel-heading" onclick="userLocation ( )">
                 <h4 class="panel-title">
-                  Direct To User Location</h4>
+                  Focus On User Location</h4>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
                 <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
                 <div class = "location-header">
-                  <h4 id="location-name"><a href="#">Click a Location on Map</a></h4>
+                  <h4 id="location-name"><a>Click a Location on Map</a></h4>
                 </div>
               </div>
               <div id="collapseOne" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="location-detail">
-
                     <table class="table table-condensed">
                       <thead>
                         <tr>
@@ -58,6 +57,7 @@
                       <tbody>
                       </tbody>
                     </table>
+                    <h4 id="view-detail"><a></a></h4>
                   </div>
                   <form method=GET action="@routes.Application.addFish()">
                     <div class="add-fish">
