@@ -1,5 +1,8 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -9,7 +12,11 @@ import java.util.Map;
 /**
  * Model for location data.
  */
-public class Location {
+@Entity
+public class Location extends play.db.ebean.Model {
+
+  @Id
+  private long id;
 
   private String name;
   private double longitude;
@@ -22,6 +29,17 @@ public class Location {
 
   private List<String> coordinates;
 
+  @ManyToMany
+  private List<Fish> fishes;
+
+  /**
+   * Creates a new empty Location.
+   *
+   */
+
+  public Location() {
+    this("", 0.0, 0.0, "", "", "");
+  }
 
   /**
    * Creates a new Location.
@@ -48,6 +66,16 @@ public class Location {
     this.coordinates = new LinkedList<>();
   }
 
+  /**
+   * Returns the ID of this Location.
+   *
+   * @return A long equal to the ID number of this Location.
+   *
+   */
+
+  public long getId() {
+    return id;
+  }
 
   /**
    * Returns the name of this Location.
@@ -220,4 +248,132 @@ public class Location {
     Collections.addAll(this.coordinates, toAdd);
   }
 
+  /**
+   * Sets the name of this Location.
+   *
+   * @param name    The String equal to the name to assign to this Location.
+   *
+   */
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  /**
+   * Sets the longitude of this Location.
+   *
+   * @param longitude    The double equal to the longitude to assign to this Location.
+   *
+   */
+
+  public void setLongitude(double longitude) {
+    this.longitude = longitude;
+  }
+
+  /**
+   * Sets the latitude of this Location.
+   *
+   * @param latitude    The double equal to the latitude to assign to this Location.
+   *
+   */
+
+  public void setLatitude(double latitude) {
+    this.latitude = latitude;
+  }
+
+  /**
+   * Sets the description of this Location.
+   *
+   * @param description    The String containing the description to assign to this Location.
+   *
+   */
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  /**
+   * Sets the description of what this Location is good for.
+   *
+   * @param goodFor    The String description what this Location is good for.
+   *
+   */
+
+  public void setGoodFor(String goodFor) {
+    this.goodFor = goodFor;
+  }
+
+  /**
+   * Sets the path to the image of this Location.
+   *
+   * @param image    The String containing the path to the image to assign to this Location.
+   *
+   */
+
+  public void setImage(String image) {
+    this.image = image;
+  }
+
+  /**
+   * Sets the Map of fish in this Location.
+   *
+   * @param fishCounts    The Map<Long, Long> containing the key-value pairs of fish IDs and their quantities.
+   *
+   */
+
+  public void setFishCounts(Map<Long, Long> fishCounts) {
+    this.fishCounts = fishCounts;
+  }
+
+  /**
+   * Sets the coordinates of this Location.
+   *
+   * @param coordinates    The List<String> containing the coordinates to assign to this Location.
+   *
+   */
+
+  public void setCoordinates(List<String> coordinates) {
+    this.coordinates = coordinates;
+  }
+
+  /**
+   * The EBean ORM finder method for database queries.
+   * @return The finder method.
+   */
+  public static Finder<Long, Location> find() {
+    return new Finder<Long, Location>(Long.class, Location.class);
+  }
+
+  /**
+   * Returns the fish in this Location.
+   *
+   * @return A List<Fish> containing the Fish in this Location.
+   *
+   */
+
+  public List<Fish> getFishes() {
+    return fishes;
+  }
+
+  /**
+   * Sets the Fish in this Location.
+   *
+   * @param fishes    The List<Fish> to assign to this Location.
+   *
+   */
+
+  public void setFishes(List<Fish> fishes) {
+    this.fishes = fishes;
+  }
+
+  /**
+   * Sets the ID of this Fish.
+   *
+   * @param id    The long equal to the ID to assign to this Fish.
+   *
+   */
+
+  public void setId(long id) {
+    this.id = id;
+  }
 }

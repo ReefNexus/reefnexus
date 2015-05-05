@@ -1,6 +1,6 @@
 package tests;
 
-import models.User;
+import models.Account;
 import play.test.WithApplication;
 
 import static org.junit.Assert.assertEquals;
@@ -25,8 +25,8 @@ public class ModelsTest extends WithApplication {
    */
 //  @Test
   public void createAndRetrieveUser() {
-    new User("bob@gmail.com", "Bob", "secret").save();
-    User bob = User.find.where().eq("email", "bob@gmail.com").findUnique();
+    new Account("bob@gmail.com", "Bob", "secret").save();
+    Account bob = Account.find.where().eq("email", "bob@gmail.com").findUnique();
     assertNotNull(bob);
     assertEquals("Bob", bob.name);
   }
@@ -36,10 +36,10 @@ public class ModelsTest extends WithApplication {
    */
 //  @Test
   public void tryAuthenticateUser() {
-    new User("bob@gmail.com", "Bob", "secret").save();
+    new Account("bob@gmail.com", "Bob", "secret").save();
 
-    assertNotNull(User.authenticate("bob@gmail.com", "secret"));
-    assertNull(User.authenticate("bob@gmail.com", "badpassword"));
-    assertNull(User.authenticate("tom@gmail.com", "secret"));
+    assertNotNull(Account.authenticate("bob@gmail.com", "secret"));
+    assertNull(Account.authenticate("bob@gmail.com", "badpassword"));
+    assertNull(Account.authenticate("tom@gmail.com", "secret"));
   }
 }

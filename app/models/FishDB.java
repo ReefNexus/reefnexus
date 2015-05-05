@@ -8,11 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Internal in-memory repository for Fishes.
+ * Handles Fish database operations.
  */
 public class FishDB {
+/*
   private static Map<Long, Fish> fishes = new HashMap<>();
   private static long currentId = 1;
+*/
 
   /**
    * Creates an instance of a fish using the data from the form and adds it to the DB.
@@ -22,21 +24,22 @@ public class FishDB {
    */
   public static void addFish(FishFormData formData) {
     long idValue = formData.id;
-    if (idValue == 0 && !fishes.containsKey(idValue)) {
-      idValue = ++currentId;
-    }
 
-    if (fishes.containsKey(idValue)) {
-      ArrayList<Location> fishLocations = fishes.get(idValue).getLocations();
+    // If the Fish already exists in the database, update the existing Fish and Location
+    if (Fish.find().byId(idValue) != null) {
+      List<Location> fishLocations = Fish.find().byId(idValue).getLocations();
       if (!fishLocations.contains(formData.location)) {
         fishLocations.add(formData.location);
       }
-      fishes.get(idValue).addNum();
+      Fish.find().byId(idValue).addNum();
     }
+    // Else create a new Fish and add it to the Location
     else {
-      Fish fish = new Fish(idValue, formData.commonName, formData.genus, formData.species, formData.family,
+      Fish fish = new Fish(formData.commonName, formData.genus, formData.species, formData.family,
           formData.location, formData.image);
-      fishes.put(idValue, fish);
+      fish.save();
+
+      formData.location.addNumberOfFish(fish, 1);
     }
   }
 
@@ -51,7 +54,7 @@ public class FishDB {
   public static Fish getFish(String toFind) {
     Fish found = null;
 
-    for (Fish f : FishDB.fishes.values()) {
+    for (Fish f : Fish.find().all()) {
       if (((f.getCommonName() != null)
           && (f.getCommonName().equalsIgnoreCase(toFind)))
           || ((f.getScientific() != null)
@@ -70,7 +73,7 @@ public class FishDB {
    * @return The fish.
    */
   public static Fish getFish(long id) {
-    Fish fish = fishes.get(id);
+    Fish fish = Fish.find().byId(id);
 
     if (fish == null) {
       throw new RuntimeException("Can't find fish with the given id.");
@@ -84,6 +87,6 @@ public class FishDB {
    * @return The fish list.
    */
   public static List<Fish> getFishes() {
-    return new ArrayList<>(fishes.values());
+    return Fish.find().all();
   }
 }

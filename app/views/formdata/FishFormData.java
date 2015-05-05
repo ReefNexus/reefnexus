@@ -3,7 +3,7 @@ package views.formdata;
 import models.Fish;
 import models.Location;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Backing class for form data.
@@ -37,7 +37,7 @@ public class FishFormData {
   /**
    * Locations of the fish.
    */
-  public ArrayList<Location> locationList;
+  public List<Location> locationList;
   /**
    * Image path.
    */
@@ -61,6 +61,7 @@ public class FishFormData {
     this.genus = fish.getGenus();
     this.species = fish.getSpecies();
     this.family = fish.getFamily();
+    this.location = fish.getLocations().get(0);
     this.locationList = fish.getLocations();
     this.image = fish.getImage();
   }
@@ -77,6 +78,7 @@ public class FishFormData {
    */
   public FishFormData(String commonName, String genus, String species, String family,
                       Location location, String image) {
+    this.id = 0;
     this.commonName = commonName;
     this.genus = genus;
     this.species = species;

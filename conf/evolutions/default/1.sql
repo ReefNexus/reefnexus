@@ -3,25 +3,68 @@
 
 # --- !Ups
 
-create table user (
+create table account (
   email                     varchar(255) not null,
   name                      varchar(255),
   password                  varchar(255),
-  constraint pk_user primary key (email))
+  constraint pk_account primary key (email))
 ;
 
-create sequence user_seq;
+create table fish (
+  id                        bigint not null,
+  common_name               varchar(255),
+  genus                     varchar(255),
+  species                   varchar(255),
+  scientific                varchar(255),
+  family                    varchar(255),
+  image                     varchar(255),
+  num_added                 bigint,
+  constraint pk_fish primary key (id))
+;
+
+create table location (
+  id                        bigint not null,
+  name                      varchar(255),
+  longitude                 float,
+  latitude                  float,
+  description               varchar(255),
+  good_for                  varchar(255),
+  image                     varchar(255),
+  constraint pk_location primary key (id))
+;
+
+
+create table location_fish (
+  location_id                    bigint not null,
+  fish_id                        bigint not null,
+  constraint pk_location_fish primary key (location_id, fish_id))
+;
+create sequence account_seq;
+
+create sequence fish_seq;
+
+create sequence location_seq;
 
 
 
+
+alter table location_fish add constraint fk_location_fish_location_01 foreign key (location_id) references location (id);
+
+alter table location_fish add constraint fk_location_fish_fish_02 foreign key (fish_id) references fish (id);
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+drop table if exists account cascade;
 
-drop table if exists user;
+drop table if exists fish cascade;
 
-SET REFERENTIAL_INTEGRITY TRUE;
+drop table if exists location_fish cascade;
 
-drop sequence if exists user_seq;
+drop table if exists location cascade;
+
+drop sequence if exists account_seq;
+
+drop sequence if exists fish_seq;
+
+drop sequence if exists location_seq;
 

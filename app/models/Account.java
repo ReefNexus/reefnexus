@@ -7,15 +7,17 @@ import javax.persistence.Id;
 
 /**
  * Class to hold users.
+ *
+ * Note that this is called "Account" rather than "User" due to a naming conflict; "User" is a reserved keyword.
  */
 @Entity
-public class User extends Model {
+public class Account extends Model {
 
   /**
    * Finder method.
    */
-  public static Finder<String, User> find = new Finder<String, User>(
-      String.class, User.class
+  public static Finder<String, Account> find = new Finder<String, Account>(
+      String.class, Account.class
   );
 
   /** User credentials. **/
@@ -30,13 +32,22 @@ public class User extends Model {
   public String password;
 
   /**
+   * Creates a new empty Account instance.
+   *
+   */
+
+  public Account() {
+    this("", "", "");
+  }
+
+  /**
    * Constructor which takes in a user's email, name, and password.
    *
    * @param email    The user's email.
    * @param name     The user's name.
    * @param password The user's password.
    */
-  public User(String email, String name, String password) {
+  public Account(String email, String name, String password) {
     this.email = email;
     this.name = name;
     this.password = password;
@@ -49,7 +60,7 @@ public class User extends Model {
    * @param password The user's password.
    * @return Authentication.
    */
-  public static User authenticate(String email, String password) {
+  public static Account authenticate(String email, String password) {
     return find.where().eq("email", email)
         .eq("password", password).findUnique();
   }
