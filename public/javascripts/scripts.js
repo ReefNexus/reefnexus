@@ -222,5 +222,4 @@ function mergeSort(toSort) {
 
 $(document).ready(function () {
   initialize();
-  collapseLocation();
 });
