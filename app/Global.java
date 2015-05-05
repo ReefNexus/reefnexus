@@ -24,7 +24,6 @@ public class Global extends GlobalSettings {
     // Only add if data is not already present
     if ((Location.find().all().size() == 0) && (Fish.find().all().size() == 0)) {
       Location waikikiBeach = new Location("Waikiki", 0, 0, "Waikiki Beach, Queen's Surf Beach, Kuhio Beach Park, Kaimana Beach", "", "images/waikiki.jpg");
-      LocationDB.addLocation(waikikiBeach);
 
       FishDB.addFish(new FishFormData(new Fish("Hawaiian Sergeant", "Abudefduf", "abdominalis",
           "Pomacentridae", waikikiBeach, "images/damsel.jpg")));
@@ -84,9 +83,6 @@ public class Global extends GlobalSettings {
       waikikiBeach.addNumberOfFish(FishDB.getFish("Viper Moray"), 15);
       waikikiBeach.addNumberOfFish(FishDB.getFish("Hawaiian Yellow Anthias"), 10);
       waikikiBeach.addNumberOfFish(FishDB.getFish("Longnose Hawkfish"), 5);
-
-
-      // Simulated addition of fish later on
       waikikiBeach.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 5);
       waikikiBeach.addNumberOfFish(FishDB.getFish("Ember Parrotfish"), 3);
       waikikiBeach.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 6);
@@ -108,24 +104,8 @@ public class Global extends GlobalSettings {
       Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "Kaneohe Beach, Fish Ponds, Coconut Island", "", "images/skaneohe.jpg");
       Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "Waiahole Beach, Kualoa Beach", "", "images/nkaneohe.jpg");
 
-      // Add the locations to the database
-      LocationDB.addLocation(kakaako);
-      LocationDB.addLocation(diamondHead);
-      LocationDB.addLocation(kahala);
-      LocationDB.addLocation(maunaluaBay);
-      LocationDB.addLocation(haunamaBay);
-      LocationDB.addLocation(kokoHead);
-      LocationDB.addLocation(sandyToKaloko);
-      LocationDB.addLocation(makapuu);
-      LocationDB.addLocation(waimanaloBay);
-      LocationDB.addLocation(lanikai);
-      LocationDB.addLocation(kailuaBay);
-      LocationDB.addLocation(mcbh);
-      LocationDB.addLocation(southKaneoheBay);
-      LocationDB.addLocation(northKaneoheBay);
 
       // Add more fish to other areas
-
       kakaako.addNumberOfFish(FishDB.getFish("Oval Butterflyfish"), 20);
       kakaako.addNumberOfFish(FishDB.getFish("Brick Soldierfish"), 19);
       kakaako.addNumberOfFish(FishDB.getFish("Great Barracuda"), 15);
@@ -240,6 +220,23 @@ public class Global extends GlobalSettings {
 
       northKaneoheBay.addNumberOfFish(FishDB.getFish("Hawaiian Whitespotted Toby"), 1);
 
+      // Add the locations to the database
+      LocationDB.addLocation(waikikiBeach);
+      LocationDB.addLocation(kakaako);
+      LocationDB.addLocation(diamondHead);
+      LocationDB.addLocation(kahala);
+      LocationDB.addLocation(maunaluaBay);
+      LocationDB.addLocation(haunamaBay);
+      LocationDB.addLocation(kokoHead);
+      LocationDB.addLocation(sandyToKaloko);
+      LocationDB.addLocation(makapuu);
+      LocationDB.addLocation(waimanaloBay);
+      LocationDB.addLocation(lanikai);
+      LocationDB.addLocation(kailuaBay);
+      LocationDB.addLocation(mcbh);
+      LocationDB.addLocation(southKaneoheBay);
+      LocationDB.addLocation(northKaneoheBay);
+
       // Set up coordinates
       kakaako.setCoordinates(new String[]{"21.27242,-157.85048",
           "21.28667,-157.87744",
@@ -301,6 +298,7 @@ public class Global extends GlobalSettings {
           "21.5447,-157.81613",
           "21.45105,-157.79424",
           "21.43907,-157.83328"});
+
     }
     else {
       for (Location l : LocationDB.getLocations()) {

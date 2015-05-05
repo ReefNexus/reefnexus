@@ -3,7 +3,6 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +26,8 @@ public class Location extends play.db.ebean.Model {
 
   private Map<Long, Long> fishCounts;
 
-  private List<String> coordinates;
+  @ManyToMany
+  private List<Coordinate> coordinates;
 
   @ManyToMany
   private List<Fish> fishes;
@@ -193,14 +193,14 @@ public class Location extends play.db.ebean.Model {
 
   public void addNumberOfFish(Fish typeOfFish, long numberOfFish) {
     // If the fish is already in the map, update the value
-    if (this.fishCounts.keySet().contains(typeOfFish.getId())) {
-      this.fishCounts.put(typeOfFish.getId(),
-          this.fishCounts.get(typeOfFish.getId()) + numberOfFish);
+    if (this.fishes.contains(typeOfFish)) {
+      this.fishCounts.put(typeOfFish.getId(), this.fishCounts.get(typeOfFish.getId()) + numberOfFish);
     }
 
     // Else add a new entry
     else {
       this.fishCounts.put(typeOfFish.getId(), numberOfFish);
+      typeOfFish.getLocations().add(this);
     }
   }
 
@@ -223,12 +223,10 @@ public class Location extends play.db.ebean.Model {
   /**
    * Returns the List of coordinates that form the bounds of this Location.
    *
-   * For convenience, these coordinates are represented as Strings rather than floating point values.
-   *
-   * @return A List<String> containing the coordinates of this Location.
+   * @return A List<Coordinate> containing the coordinates of this Location.
    */
 
-  public List<String> getCoordinates() {
+  public List<Coordinate> getCoordinates() {
     return this.coordinates;
   }
 
@@ -245,7 +243,13 @@ public class Location extends play.db.ebean.Model {
   public void setCoordinates(String[] toAdd) {
     this.coordinates.clear();
 
-    Collections.addAll(this.coordinates, toAdd);
+    for (String coordinate : toAdd) {
+      this.coordinates.add(new Coordinate(Double.parseDouble(coordinate.split(",")[0]),
+                                          Double.parseDouble(coordinate.split(",")[1])));
+      this.coordinates.get(this.coordinates.size() - 1).save();
+    }
+
+    System.out.println("Coordinates: " + this.coordinates.toArray().toString());
   }
 
   /**
@@ -328,11 +332,11 @@ public class Location extends play.db.ebean.Model {
   /**
    * Sets the coordinates of this Location.
    *
-   * @param coordinates    The List<String> containing the coordinates to assign to this Location.
+   * @param coordinates    The List<Coordinate> containing the coordinates to assign to this Location.
    *
    */
 
-  public void setCoordinates(List<String> coordinates) {
+  public void setCoordinates(List<Coordinate> coordinates) {
     this.coordinates = coordinates;
   }
 

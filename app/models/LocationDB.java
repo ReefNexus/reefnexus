@@ -22,6 +22,11 @@ public class LocationDB {
 
   public static void addLocation(Location location) {
     location.save();
+
+    // Set up relation between Location and its coordinates
+    for (Coordinate c : location.getCoordinates()) {
+      c.getLocations().add(location);
+    }
   }
 
   /**
