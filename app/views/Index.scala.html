@@ -20,7 +20,6 @@
   function getLocation ( ) {
   document.getElementById ( "grab-location" ).value = document.getElementById ( "location-name" ).textContent ;
   }
-
   </script>
 
   <div class="container location-container">
@@ -35,18 +34,19 @@
             <div class="panel panel-default">
               <div class="panel-heading" onclick="userLocation ( )">
                 <h4 class="panel-title">
-                  Go To Current Location</h4>
+                  Direct To User Location</h4>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
                 <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
-                <h4 class="panel-title">Location Detail</h4>
+                <div class = "location-header">
+                  <h4 id="location-name"><a href="#">Click a Location on Map</a></h4>
+                </div>
               </div>
               <div id="collapseOne" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="location-detail">
-                    <h4 id="location-name"><a href="#"></a></h4>
 
                     <table class="table table-condensed">
                       <thead>
