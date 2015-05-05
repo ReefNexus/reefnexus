@@ -1,12 +1,15 @@
 package tests;
 
+import models.LocationDB;
 import org.junit.Test;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import play.libs.F.Callback;
 import play.test.TestBrowser;
 import tests.pages.AddFishPage;
 import tests.pages.DatabasePage;
 import tests.pages.FishProfilePage;
 import tests.pages.IndexPage;
+import tests.pages.LocationDataPage;
 import tests.pages.LocationPage;
 import tests.pages.LoginPage;
 import tests.pages.ProfilePage;
@@ -30,6 +33,7 @@ public class IntegrationTest {
 
   @Test
   public void testPageRender() {
+    // The pages other than LocationData
     running(testServer(PORT, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
       public void invoke(TestBrowser browser) {
         browser.maximizeWindow();
@@ -64,14 +68,10 @@ public class IntegrationTest {
         browser.goTo(login);
         login.isAt();
 
-        // Need to examine how to test LocationData; if no ID provided, then the request is bad,
-        //                                           if ID provided, need to ensure that the ID is valid in test DB
-
         // Profile page
         ProfilePage profile = new ProfilePage(browser.getDriver(), PORT);
         browser.goTo(profile);
         profile.isAt();
-
       }
     });
   }
