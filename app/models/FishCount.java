@@ -1,7 +1,5 @@
 package models;
 
-import play.db.ebean.Model;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -24,7 +22,7 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-public class FishCount extends Model {
+public class FishCount extends play.db.ebean.Model {
   @Id
   private long id;
 

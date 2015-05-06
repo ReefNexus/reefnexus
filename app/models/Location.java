@@ -1,7 +1,5 @@
 package models;
 
-import play.db.ebean.Model;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +13,7 @@ import java.util.List;
  * Model for location data.
  */
 @Entity
-public class Location extends Model {
+public class Location extends play.db.ebean.Model {
 
   @Id
   private long id;
