@@ -70,7 +70,7 @@
                   <td>
                     <form method=GET action="@routes.Application.fishProfile()">
                       <button class="fish-button">@fish.getCommonName()</button>
-                      <input id="fish-id" type="hidden" name="Fish" value=@fish.getId()>
+                      <input id="fish-id" type="hidden" name="id" value=@fish.getId()>
                   </form>
                   </td>
                   <td><img src=@routes.Assets.at(fish.getImage())></td>

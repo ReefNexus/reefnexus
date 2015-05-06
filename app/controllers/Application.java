@@ -8,7 +8,6 @@ import views.formdata.LocationFormData;
 import views.html.AddFish;
 import views.html.Database;
 import views.html.FishInLocation;
-import views.html.FishProfile;
 import views.html.Index;
 import views.html.LocationData;
 import views.html.Login;
@@ -41,10 +40,11 @@ public class Application extends Controller {
   /**
    * Returns the page on fish profile.
    *
+   * @param id The long equal to the ID number of the fish to display.
    * @return The AddPage.
    */
-  public static Result fishProfile() {
-    return ok(FishProfile.render("Fish Profile"));
+  public static Result fishProfile(long id) {
+    return ok(views.html.FishProfile.render("Fish Profile", id));
   }
 
   /**

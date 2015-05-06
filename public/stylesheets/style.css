@@ -213,7 +213,7 @@ img {
 .unknown-fish {
   border-radius: 3px;
   margin-top: 30px;
-  background: #444444;
+  background: rgba(0, 0, 0, 0.7);
   padding: 15px;
 }
 
@@ -236,10 +236,17 @@ img {
   cursor: pointer;
   overflow: hidden;
   outline:none;
+  color: #00bc8d;
+  text-decoration: underline;
 }
 
 .col-md-4 {
   padding: 0px;
+}
+
+.location-fish-well {
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /** Add Fish **/
@@ -275,3 +282,19 @@ img {
   font-size: 18px;
 }
 
+/** Fish Profile **/
+
+.fish-profile-well {
+  text-align: center;
+  font-size: 24px;
+  padding: 30px;
+}
+
+.fish-profile-well > h4 {
+  font-size: 20px;
+}
+
+.fish-found {
+  color: white;
+  text-decoration: underline;
+}

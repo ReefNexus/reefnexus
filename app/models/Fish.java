@@ -6,6 +6,7 @@ import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Model for fish data.
  */
@@ -277,4 +278,5 @@ public class Fish extends play.db.ebean.Model {
   public static Finder<Long, Fish> find() {
     return new Finder<Long, Fish>(Long.class, Fish.class);
   }
+
 }

@@ -23,15 +23,17 @@
       <script type="text/javascript" src="@routes.Assets.at("javascripts/scripts.js")"></script>
     }
 
-      <!-- Location page JavaScript -->
     @if(page == "Location") {
       <script type="text/javascript" src="@routes.Assets.at("javascripts/location.js")"></script>
       <script type="text/javascript" src="@routes.Assets.at("javascripts/mapPersist.js")"></script>
     }
 
-      <!-- AddFish page JavaScript -->
     @if(page == "AddFish") {
       <script type="text/javascript" src="@routes.Assets.at("javascripts/addFish.js")"></script>
+      <script type="text/javascript" src="@routes.Assets.at("javascripts/mapPersist.js")"></script>
+    }
+
+    @if(page == "FishProfile") {
       <script type="text/javascript" src="@routes.Assets.at("javascripts/mapPersist.js")"></script>
     }
 
@@ -42,6 +44,7 @@
     @if(page == "Login") {
       <script type="text/javascript" src="@routes.Assets.at("javascripts/mapPersist.js")"></script>
     }
+
 
 
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
