@@ -2,10 +2,10 @@
 
 @Main("FishInLocation") {
   <div id="fish-selection">
-    @for(fishID <- LocationDB.getLocation(locationName).getFishCounts().keySet()) {
+    @for(fish <- LocationDB.getLocation(locationName).getFishes()) {
       <div class="thumbnail">
-        <img class="fish-image" src=@routes.Assets.at(FishDB.getFish(fishID).getImage())>
-        <span class="fish-name caption center-block">@FishDB.getFish(fishID).getCommonName()</span>
+        <img class="fish-image" src=@routes.Assets.at(fish.getImage())>
+        <span class="fish-name caption center-block">@fish.getCommonName()</span>
       </div>
     }
   </div>
