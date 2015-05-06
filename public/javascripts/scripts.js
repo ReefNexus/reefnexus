@@ -89,6 +89,34 @@ function initialize() {
 
           // Now sort by percentage
           sortFishResults();
+
+          $(".location-detail > table > tbody").children().each(function () {
+
+            var fishPercent = parseFloat($(this).find(".fish-count").first().text());
+
+            if(fishPercent > 90){
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/tenrating.png'>");}
+            else if (fishPercent > 80) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/ninerating.png'>");}
+            else if (fishPercent > 70) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/eightrating.png'>");}
+            else if (fishPercent > 60) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/sevenrating.png'>");}
+            else if (fishPercent > 50) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/sixrating.png'>");}
+            else if (fishPercent > 40) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/fiverating.png'>");}
+            else if (fishPercent > 30) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/fourrating.png'>");}
+            else if (fishPercent > 20) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/threerating.png'>");}
+            else if (fishPercent > 10) {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/tworating.png'>");}
+            else {
+              $(this).find(".fish-count").first().html("<img src='/assets/images/fishrating/onerating.png'>");}
+
+          });
+
         }, error: function () {
           $(".location-detail > h4 > a").text("Location not found")
               .attr("href", "#");
@@ -96,10 +124,6 @@ function initialize() {
       });
     });
   }
-}
-
-function collapseLocation() {
-
 }
 
 /*

@@ -19,7 +19,6 @@ $(document).ready(function () {
     // When the user clicks on a fish image, submit the form with the corresponding fish name
     $(".fish-image").click(function() {
       $("#fish-name-input").val($(this).parent().find(".fish-name").text());
-      $("#submit").click();
     });
 
   },

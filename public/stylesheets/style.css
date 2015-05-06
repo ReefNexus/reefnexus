@@ -16,6 +16,7 @@ h3 {
 
 h4 {
   color: #49d8b4;
+  text-align: center;
 }
 
 .well {
@@ -114,7 +115,7 @@ h4 {
 }
 
 .panel-default {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   border: 0;
 }
 
@@ -218,7 +219,7 @@ img {
 }
 
 .percent {
-  color: lightcoral;
+  color: darkred;
 }
 
 .fish-button {
@@ -237,7 +238,7 @@ img {
 
 .thumbnail {
   float: left;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;
   margin: 2px;
   border: 0px;
@@ -247,6 +248,7 @@ img {
 
 .thumbnail > img {
   margin: 0px;
+  max-height: 170px;
 }
 
 .thumbnail:hover {
