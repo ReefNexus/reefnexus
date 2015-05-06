@@ -7,14 +7,16 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-3"></div>
+      <div class="col-md-8">
+        <div class="well well-sm add-fish-well">
+        <h3 class="fish-input-type-header">Choose a fish from below...</h3>
+        <div id="select-by-image"></div>
+        </div>
+      </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="well well-sm">
-          <h2>Adding fish...</h2>
-          <h3 class="fish-input-type-header">Select from the images below...</h3>
-          <div id="select-by-image"></div>
-          <h3 class="fish-input-type-header">If your fish is not shown above...</h3>
+          <h3 class="fish-input-type-header">...Or input manually</h3>
           @form(routes.Application.addFishToLoc(), 'class -> "form-horizontal") {
             <input type="hidden"
             name="@locationForm("id").name">

@@ -38,6 +38,7 @@ function initialize() {
     newOverlay.setMap(this.map);
     overlays.push(newOverlay);
 
+
     // Show the data for the region that was clicked on
     google.maps.event.addListener(newOverlay, 'click', function () {
 
@@ -55,7 +56,10 @@ function initialize() {
           var totalFishCount = 0;
 
           // Update the location name on the right of the page
-          $(".location-detail > h4 > a").text($(wrapper).find("#location-name").text())
+          $(".location-header > h4 > a").text($(wrapper).find("#location-name").text())
+              .attr("href", $(wrapper).find("#location-url").text());
+
+          $(".location-detail > h4 > a").text("Click here to view more detail...")
               .attr("href", $(wrapper).find("#location-url").text());
 
           // For each .fish-data
@@ -220,7 +224,20 @@ function mergeSort(toSort) {
   return sorted;
 }
 
+function retrieveLoc() {
+  var mapzoom = map.getZoom();
+
+  var mapcenter = map.getCenter();
+  var maplat = mapcenter.lat();
+  var maplng = mapcenter.lng();
+  var maptypeid = map.getMapTypeId();
+
+  var mapLoc = maplat + "_" + maplng + "_" + mapzoom + "_" + maptypeid;
+
+  localStorage.setItem("mapLoc", mapLoc);
+
+}
+
 $(document).ready(function () {
   initialize();
-  collapseLocation();
 });

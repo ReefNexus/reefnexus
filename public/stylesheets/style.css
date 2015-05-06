@@ -21,7 +21,7 @@ h4 {
 .well {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 .footer {
@@ -30,10 +30,20 @@ h4 {
   width: 100%;
 }
 
-.footer > .container > .row > .col-md-12 > .well {
-  background-color: transparent;
+.footer > .row > .col-md-12 {
+  padding: 0px;
+}
+
+.footer > .row > .col-md-12 > .well {
+  background-color: rgba(0, 0, 0, 0.1);
   text-align: center;
   color: black;
+  margin: 0px;
+  border-radius: 0px;
+}
+
+.footer > .row > .col-md-12 > .well > a {
+  color: white;
 }
 
 /** Navbar **/
@@ -120,6 +130,15 @@ h4 {
 .location-container {
   padding-top: 40px;
   background-color: transparent;
+}
+
+#location-name {
+  margin: 0;
+}
+
+#location-name > a:hover {
+  margin: 0;
+  text-decoration: none;
 }
 
 .add-fish > .btn {
@@ -214,11 +233,29 @@ img {
   padding: 0px;
 }
 
-.footer > .container > .row > .col-md-12 > .well {
-  background-color: transparent;
-  text-align: center;
+/** Add Fish **/
+
+.thumbnail {
+  float: left;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  margin: 2px;
+  border: 0px;
+  height: 220px;
+  width: 220px;
 }
 
-.fish-selection {
-  vertical-align: middle;
+.thumbnail > img {
+  margin: 0px;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.add-fish-well {
+  max-height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
