@@ -23,7 +23,7 @@ public class LocationDB {
 
     // Now add the coordinates into the database
     for (Coordinate c : location.getCoordinates()) {
-      System.out.println(location.getName() + " coordinates: " + c.toString());
+      c.save();
     }
   }
 
