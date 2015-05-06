@@ -4,6 +4,7 @@ import models.Fish;
 import models.Location;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Backing class for form data.
@@ -37,7 +38,7 @@ public class FishFormData {
   /**
    * Locations of the fish.
    */
-  public ArrayList<Location> locationList;
+  public List<Location> locationList;
   /**
    * Image path.
    */
@@ -61,12 +62,16 @@ public class FishFormData {
     this.genus = fish.getGenus();
     this.species = fish.getSpecies();
     this.family = fish.getFamily();
+    this.location = (fish.getLocations().isEmpty()) ? (null) : (fish.getLocations().get(0));
     this.locationList = fish.getLocations();
     this.image = fish.getImage();
   }
 
   /**
-   * Creates default fish during loading.
+   * Creates fish when seeding the database.
+   *
+   * This is more convenient for internal use and testing, but the constructor that takes a Fish parameter is more
+   * likely to be used in actual production.
    *
    * @param commonName The common name of the fish.
    * @param genus      The genus of the fish.
@@ -77,11 +82,18 @@ public class FishFormData {
    */
   public FishFormData(String commonName, String genus, String species, String family,
                       Location location, String image) {
+    this.id = 0;
     this.commonName = commonName;
     this.genus = genus;
     this.species = species;
     this.family = family;
     this.location = location;
+    this.locationList = new ArrayList<>();
+
+    if (this.location != null) {
+      this.locationList.add(this.location);
+    }
+
     this.image = image;
   }
 }

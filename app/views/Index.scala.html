@@ -3,10 +3,10 @@
 @Main("Home") {
   <script type="text/javascript">
   var overlayCoordinates =[
-    @for(location <- LocationDB.getLocations) {
+    @for(location <- LocationDB.getLocations()) {
       @Html("[")
-      @for(coordinatePair <- location.getCoordinates) {
-        @Html("new google.maps.LatLng(" + coordinatePair + "), ")
+      @for(coordinatePair <- location.getCoordinates()) {
+        @Html("new google.maps.LatLng(" + coordinatePair.toString() + "), ")
       }
       @Html("],")
     }

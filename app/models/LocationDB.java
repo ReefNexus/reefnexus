@@ -2,17 +2,16 @@ package models;
 
 import views.formdata.LocationFormData;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /**
- * Internal in-memory repository for Locations.
- * <p>
- * Note that Locations themselves are immutable once created.
+ * Handles Location database interaction.
+ *
  */
 public class LocationDB {
+/*
   private static Map<Long, Location> locations = new HashMap<>();
+*/
 
   /**
    * Adds a Location to the database.
@@ -21,7 +20,12 @@ public class LocationDB {
    */
 
   public static void addLocation(Location location) {
-    LocationDB.locations.put((long) (LocationDB.locations.size() + 1), location);
+    location.save();
+
+    // Now add the coordinates into the database
+    for (Coordinate c : location.getCoordinates()) {
+      System.out.println(location.getName() + " coordinates: " + c.toString());
+    }
   }
 
   /**
@@ -33,7 +37,7 @@ public class LocationDB {
    */
 
   public static Location getLocation(long id) {
-    return LocationDB.locations.get(id);
+    return Location.find().byId(id);
   }
 
   /**
@@ -47,7 +51,7 @@ public class LocationDB {
   public static Location getLocation(String name) {
     Location location = null;
 
-    for (Location l : LocationDB.locations.values()) {
+    for (Location l : Location.find().all()) {
       if ((l != null) && (l.getName() != null) && (name != null)
           && (l.getName().equalsIgnoreCase(name.replaceAll("_", " ")))) {
         location = l;
@@ -63,8 +67,8 @@ public class LocationDB {
    * @return A Collection<Location> containing all Locations in the LocationDB.
    */
 
-  public static Collection<Location> getLocations() {
-    return LocationDB.locations.values();
+  public static List<Location> getLocations() {
+    return Location.find().all();
   }
 
   /**
@@ -77,16 +81,7 @@ public class LocationDB {
    */
 
   public static long getId(String name) {
-    long id = 0;
-
-    for (long l : LocationDB.locations.keySet()) {
-      if ((LocationDB.locations.get(l) != null) && (LocationDB.locations.get(l) != null)
-          && (LocationDB.locations.get(l).getName().equalsIgnoreCase(name.replaceAll("_", " ")))) {
-        id = l;
-      }
-    }
-
-    return id;
+    return Location.find().where().eq("name", name).findUnique().getId();
   }
 
   /**

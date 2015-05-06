@@ -14,9 +14,6 @@ import views.html.LocationData;
 import views.html.Login;
 import views.html.Profile;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Provides controllers for this application.
  */
@@ -144,14 +141,11 @@ public class Application extends Controller {
     // If invalid, display error
     if (toShow == null) {
       return badRequest(LocationData.render("Invalid request for " + name.replaceAll("_", " "),
-          name.replaceAll("_", " ") + " not found", new HashMap<Long, Long>()));
+          name.replaceAll("_", " ") + " not found"));
     }
     // Else return the LocationData page
     else {
-      Map<Long, Long> fishCounts = toShow.getFishCounts();
-      return ok(LocationData.render("Location Data", name.replaceAll("_", " "), fishCounts));
+      return ok(LocationData.render("Location Data", name.replaceAll("_", " ")));
     }
-
   }
-
 }
