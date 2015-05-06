@@ -18,7 +18,6 @@ public class LocationDB {
    *
    * @param location The Location to add to the database.
    */
-
   public static void addLocation(Location location) {
     location.save();
 
