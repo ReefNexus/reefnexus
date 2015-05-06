@@ -1,5 +1,7 @@
 package models;
 
+import play.db.ebean.Model;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -14,7 +16,7 @@ import java.util.List;
  */
 
 @Entity
-public class Coordinate extends play.db.ebean.Model {
+public class Coordinate extends Model {
   private double latitude;
   private double longitude;
 
