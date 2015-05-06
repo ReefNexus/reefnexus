@@ -1,7 +1,5 @@
 package controllers;
 
-import models.Coordinate;
-import models.FishDB;
 import models.LocationDB;
 import play.data.Form;
 import play.mvc.Controller;
@@ -15,9 +13,6 @@ import views.html.Index;
 import views.html.LocationData;
 import views.html.Login;
 import views.html.Profile;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Provides controllers for this application.
@@ -146,23 +141,11 @@ public class Application extends Controller {
     // If invalid, display error
     if (toShow == null) {
       return badRequest(LocationData.render("Invalid request for " + name.replaceAll("_", " "),
-          name.replaceAll("_", " ") + " not found", new HashMap<Long, Long>()));
+          name.replaceAll("_", " ") + " not found"));
     }
     // Else return the LocationData page
     else {
-      Map<Long, Long> fishCounts = toShow.getFishCounts();
-
-      System.out.println("Types of Fish: " + fishCounts.size());
-
-      for (long l : fishCounts.keySet()) {
-        System.out.println("Fish " + FishDB.getFish(l) + ": " + fishCounts.get(l));
-      }
-
-      for (Coordinate c : toShow.getCoordinates()) {
-        System.out.println("Coordinates for " + toShow.getName() + ": " + c.toString());
-      }
-
-      return ok(LocationData.render("Location Data", name.replaceAll("_", " "), fishCounts));
+      return ok(LocationData.render("Location Data", name.replaceAll("_", " ")));
     }
   }
 }

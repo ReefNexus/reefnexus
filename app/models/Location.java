@@ -4,11 +4,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Model for location data.
@@ -26,13 +25,14 @@ public class Location extends play.db.ebean.Model {
   private String goodFor;
   private String image;
 
-  private Map<Long, Long> fishCounts;
-
-  @ManyToMany(cascade=CascadeType.PERSIST)
+  @ManyToMany(cascade = CascadeType.PERSIST)
   private List<Coordinate> coordinates;
 
-  @ManyToMany(cascade=CascadeType.PERSIST)
+  @ManyToMany(cascade = CascadeType.PERSIST)
   private List<Fish> fishes;
+
+  @OneToMany(mappedBy = "location", cascade = CascadeType.PERSIST)
+  private List<FishCount> fishCounts;
 
   /**
    * Creates a new empty Location.
@@ -64,7 +64,7 @@ public class Location extends play.db.ebean.Model {
     this.goodFor = goodFor;
     this.image = image;
 
-    this.fishCounts = new HashMap<>();
+    this.fishCounts = new ArrayList<>();
     this.coordinates = new LinkedList<>();
     this.fishes = new ArrayList<>();
   }
@@ -161,12 +161,12 @@ public class Location extends play.db.ebean.Model {
   }
 
   /**
-   * Returns the Map of fish counts.
+   * Returns the List of fish counts.
    *
-   * @return The Map containing the number of fish in this Location.
+   * @return The List containing the number of fish in this Location.
    */
 
-  public Map<Long, Long> getFishCounts() {
+  public List<FishCount> getFishCounts() {
     return this.fishCounts;
   }
 
@@ -180,8 +180,8 @@ public class Location extends play.db.ebean.Model {
   public long getNumberOfFish(Fish typeOfFish) {
     long count = 0;
 
-    if (this.fishCounts.keySet().contains(typeOfFish.getId())) {
-      count = this.fishCounts.get(typeOfFish.getId());
+    if (this.getFishCount(typeOfFish) != null) {
+      count = this.getFishCount(typeOfFish).getCount();
     }
 
     return count;
@@ -197,13 +197,13 @@ public class Location extends play.db.ebean.Model {
   public void addNumberOfFish(Fish typeOfFish, long numberOfFish) {
     // If the fish is already in the map, update the value
     if (this.fishes.contains(typeOfFish)) {
-      this.fishCounts.put(typeOfFish.getId(), this.fishCounts.get(typeOfFish.getId()) + numberOfFish);
+      this.getFishCount(typeOfFish).addCount(numberOfFish);
     }
 
     // Else add a new entry
     else {
-      this.fishCounts.put(typeOfFish.getId(), numberOfFish);
       this.fishes.add(typeOfFish);
+      this.fishCounts.add(new FishCount(this, typeOfFish.getId(), numberOfFish));
       typeOfFish.addLocation(this);
     }
   }
@@ -217,11 +217,32 @@ public class Location extends play.db.ebean.Model {
   public long totalFishCount() {
     long sum = 0;
 
-    for (long numberOfFish : this.fishCounts.values()) {
-      sum += numberOfFish;
+    for (FishCount f : this.fishCounts) {
+      sum += f.getCount();
     }
 
     return sum;
+  }
+
+  /**
+   * Returns the FishCount instance for the given Fish.
+   *
+   * @param typeOfFish    The Fish to retrieve the FishCount instance for.
+   *
+   * @return A FishCount instance corresponding to the given Fish;
+   *         null if not match was found.
+   *
+   */
+
+  public FishCount getFishCount(Fish typeOfFish) {
+    FishCount count = null;
+    for (FishCount f : this.fishCounts) {
+      if ((this.equals(f.getLocation())) && (typeOfFish.getId() == f.getFishId())) {
+        count = f;
+      }
+    }
+
+    return count;
   }
 
   /**
@@ -325,11 +346,11 @@ public class Location extends play.db.ebean.Model {
   /**
    * Sets the Map of fish in this Location.
    *
-   * @param fishCounts    The Map<Long, Long> containing the key-value pairs of fish IDs and their quantities.
+   * @param fishCounts    The List<FishCount> containing the fish IDs and their quantities in this Location.
    *
    */
 
-  public void setFishCounts(Map<Long, Long> fishCounts) {
+  public void setFishCounts(List<FishCount> fishCounts) {
     this.fishCounts = fishCounts;
   }
 
@@ -395,7 +416,7 @@ public class Location extends play.db.ebean.Model {
   public void addFish(Fish fish) {
     if (!this.fishes.contains(fish)) {
       this.fishes.add(fish);
-      this.fishCounts.put(fish.getId(), 0l);
+      this.addNumberOfFish(fish, 0L);
     }
   }
 }

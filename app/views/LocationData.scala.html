@@ -1,4 +1,4 @@
-@(message: String, locationName: String, fishCounts: Map[Long, Long])
+@(message: String, locationName: String)
 
   @Main("LocationData") {
     <div id="location-data">
@@ -7,8 +7,8 @@
         <!-- For each fish in the location, fill in the following -->
       @for(fish <- LocationDB.getLocation(locationName).getFishes()) {
         <div class="fish-data">
-          <div class="fish-name">@FishDB.getFish(fish.getId()).getCommonName()</div>
-          <div class="fish-count">@fishCounts.get(fish.getId())</div>
+          <div class="fish-name">@fish.getCommonName()</div>
+          <div class="fish-count">@LocationDB.getLocation(locationName).getFishCount(fish).getCount()</div>
         </div>
       }
     </div>

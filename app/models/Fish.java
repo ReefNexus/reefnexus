@@ -1,6 +1,5 @@
 package models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -22,7 +21,7 @@ public class Fish extends play.db.ebean.Model {
   private String scientific;
   private String family;
 
-  @ManyToMany(mappedBy="fishes")
+  @ManyToMany(mappedBy = "fishes")
   private List<Location> locations;
 
   private String image;

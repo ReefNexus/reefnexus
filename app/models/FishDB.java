@@ -2,10 +2,7 @@ package models;
 
 import views.formdata.FishFormData;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Handles Fish database operations.

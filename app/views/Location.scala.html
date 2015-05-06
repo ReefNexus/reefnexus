@@ -65,25 +65,25 @@
                 </tr>
               </thead>
               <tbody>
-              @for(fish <- LocationDB.getLocation(id).getFishCounts().keySet()) {
+              @for(fish <- LocationDB.getLocation(id).getFishes()) {
                 <tr class="fish-data">
                   <td>
-                    <span>@LocationDB.getLocation(id).getFishCounts().get(fish) fish</span>
-                    <span class="percent fish-count">(@("%.2f".format((LocationDB.getLocation(id).getFishCounts().get(fish) * 100.0) / LocationDB.getLocation(id).totalFishCount())) %)</span>
+                    <span>@LocationDB.getLocation(id).getFishCount(fish).getCount() fish</span>
+                    <span class="percent fish-count">(@("%.2f".format((LocationDB.getLocation(id).getFishCount(fish).getCount() * 100.0) / LocationDB.getLocation(id).totalFishCount())) %)</span>
                   </td>
                   <td>
                     <form method=GET action="@routes.Application.fishProfile()">
-                      <button class="fish-button">@FishDB.getFish(fish).getCommonName()</button>
-                      <input id="fish-id" type="hidden" name="Fish" value=@FishDB.getFish(fish).getId()>
+                      <button class="fish-button">@fish.getCommonName()</button>
+                      <input id="fish-id" type="hidden" name="Fish" value=@fish.getId()>
                   </form>
                   </td>
-                  <td><img src=@routes.Assets.at(FishDB.getFish(fish).getImage())></td>
+                  <td><img src=@routes.Assets.at(fish.getImage())></td>
                 </tr>
               }
               </tbody>
             </table>
             <div class="more-fish">
-              <button class="btn"><p>Cick to view more...</p>
+              <button class="btn"><p>Click to view more...</p>
               </button>
             </div>
           </div>

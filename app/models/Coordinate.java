@@ -1,10 +1,8 @@
 package models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class Coordinate extends play.db.ebean.Model {
   @Id
   private long id = 0;
 
-  @ManyToMany(mappedBy="coordinates")
+  @ManyToMany(mappedBy = "coordinates")
   private List<Location> locations;
 
   /**
