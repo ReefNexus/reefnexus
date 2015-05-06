@@ -5,8 +5,8 @@
 
 create table coordinate (
   id                        bigint not null,
-  latitude                  double,
-  longitude                 double,
+  latitude                  float,
+  longitude                 float,
   constraint pk_coordinate primary key (id))
 ;
 
@@ -33,8 +33,8 @@ create table fish_count (
 create table location (
   id                        bigint not null,
   name                      varchar(255),
-  longitude                 double,
-  latitude                  double,
+  longitude                 float,
+  latitude                  float,
   description               varchar(255),
   good_for                  varchar(255),
   image                     varchar(255),
@@ -61,36 +61,32 @@ create sequence fish_count_seq;
 
 create sequence location_seq;
 
-alter table fish_count add constraint fk_fish_count_location_1 foreign key (location_id) references location (id) on delete restrict on update restrict;
+alter table fish_count add constraint fk_fish_count_location_1 foreign key (location_id) references location (id);
 create index ix_fish_count_location_1 on fish_count (location_id);
 
 
 
-alter table location_coordinate add constraint fk_location_coordinate_locati_01 foreign key (location_id) references location (id) on delete restrict on update restrict;
+alter table location_coordinate add constraint fk_location_coordinate_locati_01 foreign key (location_id) references location (id);
 
-alter table location_coordinate add constraint fk_location_coordinate_coordi_02 foreign key (coordinate_id) references coordinate (id) on delete restrict on update restrict;
+alter table location_coordinate add constraint fk_location_coordinate_coordi_02 foreign key (coordinate_id) references coordinate (id);
 
-alter table location_fish add constraint fk_location_fish_location_01 foreign key (location_id) references location (id) on delete restrict on update restrict;
+alter table location_fish add constraint fk_location_fish_location_01 foreign key (location_id) references location (id);
 
-alter table location_fish add constraint fk_location_fish_fish_02 foreign key (fish_id) references fish (id) on delete restrict on update restrict;
+alter table location_fish add constraint fk_location_fish_fish_02 foreign key (fish_id) references fish (id);
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+drop table if exists coordinate cascade;
 
-drop table if exists coordinate;
+drop table if exists location_coordinate cascade;
 
-drop table if exists location_coordinate;
+drop table if exists fish cascade;
 
-drop table if exists fish;
+drop table if exists location_fish cascade;
 
-drop table if exists location_fish;
+drop table if exists fish_count cascade;
 
-drop table if exists fish_count;
-
-drop table if exists location;
-
-SET REFERENTIAL_INTEGRITY TRUE;
+drop table if exists location cascade;
 
 drop sequence if exists coordinate_seq;
 
