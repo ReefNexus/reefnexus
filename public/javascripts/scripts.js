@@ -56,11 +56,13 @@ function initialize() {
           var totalFishCount = 0;
 
           // Update the location name on the right of the page
-          $(".location-header > h4 > a").text($(wrapper).find("#location-name").text())
-              .attr("href", $(wrapper).find("#location-url").text());
+          $(".location-header > h4 > a").text($(wrapper).find("#location-name").text());
 
           $(".location-detail > h4 > a").text("Click here to view more detail...")
               .attr("href", $(wrapper).find("#location-url").text());
+
+          // Counter to limit loop to ten entries
+          var loopNum = 10;
 
           // For each .fish-data
           $(wrapper).find(".fish-data").each(function () {
@@ -77,6 +79,13 @@ function initialize() {
 
             // Add value of .fish-count to totalFish
             totalFishCount += parseInt($(fishCountColumn).text());
+
+            loopNum = loopNum - 1;
+
+            if(loopNum == 0){
+              return false;
+            }
+
           });
 
           // For each row in the table, append the percentage (in addition to the total number of fish)
@@ -90,6 +99,7 @@ function initialize() {
           // Now sort by percentage
           sortFishResults();
 
+          // Convert percentage to fish rating skill (up to max of five "fishes").
           $(".location-detail > table > tbody").children().each(function () {
 
             var fishPercent = parseFloat($(this).find(".fish-count").first().text());
@@ -248,6 +258,9 @@ function mergeSort(toSort) {
   return sorted;
 }
 
+/*
+ * Retrieve map location in background to be recalled in next page.
+ */
 function retrieveLoc() {
   var mapzoom = map.getZoom();
 

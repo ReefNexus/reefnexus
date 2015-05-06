@@ -218,6 +218,8 @@ public class Global extends GlobalSettings {
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Brown Tang"), 31313);
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 4333);
     southKaneoheBay.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 88);
+    southKaneoheBay.addNumberOfFish(FishDB.getFish("Brown Tang"), 500);
+    southKaneoheBay.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 399);
 
     northKaneoheBay.addNumberOfFish(FishDB.getFish("Hawaiian Whitespotted Toby"), 1);
 

@@ -16,7 +16,7 @@ $(document).ready(function () {
     var wrapper = $("<div></div>").html(data);
     $("#select-by-image").append($(wrapper).find("#fish-selection"));
 
-    // When the user clicks on a fish image, submit the form with the corresponding fish name
+    // When the user clicks on a fish image, enter fish name into form
     $(".fish-image").click(function() {
       $("#fish-name-input").val($(this).parent().find(".fish-name").text());
     });
