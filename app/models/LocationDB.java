@@ -6,8 +6,7 @@ import java.util.List;
 
 /**
  * Handles Location database interaction.
- * <p>
- * Note that Locations themselves are immutable once created.
+ *
  */
 public class LocationDB {
 /*
@@ -23,9 +22,9 @@ public class LocationDB {
   public static void addLocation(Location location) {
     location.save();
 
-    // Set up relation between Location and its coordinates
+    // Now add the coordinates into the database
     for (Coordinate c : location.getCoordinates()) {
-      c.getLocations().add(location);
+      System.out.println(location.getName() + " coordinates: " + c.toString());
     }
   }
 

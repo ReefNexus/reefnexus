@@ -5,10 +5,10 @@
       <div id="location-url">/location?id=@LocationDB.getId(locationName)</div>
       <div id="location-name">@locationName</div>
         <!-- For each fish in the location, fill in the following -->
-      @for(fishID <- fishCounts.keySet()) {
+      @for(fish <- LocationDB.getLocation(locationName).getFishes()) {
         <div class="fish-data">
-          <div class="fish-name">@FishDB.getFish(fishID).getCommonName()</div>
-          <div class="fish-count">@fishCounts.get(fishID)</div>
+          <div class="fish-name">@FishDB.getFish(fish.getId()).getCommonName()</div>
+          <div class="fish-count">@fishCounts.get(fish.getId())</div>
         </div>
       }
     </div>

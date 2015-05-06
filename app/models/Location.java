@@ -1,8 +1,10 @@
 package models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,10 +28,10 @@ public class Location extends play.db.ebean.Model {
 
   private Map<Long, Long> fishCounts;
 
-  @ManyToMany
+  @ManyToMany(cascade=CascadeType.PERSIST)
   private List<Coordinate> coordinates;
 
-  @ManyToMany
+  @ManyToMany(cascade=CascadeType.PERSIST)
   private List<Fish> fishes;
 
   /**
@@ -64,6 +66,7 @@ public class Location extends play.db.ebean.Model {
 
     this.fishCounts = new HashMap<>();
     this.coordinates = new LinkedList<>();
+    this.fishes = new ArrayList<>();
   }
 
   /**
@@ -200,7 +203,8 @@ public class Location extends play.db.ebean.Model {
     // Else add a new entry
     else {
       this.fishCounts.put(typeOfFish.getId(), numberOfFish);
-      typeOfFish.getLocations().add(this);
+      this.fishes.add(typeOfFish);
+      typeOfFish.addLocation(this);
     }
   }
 
@@ -244,12 +248,12 @@ public class Location extends play.db.ebean.Model {
     this.coordinates.clear();
 
     for (String coordinate : toAdd) {
-      this.coordinates.add(new Coordinate(Double.parseDouble(coordinate.split(",")[0]),
-                                          Double.parseDouble(coordinate.split(",")[1])));
-      this.coordinates.get(this.coordinates.size() - 1).save();
+      Coordinate c = new Coordinate(Double.parseDouble(coordinate.split(",")[0]),
+                                    Double.parseDouble(coordinate.split(",")[1]));
+      System.out.format("%s: %s%n", this.getName(), c);
+      c.addLocation(this);
+      this.coordinates.add(c);
     }
-
-    System.out.println("Coordinates: " + this.coordinates.toArray().toString());
   }
 
   /**
@@ -356,7 +360,7 @@ public class Location extends play.db.ebean.Model {
    */
 
   public List<Fish> getFishes() {
-    return fishes;
+    return this.fishes;
   }
 
   /**
@@ -379,5 +383,19 @@ public class Location extends play.db.ebean.Model {
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  /**
+   * Adds a Fish to this Location.
+   *
+   * @param fish    The Fish to add to this Location.
+   *
+   */
+
+  public void addFish(Fish fish) {
+    if (!this.fishes.contains(fish)) {
+      this.fishes.add(fish);
+      this.fishCounts.put(fish.getId(), 0l);
+    }
   }
 }

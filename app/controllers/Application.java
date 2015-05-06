@@ -1,5 +1,7 @@
 package controllers;
 
+import models.Coordinate;
+import models.FishDB;
 import models.LocationDB;
 import play.data.Form;
 import play.mvc.Controller;
@@ -149,9 +151,18 @@ public class Application extends Controller {
     // Else return the LocationData page
     else {
       Map<Long, Long> fishCounts = toShow.getFishCounts();
+
+      System.out.println("Types of Fish: " + fishCounts.size());
+
+      for (long l : fishCounts.keySet()) {
+        System.out.println("Fish " + FishDB.getFish(l) + ": " + fishCounts.get(l));
+      }
+
+      for (Coordinate c : toShow.getCoordinates()) {
+        System.out.println("Coordinates for " + toShow.getName() + ": " + c.toString());
+      }
+
       return ok(LocationData.render("Location Data", name.replaceAll("_", " "), fishCounts));
     }
-
   }
-
 }

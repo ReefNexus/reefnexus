@@ -23,7 +23,7 @@ public class Coordinate extends play.db.ebean.Model {
   @Id
   private long id = 0;
 
-  @ManyToMany(mappedBy="coordinates", cascade=CascadeType.PERSIST)
+  @ManyToMany(mappedBy="coordinates")
   private List<Location> locations;
 
   /**
@@ -156,5 +156,18 @@ public class Coordinate extends play.db.ebean.Model {
   @Override
   public String toString() {
     return String.format("%f,%f", this.latitude, this.longitude);
+  }
+
+  /**
+   * Adds a Location to the list of locations using this Coordinate.
+   *
+   * @param location    The Location to add to this Coordinate.
+   *
+   */
+
+  public void addLocation(Location location) {
+    if (location != null) {
+      this.locations.add(location);
+    }
   }
 }

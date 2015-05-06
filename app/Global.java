@@ -23,54 +23,72 @@ public class Global extends GlobalSettings {
   public void onStart(Application app) {
     // Only add if data is not already present
     if ((Location.find().all().size() == 0) && (Fish.find().all().size() == 0)) {
+      // Set up Locations
       Location waikikiBeach = new Location("Waikiki", 0, 0, "Waikiki Beach, Queen's Surf Beach, Kuhio Beach Park, Kaimana Beach", "", "images/waikiki.jpg");
+      Location kakaako = new Location("Kaka'ako to Ala Moana", 0, 0, "Ala Moana Beach, Kewalo Basin, Kaka'ako Waterfront", "", "images/kakaako.jpg");
+      Location diamondHead = new Location("Diamond Head", 0, 0, "Makalei Beach, Le'ahi Beach, Diamond Head Beach, Black Point", "", "images/diamond.jpg");
+      Location kahala = new Location("Kahala", 0, 0, "Waialae Beach, Wailupe Beach", "", "images/kahala.jpg");
+      Location maunaluaBay = new Location("Maunalua Bay", 0, 0, "Kawaiku'i Beach, Paiko Beach, Kuliouou Beach, Maunalua Bay Beach, Portlock", "", "images/maunalua.jpg");
+      Location haunamaBay = new Location("Hanauma Bay", 0, 0, "Hanauma Bay", "", "images/hanauma.jpg");
+      Location kokoHead = new Location("Koko Head", 0, 0, "Kahauloa Cove, Bamboo Ridge, Halona Beach", "", "images/koko.jpg");
+      Location sandyToKaloko = new Location("Sandy to Kaloko", 0, 0, "Sandy Beach, Wawamalu Beach, Kaloko Beach", "", "images/wawamalu.jpg");
+      Location makapuu = new Location("Makapu'u", 0, 0, "Makapu'u Point, Makapu'u Tidepools, Makapu'u Beach, Kaupo Cove", "", "images/makapuu.jpg");
+      Location waimanaloBay = new Location("Waimanalo Bay", 0, 0, "Kaiona Beach,  Waimanalo Beach, Bellows Beach", "", "images/waimanalo.jpg");
+      Location lanikai = new Location("Lanikai", 0, 0, "Lanikai Beach, The Mokes", "", "images/lanikai.jpg");
+      Location kailuaBay = new Location("Kailua Bay", 0, 0, "Kailua Beach, Kalama Beach", "", "images/kailua.jpg.");
+      Location mcbh = new Location("MCBH", 0, 0, "Marine Corps Base Hawaii", "", "images/mcbh.jpg");
+      Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "Kaneohe Beach, Fish Ponds, Coconut Island", "", "images/skaneohe.jpg");
+      Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "Waiahole Beach, Kualoa Beach", "", "images/nkaneohe.jpg");
 
-      FishDB.addFish(new FishFormData(new Fish("Hawaiian Sergeant", "Abudefduf", "abdominalis",
-          "Pomacentridae", waikikiBeach, "images/damsel.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Christmas Wrasse", "Thalassoma", "trilobatum",
-          "Labridae", waikikiBeach, "images/wrasse2.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Ember Parrotfish", "Scarus", "rubroviolaceus",
-          "Scaridae", waikikiBeach, "images/parrot2.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Yellowstripe Goatfish", "Parupeneus", "chrysopleuron",
-          "Mullidae", waikikiBeach, "images/goat.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Brown Tang", "Zebrasoma", "scopas",
-          "Acanthuridae", waikikiBeach, "images/surgeon.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Bluestripe Snapper", "Lutjanus", "kasmira",
-          "Lutjanidae", waikikiBeach, "images/snapper.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Reef Triggerfish", "Rhinecanthus", "rectangulus",
-          "Balistidae", waikikiBeach, "images/trigger.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Spotted Coral Blenny", "Exallias", "brevis",
-          "Blennidae", waikikiBeach, "images/blenny.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Great Barracuda", "Sphyraena", "barracuda",
-          "Sphyraenidae", waikikiBeach, "images/barracuda.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Bluefin Trevally", "Caranx", "melampygus",
-          "Carangidae", waikikiBeach, "images/jack.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Moorish Idol", "Zanclus", "cornutus",
-          "Zanclidae", waikikiBeach, "images/moorish.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Hawaiian Yellow Anthias", "Odontanthias", "fuscipinnis",
-          "Serranidae", waikikiBeach, "images/anthias.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Great White Shark", "Carcharadon", "carcharias",
-          "Lamnidae", waikikiBeach, "images/shark.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Brick Soldierfish", "Myripristis", "amaena",
-          "Holocentridae", waikikiBeach, "images/soldier.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Viper Moray", "Enchelynassa", "canina",
-          "Muraenidae", waikikiBeach, "images/eel.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Hawaiian Freckled Frogfish", "Antennarius", "drombus",
-          "Antennariidae", waikikiBeach, "images/frogfish.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Longnose Hawkfish", "Oxycirrhites", "typus",
-          "Cirrhitidae", waikikiBeach, "images/hawkfish.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Fisher's Seahorse", "Hippocampus", "fisheri",
-          "Syngnathidae", waikikiBeach, "images/seahorse.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Oval Butterflyfish", "Chaetodon", "lunulatus",
-          "Chaetodontidae", waikikiBeach, "images/butterfly.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Hawaiian Flagtail", "Kuhlia", "xenura",
-          "Kuhliidae", waikikiBeach, "images/flagtail.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Panther Flounder", "Bothus", "pantherinus",
-          "Bothidae", waikikiBeach, "images/flounder.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Giant Grouper", "Epinephelus", "lanceolatus",
-          "Serranidae", waikikiBeach, "images/grouper.jpg")));
-      FishDB.addFish(new FishFormData(new Fish("Hawaiian Whitespotted Toby", "Canthigaster", "jactator",
-          "Tetraodontidae", waikikiBeach, "images/toby.jpg")));
+
+
+      // Set up Fish
+      FishDB.addFish(new FishFormData("Hawaiian Sergeant", "Abudefduf", "abdominalis",
+          "Pomacentridae", null, "images/damsel.jpg"));
+      FishDB.addFish(new FishFormData("Christmas Wrasse", "Thalassoma", "trilobatum",
+          "Labridae", null, "images/wrasse2.jpg"));
+      FishDB.addFish(new FishFormData("Ember Parrotfish", "Scarus", "rubroviolaceus",
+          "Scaridae", null, "images/parrot2.jpg"));
+      FishDB.addFish(new FishFormData("Yellowstripe Goatfish", "Parupeneus", "chrysopleuron",
+          "Mullidae", null, "images/goat.jpg"));
+      FishDB.addFish(new FishFormData("Brown Tang", "Zebrasoma", "scopas",
+          "Acanthuridae", null, "images/surgeon.jpg"));
+      FishDB.addFish(new FishFormData("Bluestripe Snapper", "Lutjanus", "kasmira",
+          "Lutjanidae", null, "images/snapper.jpg"));
+      FishDB.addFish(new FishFormData("Reef Triggerfish", "Rhinecanthus", "rectangulus",
+          "Balistidae", null, "images/trigger.jpg"));
+      FishDB.addFish(new FishFormData("Spotted Coral Blenny", "Exallias", "brevis",
+          "Blennidae", null, "images/blenny.jpg"));
+      FishDB.addFish(new FishFormData("Great Barracuda", "Sphyraena", "barracuda",
+          "Sphyraenidae", null, "images/barracuda.jpg"));
+      FishDB.addFish(new FishFormData("Bluefin Trevally", "Caranx", "melampygus",
+          "Carangidae", null, "images/jack.jpg"));
+      FishDB.addFish(new FishFormData("Moorish Idol", "Zanclus", "cornutus",
+          "Zanclidae", null, "images/moorish.jpg"));
+      FishDB.addFish(new FishFormData("Hawaiian Yellow Anthias", "Odontanthias", "fuscipinnis",
+          "Serranidae", null, "images/anthias.jpg"));
+      FishDB.addFish(new FishFormData("Great White Shark", "Carcharadon", "carcharias",
+          "Lamnidae", null, "images/shark.jpg"));
+      FishDB.addFish(new FishFormData("Brick Soldierfish", "Myripristis", "amaena",
+          "Holocentridae", null, "images/soldier.jpg"));
+      FishDB.addFish(new FishFormData("Viper Moray", "Enchelynassa", "canina",
+          "Muraenidae", null, "images/eel.jpg"));
+      FishDB.addFish(new FishFormData("Hawaiian Freckled Frogfish", "Antennarius", "drombus",
+          "Antennariidae", null, "images/frogfish.jpg"));
+      FishDB.addFish(new FishFormData("Longnose Hawkfish", "Oxycirrhites", "typus",
+          "Cirrhitidae", null, "images/hawkfish.jpg"));
+      FishDB.addFish(new FishFormData("Fisher's Seahorse", "Hippocampus", "fisheri",
+          "Syngnathidae", null, "images/seahorse.jpg"));
+      FishDB.addFish(new FishFormData("Oval Butterflyfish", "Chaetodon", "lunulatus",
+          "Chaetodontidae", null, "images/butterfly.jpg"));
+      FishDB.addFish(new FishFormData("Hawaiian Flagtail", "Kuhlia", "xenura",
+          "Kuhliidae", null, "images/flagtail.jpg"));
+      FishDB.addFish(new FishFormData("Panther Flounder", "Bothus", "pantherinus",
+          "Bothidae", null, "images/flounder.jpg"));
+      FishDB.addFish(new FishFormData("Giant Grouper", "Epinephelus", "lanceolatus",
+          "Serranidae", null, "images/grouper.jpg"));
+      FishDB.addFish(new FishFormData("Hawaiian Whitespotted Toby", "Canthigaster", "jactator",
+          "Tetraodontidae", null, "images/toby.jpg"));
 
       // Initial add
       waikikiBeach.addNumberOfFish(FishDB.getFish("Hawaiian Sergeant"), 150);
@@ -87,22 +105,6 @@ public class Global extends GlobalSettings {
       waikikiBeach.addNumberOfFish(FishDB.getFish("Ember Parrotfish"), 3);
       waikikiBeach.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 6);
       waikikiBeach.addNumberOfFish(FishDB.getFish("Bluestripe Snapper"), 2);
-
-      // Sets up other Locations
-      Location kakaako = new Location("Kaka'ako to Ala Moana", 0, 0, "Ala Moana Beach, Kewalo Basin, Kaka'ako Waterfront", "", "images/kakaako.jpg");
-      Location diamondHead = new Location("Diamond Head", 0, 0, "Makalei Beach, Le'ahi Beach, Diamond Head Beach, Black Point", "", "images/diamond.jpg");
-      Location kahala = new Location("Kahala", 0, 0, "Waialae Beach, Wailupe Beach", "", "images/kahala.jpg");
-      Location maunaluaBay = new Location("Maunalua Bay", 0, 0, "Kawaiku'i Beach, Paiko Beach, Kuliouou Beach, Maunalua Bay Beach, Portlock", "", "images/maunalua.jpg");
-      Location haunamaBay = new Location("Hanauma Bay", 0, 0, "Hanauma Bay", "", "images/hanauma.jpg");
-      Location kokoHead = new Location("Koko Head", 0, 0, "Kahauloa Cove, Bamboo Ridge, Halona Beach", "", "images/koko.jpg");
-      Location sandyToKaloko = new Location("Sandy to Kaloko", 0, 0, "Sandy Beach, Wawamalu Beach, Kaloko Beach", "", "images/wawamalu.jpg");
-      Location makapuu = new Location("Makapu'u", 0, 0, "Makapu'u Point, Makapu'u Tidepools, Makapu'u Beach, Kaupo Cove", "", "images/makapuu.jpg");
-      Location waimanaloBay = new Location("Waimanalo Bay", 0, 0, "Kaiona Beach,  Waimanalo Beach, Bellows Beach", "", "images/waimanalo.jpg");
-      Location lanikai = new Location("Lanikai", 0, 0, "Lanikai Beach, The Mokes", "", "images/lanikai.jpg");
-      Location kailuaBay = new Location("Kailua Bay", 0, 0, "Kailua Beach, Kalama Beach", "", "images/kailua.jpg.");
-      Location mcbh = new Location("MCBH", 0, 0, "Marine Corps Base Hawaii", "", "images/mcbh.jpg");
-      Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "Kaneohe Beach, Fish Ponds, Coconut Island", "", "images/skaneohe.jpg");
-      Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "Waiahole Beach, Kualoa Beach", "", "images/nkaneohe.jpg");
 
 
       // Add more fish to other areas
@@ -220,24 +222,7 @@ public class Global extends GlobalSettings {
 
       northKaneoheBay.addNumberOfFish(FishDB.getFish("Hawaiian Whitespotted Toby"), 1);
 
-      // Add the locations to the database
-      LocationDB.addLocation(waikikiBeach);
-      LocationDB.addLocation(kakaako);
-      LocationDB.addLocation(diamondHead);
-      LocationDB.addLocation(kahala);
-      LocationDB.addLocation(maunaluaBay);
-      LocationDB.addLocation(haunamaBay);
-      LocationDB.addLocation(kokoHead);
-      LocationDB.addLocation(sandyToKaloko);
-      LocationDB.addLocation(makapuu);
-      LocationDB.addLocation(waimanaloBay);
-      LocationDB.addLocation(lanikai);
-      LocationDB.addLocation(kailuaBay);
-      LocationDB.addLocation(mcbh);
-      LocationDB.addLocation(southKaneoheBay);
-      LocationDB.addLocation(northKaneoheBay);
-
-      // Set up coordinates
+      // Assign Coordinates to Locations
       kakaako.setCoordinates(new String[]{"21.27242,-157.85048",
           "21.28667,-157.87744",
           "21.30733,-157.85931",
@@ -299,15 +284,34 @@ public class Global extends GlobalSettings {
           "21.45105,-157.79424",
           "21.43907,-157.83328"});
 
+      // Add the locations to the database
+      LocationDB.addLocation(waikikiBeach);
+      LocationDB.addLocation(kakaako);
+      LocationDB.addLocation(diamondHead);
+      LocationDB.addLocation(kahala);
+      LocationDB.addLocation(maunaluaBay);
+      LocationDB.addLocation(haunamaBay);
+      LocationDB.addLocation(kokoHead);
+      LocationDB.addLocation(sandyToKaloko);
+      LocationDB.addLocation(makapuu);
+      LocationDB.addLocation(waimanaloBay);
+      LocationDB.addLocation(lanikai);
+      LocationDB.addLocation(kailuaBay);
+      LocationDB.addLocation(mcbh);
+      LocationDB.addLocation(southKaneoheBay);
+      LocationDB.addLocation(northKaneoheBay);
+
+
     }
     else {
       for (Location l : LocationDB.getLocations()) {
-        System.out.println("Location: " + l);
+        System.out.println("Location: " + l.getName());
+
+        for (Fish f : l.getFishes()) {
+          System.out.println("\tFish: " + f.getCommonName());
+        }
       }
 
-      for (Fish f : FishDB.getFishes()) {
-        System.out.println("Fish: " + f);
-      }
     }
   }
 }

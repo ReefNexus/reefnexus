@@ -22,7 +22,7 @@ public class Fish extends play.db.ebean.Model {
   private String scientific;
   private String family;
 
-  @ManyToMany(mappedBy="fishes", cascade=CascadeType.PERSIST)
+  @ManyToMany(mappedBy="fishes")
   private List<Location> locations;
 
   private String image;
@@ -64,8 +64,6 @@ public class Fish extends play.db.ebean.Model {
     this.image = image;
 
     this.scientific = genus + " " + species;
-
-
   }
 
   /**
@@ -257,6 +255,20 @@ public class Fish extends play.db.ebean.Model {
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  /**
+   * Adds a Location that this Fish is found in.
+   *
+   * @param location    The Location to add to this Fish instance.
+   *
+   */
+
+  public void addLocation(Location location) {
+    if (!this.locations.contains(location)) {
+      this.locations.add(location);
+      location.addFish(this);
+    }
   }
 
   /**

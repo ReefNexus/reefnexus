@@ -23,24 +23,9 @@ public class FishDB {
    * @param formData The form data.
    */
   public static void addFish(FishFormData formData) {
-    long idValue = formData.id;
-
-    // If the Fish already exists in the database, update the existing Fish and Location
-    if (Fish.find().byId(idValue) != null) {
-      List<Location> fishLocations = Fish.find().byId(idValue).getLocations();
-      if (!fishLocations.contains(formData.location)) {
-        fishLocations.add(formData.location);
-      }
-      Fish.find().byId(idValue).addNum();
-    }
-    // Else create a new Fish and add it to the Location
-    else {
-      Fish fish = new Fish(formData.commonName, formData.genus, formData.species, formData.family,
-          formData.location, formData.image);
-      fish.save();
-
-      formData.location.addNumberOfFish(fish, 1);
-    }
+    Fish fish = new Fish(formData.commonName, formData.genus, formData.species, formData.family,
+                         formData.location, formData.image);
+    fish.save();
   }
 
   /**
