@@ -90,4 +90,41 @@ public class LocationDB {
   public static void addFish(LocationFormData formData) {
     LocationDB.getLocation(formData.location).addNumberOfFish(FishDB.getFish(formData.fish), 1);
   }
+
+  /**
+   * Adds a Coordinate to the database.
+   *
+   * @param toAdd    The Coordinate to add to the database.
+   *
+   */
+
+  public static void addCoordinate(Coordinate toAdd) {
+    // Only save if the Coordinate does not already exist
+    if (Coordinate.find().where().eq("latitude", toAdd.getLatitude()).eq("longitude",
+                                                                         toAdd.getLongitude()).findRowCount() == 0) {
+      toAdd.save();
+    }
+  }
+
+  /**
+   * Returns a Coordinate with the given latitude and longitude.
+   *
+   * @param latitude     The double equal to the latitude of the Coordinate to search for.
+   * @param longitude    The double equal to the longitude of the Coordinate to search for.
+   *
+   * @return A Coordinate with the given latitude and longitude.
+   *         If no such Coordinate exists, this creates one.
+   *
+   */
+
+  public static Coordinate getCoordinate(double latitude, double longitude) {
+    Coordinate coordinate = Coordinate.find().where().eq("latitude", latitude).eq("longitude", longitude).findUnique();
+
+    if (coordinate == null) {
+      coordinate = new Coordinate(latitude, longitude);
+      LocationDB.addCoordinate(coordinate);
+    }
+
+    return coordinate;
+  }
 }

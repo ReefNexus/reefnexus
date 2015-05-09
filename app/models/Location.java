@@ -364,7 +364,14 @@ public class Location extends Model {
    */
 
   public void setCoordinates(List<Coordinate> coordinates) {
+    for (Coordinate c : coordinates) {
+      c.addLocation(this);
+      System.out.println("Adding coordinate " + c.toString() + " to location " + this.getName());
+    }
+
     this.coordinates = coordinates;
+
+
   }
 
   /**
