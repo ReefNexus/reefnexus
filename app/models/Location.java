@@ -201,7 +201,7 @@ public class Location extends Model {
     // If the fish is already in the map, update the value
     if (this.fishes.contains(typeOfFish)) {
       this.getFishCount(typeOfFish).addCount(numberOfFish);
-      this.getFishCount(typeOfFish).save();
+      this.getFishCount(typeOfFish).update();
     }
 
     // Else add a new entry
