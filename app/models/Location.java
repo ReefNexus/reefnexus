@@ -69,6 +69,7 @@ public class Location extends Model {
     this.fishCounts = new ArrayList<>();
     this.coordinates = new LinkedList<>();
     this.fishes = new ArrayList<>();
+
   }
 
   /**
@@ -200,6 +201,7 @@ public class Location extends Model {
     // If the fish is already in the map, update the value
     if (this.fishes.contains(typeOfFish)) {
       this.getFishCount(typeOfFish).addCount(numberOfFish);
+      this.getFishCount(typeOfFish).save();
     }
 
     // Else add a new entry
@@ -207,6 +209,7 @@ public class Location extends Model {
       this.fishes.add(typeOfFish);
       this.fishCounts.add(new FishCount(this, typeOfFish.getId(), numberOfFish));
       typeOfFish.addLocation(this);
+      typeOfFish.update();
     }
   }
 
