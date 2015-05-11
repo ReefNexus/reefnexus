@@ -206,10 +206,12 @@ public class Location extends Model {
 
     // Else add a new entry
     else {
+      FishCount fishCount = new FishCount(this, typeOfFish.getId(), numberOfFish);
       this.fishes.add(typeOfFish);
-      this.fishCounts.add(new FishCount(this, typeOfFish.getId(), numberOfFish));
+      this.fishCounts.add(fishCount);
       typeOfFish.addLocation(this);
       typeOfFish.update();
+      fishCount.save();
     }
   }
 
@@ -279,6 +281,8 @@ public class Location extends Model {
       System.out.format("%s: %s%n", this.getName(), c);
       c.addLocation(this);
       this.coordinates.add(c);
+
+      c.save();
     }
   }
 

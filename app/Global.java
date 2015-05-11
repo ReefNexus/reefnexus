@@ -25,36 +25,37 @@ public class Global extends GlobalSettings {
     if ((Location.find().all().size() == 0) && (Fish.find().all().size() == 0)) {
       // Set up Locations
       Location waikikiBeach = new Location("Waikiki", 0, 0, "Waikiki Beach, Queen's Surf Beach, Kuhio Beach Park, Kaimana Beach", "", "images/waikiki.jpg");
-      waikikiBeach.save();
       Location kakaako = new Location("Kaka'ako to Ala Moana", 0, 0, "Ala Moana Beach, Kewalo Basin, Kaka'ako Waterfront", "", "images/kakaako.jpg");
-      kakaako.save();
       Location diamondHead = new Location("Diamond Head", 0, 0, "Makalei Beach, Le'ahi Beach, Diamond Head Beach, Black Point", "", "images/diamond.jpg");
-      diamondHead.save();
       Location kahala = new Location("Kahala", 0, 0, "Waialae Beach, Wailupe Beach", "", "images/kahala.jpg");
-      kahala.save();
       Location maunaluaBay = new Location("Maunalua Bay", 0, 0, "Kawaiku'i Beach, Paiko Beach, Kuliouou Beach, Maunalua Bay Beach, Portlock", "", "images/maunalua.jpg");
-      maunaluaBay.save();
       Location haunamaBay = new Location("Hanauma Bay", 0, 0, "Hanauma Bay", "", "images/hanauma.jpg");
-      haunamaBay.save();
       Location kokoHead = new Location("Koko Head", 0, 0, "Kahauloa Cove, Bamboo Ridge, Halona Beach", "", "images/koko.jpg");
-      kokoHead.save();
       Location sandyToKaloko = new Location("Sandy to Kaloko", 0, 0, "Sandy Beach, Wawamalu Beach, Kaloko Beach", "", "images/wawamalu.jpg");
-      sandyToKaloko.save();
       Location makapuu = new Location("Makapu'u", 0, 0, "Makapu'u Point, Makapu'u Tidepools, Makapu'u Beach, Kaupo Cove", "", "images/makapuu.jpg");
-      makapuu.save();
       Location waimanaloBay = new Location("Waimanalo Bay", 0, 0, "Kaiona Beach,  Waimanalo Beach, Bellows Beach", "", "images/waimanalo.jpg");
-      waimanaloBay.save();
       Location lanikai = new Location("Lanikai", 0, 0, "Lanikai Beach, The Mokes", "", "images/lanikai.jpg");
-      lanikai.save();
       Location kailuaBay = new Location("Kailua Bay", 0, 0, "Kailua Beach, Kalama Beach", "", "images/kailua.jpg.");
-      kailuaBay.save();
       Location mcbh = new Location("MCBH", 0, 0, "Marine Corps Base Hawaii", "", "images/mcbh.jpg");
-      mcbh.save();
       Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "Kaneohe Beach, Fish Ponds, Coconut Island", "", "images/skaneohe.jpg");
-      southKaneoheBay.save();
       Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "Waiahole Beach, Kualoa Beach", "", "images/nkaneohe.jpg");
-      northKaneoheBay.save();
 
+      // Add the locations to the database
+      LocationDB.addLocation(waikikiBeach);
+      LocationDB.addLocation(kakaako);
+      LocationDB.addLocation(diamondHead);
+      LocationDB.addLocation(kahala);
+      LocationDB.addLocation(maunaluaBay);
+      LocationDB.addLocation(haunamaBay);
+      LocationDB.addLocation(kokoHead);
+      LocationDB.addLocation(sandyToKaloko);
+      LocationDB.addLocation(makapuu);
+      LocationDB.addLocation(waimanaloBay);
+      LocationDB.addLocation(lanikai);
+      LocationDB.addLocation(kailuaBay);
+      LocationDB.addLocation(mcbh);
+      LocationDB.addLocation(southKaneoheBay);
+      LocationDB.addLocation(northKaneoheBay);
 
       // Set up Fish
       FishDB.addFish(new FishFormData("Hawaiian Sergeant", "Abudefduf", "abdominalis",
@@ -295,24 +296,6 @@ public class Global extends GlobalSettings {
           "21.5447,-157.81613",
           "21.45105,-157.79424",
           "21.43907,-157.83328"});
-
-      // Add the locations to the database
-      LocationDB.addLocation(waikikiBeach);
-      LocationDB.addLocation(kakaako);
-      LocationDB.addLocation(diamondHead);
-      LocationDB.addLocation(kahala);
-      LocationDB.addLocation(maunaluaBay);
-      LocationDB.addLocation(haunamaBay);
-      LocationDB.addLocation(kokoHead);
-      LocationDB.addLocation(sandyToKaloko);
-      LocationDB.addLocation(makapuu);
-      LocationDB.addLocation(waimanaloBay);
-      LocationDB.addLocation(lanikai);
-      LocationDB.addLocation(kailuaBay);
-      LocationDB.addLocation(mcbh);
-      LocationDB.addLocation(southKaneoheBay);
-      LocationDB.addLocation(northKaneoheBay);
-
 
     }
     else {
