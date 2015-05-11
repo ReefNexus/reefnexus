@@ -40,7 +40,7 @@ public class Global extends GlobalSettings {
       Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "Kaneohe Beach, Fish Ponds, Coconut Island", "", "images/skaneohe.jpg");
       Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "Waiahole Beach, Kualoa Beach", "", "images/nkaneohe.jpg");
 
-      // Add the locations to the database
+      // Add the locations to the database.
       LocationDB.addLocation(waikikiBeach);
       LocationDB.addLocation(kakaako);
       LocationDB.addLocation(diamondHead);
