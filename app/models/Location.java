@@ -283,7 +283,7 @@ public class Location extends Model {
       this.coordinates.add(c);
 
       c.save();
-      
+
     }
   }
 
