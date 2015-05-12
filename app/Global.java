@@ -1,3 +1,4 @@
+import models.AccountDB;
 import models.Fish;
 import models.FishDB;
 import models.Location;
@@ -21,6 +22,9 @@ public class Global extends GlobalSettings {
 
   @Override
   public void onStart(Application app) {
+    // Add default user
+    AccountDB.addUserInfo("Danny", "fish@fish.net", "shark");
+
     // Only add if data is not already present
     if ((Location.find().all().size() == 0) && (Fish.find().all().size() == 0)) {
       // Set up Locations

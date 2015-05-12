@@ -1,9 +1,11 @@
 package controllers;
 
 import models.LocationDB;
+import play.mvc.Security;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.formdata.AccountFormData;
 import views.formdata.LocationFormData;
 import views.html.AddFish;
 import views.html.Database;
@@ -72,8 +74,54 @@ public class Application extends Controller {
    * @return The Login.
    */
   public static Result login() {
-    return ok(Login.render("Login"));
+    Form<AccountFormData> formData = Form.form(AccountFormData.class);
+    return ok(Login.render("Login", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()), formData));
   }
+
+  /**
+   * Processes a login form submission from an unauthenticated user.
+   * First we bind the HTTP POST data to an instance of LoginFormData.
+   * The binding process will invoke the LoginFormData.validate() method.
+   * If errors are found, re-render the page, displaying the error data.
+   * If errors not found, render the page with the good data.
+   * @return The index page with the results of validation.
+   */
+  public static Result postLogin() {
+
+    // Get the submitted form data from the request object, and run validation.
+    Form<AccountFormData> formData = Form.form(AccountFormData.class).bindFromRequest();
+
+    if (formData.hasErrors()) {
+      flash("error", "Login credentials not valid.");
+      return badRequest(Login.render("Login", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()), formData));
+    }
+    else {
+      // email/password OK, so now we set the session variable and only go to authenticated pages.
+      session().clear();
+      session("email", formData.get().email);
+      return redirect(routes.Application.profile());
+    }
+  }
+
+  /**
+   * Logs out (only for authenticated users) and returns them to the Index page.
+   * @return A redirect to the Index page.
+   */
+  @Security.Authenticated(Secured.class)
+  public static Result logout() {
+    session().clear();
+    return redirect(routes.Application.index());
+  }
+
+  /**
+   * Provides the Profile page (only to authenticated users).
+   * @return The Profile page.
+   */
+  @Security.Authenticated(Secured.class)
+  public static Result profile() {
+    return ok(Profile.render("Profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+  }
+
 
   /**
    * Returns the page on which to display user information.
