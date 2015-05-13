@@ -4,12 +4,12 @@
   @if(LocationDB.getLocation(id) == null) {
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
           <div class="well well-sm">
             <h3>No location found</h3>
 
             <!-- Manually done since there is no field set up for this -->
-            <select id="location-select">
+            <select id="location-select" class="center-block">
               <option value="-1"></option>
               @for(location <- LocationDB.getLocations()) {
                 <option value="@location.getId()">@location.getName()</option>
