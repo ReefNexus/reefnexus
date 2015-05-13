@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Fish;
 import models.LocationDB;
 import play.data.Form;
 import play.mvc.Controller;
@@ -12,6 +13,7 @@ import views.html.Index;
 import views.html.LocationData;
 import views.html.Login;
 import views.html.Profile;
+import views.html.FishResult;
 
 /**
  * Provides controllers for this application.
@@ -147,5 +149,13 @@ public class Application extends Controller {
     else {
       return ok(LocationData.render("Location Data", name.replaceAll("_", " ")));
     }
+  }
+
+  public static Result fishResult(String common, String family, String genus, String species) {
+    return ok(
+        FishResult.render(
+            Fish.searchFish(common, family, genus, species)
+        )
+    );
   }
 }
