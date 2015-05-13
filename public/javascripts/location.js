@@ -65,5 +65,12 @@ function mergeSort(toSort) {
 
 $(document).ready(function() {
   $("table#fish-data > tbody").append(mergeSort($(".fish-data")));
+
+  // When the value of #location-select changes, load the corresponding location page
+  $("#location-select").change(function() {
+    if ($(this).find(":selected").val() != "-1") {
+      window.location.replace("/location?id=" + $(this).find(":selected").val());
+    }
+  });
 });
 
