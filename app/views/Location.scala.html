@@ -30,9 +30,21 @@
             <div class="location">
               <u><p>Coastal areas of interest:</p></u>
               <p>@LocationDB.getLocation(id).getDescription()</p>
+            </div>
 
+            <div id="location-search" class="well well-sm">
+              <h3>Select other location...</h3>
+
+                <!-- Manually done since there is no field set up for this -->
+              <select id="location-select" class="center-block">
+                <option value="-1"></option>
+                @for(location <- LocationDB.getLocations()) {
+                  <option value="@location.getId()">@location.getName()</option>
+                }
+              </select>
             </div>
           </div>
+
         </div>
 
         <div class="col-md-8">
