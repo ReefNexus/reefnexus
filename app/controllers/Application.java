@@ -122,16 +122,6 @@ public class Application extends Controller {
     return ok(Profile.render("Profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
   }
 
-
-  /**
-   * Returns the page on which to display user information.
-   *
-   * @return The Profile.
-   */
-  public static Result profile() {
-    return ok(Profile.render("Profile"));
-  }
-
   /**
    * Returns the page on which to display fish images and labels.
    *

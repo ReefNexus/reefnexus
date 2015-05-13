@@ -3,16 +3,17 @@
 # ~~~~
 
 # Home page
-GET         /                    controllers.Application.index()
-GET         /addFish             controllers.Application.addFish()
-GET         /database            controllers.Application.database()
-GET         /fishInLocation      controllers.Application.fishInLocation(locationName: String)
-GET         /fishProfile         controllers.Application.fishProfile(id: Long ?= 0)
-GET         /location            controllers.Application.location(id: Long ?= 0)
-GET         /login               controllers.Application.login()
-GET         /locationData        controllers.Application.locationData(name: String)
-GET         /profile             controllers.Application.profile()
-POST        /addFish             controllers.Application.addFishToLoc()
+GET         /                      controllers.Application.index()
+GET         /addFish               controllers.Application.addFish()
+GET         /database              controllers.Application.database()
+GET         /fishInLocation        controllers.Application.fishInLocation(locationName: String)
+GET         /fishProfile           controllers.Application.fishProfile(id: Long ?= 0)
+GET         /location              controllers.Application.location(id: Long ?= 0)
+GET         /login                 controllers.Application.login()
+POST        /login                 controllers.Application.postLogin()
+GET         /locationData          controllers.Application.locationData(name: String)
+GET         /profile               controllers.Application.profile()
+POST        /addFish               controllers.Application.addFishToLoc()
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file        controllers.Assets.at(path="/public", file)
+GET         /assets/*file          controllers.Assets.at(path="/public", file)
