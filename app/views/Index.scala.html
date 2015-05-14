@@ -4,11 +4,9 @@
   <script type="text/javascript">
   var overlayCoordinates =[
     @for(location <- LocationDB.getLocations()) {
-      @Html("[")
       @for(coordinatePair <- location.getCoordinates()) {
         @Html("new google.maps.LatLng(" + coordinatePair.toString() + "), ")
       }
-      @Html("],")
     }
   ] ;
   var overlayNames =[
@@ -31,17 +29,21 @@
       <div class="col-md-4">
         <div class="well well-sm location-well">
           <div class="panel-group" id="accordion">
+            <div class="panel panel-default panel-info">
+                <p>Please add your sighted fish to the corresponding location.  You may either choose an area on the map or focus on the location you are currently at.
+                Expand the location panel to view more information and add the fish.</p>
+            </div>
             <div class="panel panel-default">
               <div class="panel-heading" onclick="userLocation ( )">
                 <h4 class="panel-title">
-                  Focus On User Location</h4>
+                  Center On User Location</h4>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
                 <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
                 <div class = "location-header">
-                  <h4 id="location-name"><a>Click On a Location On Map</a></h4>
+                  <h4 id="location-name"><a>Select A Coastal Point On Map</a></h4>
                 </div>
               </div>
               <div id="collapseOne" class="panel-collapse collapse">

@@ -4,18 +4,24 @@
   @if(LocationDB.getLocation(id) == null) {
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-1">
+          &nbsp
+        </div>
+        <div class="col-md-10">
           <div class="well well-sm">
-            <h3>No location found</h3>
+            <h3>Select a location to view information on fish sightings in the area</h3>
 
             <!-- Manually done since there is no field set up for this -->
             <select id="location-select" class="center-block">
-              <option value="-1"></option>
+              <option select="selected">Select Location...</option>
               @for(location <- LocationDB.getLocations()) {
                 <option value="@location.getId()">@location.getName()</option>
               }
             </select>
           </div>
+        </div>
+        <div class="col-md-1">
+          &nbsp
         </div>
       </div>
     </div>

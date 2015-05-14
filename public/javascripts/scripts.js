@@ -27,13 +27,14 @@ function initialize() {
   // Sets up the overlays
   for (var i = 0; i < overlayCoordinates.length; i++) {
     var coordinates = overlayCoordinates[i];
-    var newOverlay = new google.maps.Polygon({
-      paths: coordinates,
+    var newOverlay = new google.maps.Circle({
+      center: coordinates,
       strokeColor: "#000000",
-      strokeOpacity: 0.0,
+      strokeOpacity: 0.7,
       strokeWeight: 2,
       fillColor: "#000000",
-      fillOpacity: 0.0
+      fillOpacity: 0.2,
+      radius: 900
     });
     newOverlay.setMap(this.map);
     overlays.push(newOverlay);
@@ -169,7 +170,7 @@ function showPosition(userLatitude, userLongitude) {
   lon = userLongitude;
   latlon = new google.maps.LatLng(lat, lon);
 
-  map.setZoom(15);
+  map.setZoom(14);
   google.maps.event.trigger(map.panTo(latlon), 'click');
 }
 
