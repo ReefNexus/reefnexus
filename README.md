@@ -12,7 +12,7 @@ Although there are many fish databases available, there are few applications tha
 - <a href="https://www.heroku.com/">Deployed on Heroku</a>
 - Heavily utilizes the <a href="https://developers.google.com/maps/">Google Maps API</a>
 
-<img src="https://raw.githubusercontent.com/wengdg/reefnexus/master/docs/images/mainpage.PNG" width="75%"/>
+<img src="https://github.com/ReefNexus/reefnexus/blob/master/docs/images/mainpage.PNG" width="75%"/>
 
 <b>Additional features:</b>
 - Comprehensive fish database which includes species-specific information 
