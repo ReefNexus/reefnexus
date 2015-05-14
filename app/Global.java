@@ -24,44 +24,70 @@ public class Global extends GlobalSettings {
     // Only add if data is not already present
     if ((Location.find().all().size() == 0) && (Fish.find().all().size() == 0)) {
       // Set up Locations
-      Location waikikiBeach = new Location("Waikiki", 0, 0, "Waikiki Beach, Queen's Surf Beach, Kuhio Beach Park, Kaimana Beach", "", "images/location/waikiki.jpg");
-      Location kakaako = new Location("Kaka'ako to Ala Moana", 0, 0, "Ala Moana Beach, Kewalo Basin, Kaka'ako Waterfront", "", "images/location/kakaako.jpg");
-      Location diamondHead = new Location("Diamond Head", 0, 0, "Makalei Beach, Le'ahi Beach, Diamond Head Beach, Black Point", "", "images/location/diamond.jpg");
-      Location kahala = new Location("Kahala", 0, 0, "Waialae Beach, Wailupe Beach", "", "images/location/kahala.jpg");
-      Location maunaluaBay = new Location("Maunalua Bay", 0, 0, "Kawaiku'i Beach, Paiko Beach, Kuliouou Beach, Maunalua Bay Beach, Portlock", "", "images/location/maunalua.jpg");
+      Location waikikiBeach = new Location("Waikiki", 0, 0, "Waikiki Beach, "
+          + "Queen's Surf Beach, Kuhio Beach Park, Kaimana Beach", "", "images/location/waikiki.jpg");
+      Location kakaako = new Location("Kaka'ako to Ala Moana", 0, 0, "Ala Moana Beach, "
+          + "Kewalo Basin, Kaka'ako Waterfront", "", "images/location/kakaako.jpg");
+      Location diamondHead = new Location("Diamond Head", 0, 0, "Makalei Beach, "
+          + "Le'ahi Beach, Diamond Head Beach, Black Point", "", "images/location/diamond.jpg");
+      Location kahala = new Location("Kahala", 0, 0, "Waialae Beach, "
+          + "Wailupe Beach", "", "images/location/kahala.jpg");
+      Location maunaluaBay = new Location("Maunalua Bay", 0, 0, "Kawaiku'i Beach, "
+          + "Paiko Beach, Kuliouou Beach, Maunalua Bay Beach, Portlock", "", "images/location/maunalua.jpg");
       Location haunamaBay = new Location("Hanauma Bay", 0, 0, "Hanauma Bay", "", "images/location/hanauma.jpg");
-      Location kokoHead = new Location("Koko Head", 0, 0, "Kahauloa Cove, Bamboo Ridge, Halona Beach", "", "images/location/koko.jpg");
-      Location sandyToKaloko = new Location("Sandy to Kaloko", 0, 0, "Sandy Beach, Wawamalu Beach, Kaloko Beach", "", "images/location/wawamalu.jpg");
-      Location makapuu = new Location("Makapu'u", 0, 0, "Makapu'u Point, Makapu'u Tidepools, Makapu'u Beach, Kaupo Cove", "", "images/location/makapuu.jpg");
-      Location waimanaloBay = new Location("Waimanalo Bay", 0, 0, "Kaiona Beach,  Waimanalo Beach, Bellows Beach", "", "images/location/waimanalo.jpg");
+      Location kokoHead = new Location("Koko Head", 0, 0, "Kahauloa Cove, "
+          + "Bamboo Ridge, Halona Beach", "", "images/location/koko.jpg");
+      Location sandyToKaloko = new Location("Sandy to Kaloko", 0, 0, "Sandy Beach, "
+          + "Wawamalu Beach, Kaloko Beach", "", "images/location/wawamalu.jpg");
+      Location makapuu = new Location("Makapu'u", 0, 0, "Makapu'u Point, "
+          + "Makapu'u Tidepools, Makapu'u Beach, Kaupo Cove", "", "images/location/makapuu.jpg");
+      Location waimanaloBay = new Location("Waimanalo Bay", 0, 0, "Kaiona Beach,  "
+          + "Waimanalo Beach, Bellows Beach", "", "images/location/waimanalo.jpg");
       Location lanikai = new Location("Lanikai", 0, 0, "Lanikai Beach, The Mokes", "", "images/location/lanikai.jpg");
-      Location kailuaBay = new Location("Kailua Bay", 0, 0, "Kailua Beach, Kalama Beach", "", "images/location/kailua.jpg.");
+      Location kailuaBay = new Location("Kailua Bay", 0, 0, "Kailua Beach, "
+          + "Kalama Beach", "", "images/location/kailua.jpg.");
       Location mcbh = new Location("MCBH", 0, 0, "Marine Corps Base Hawaii", "", "images/location/mcbh.jpg");
-      Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "Kaneohe Beach, Fish Ponds, Coconut Island", "", "images/location/skaneohe.jpg");
-      Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "Waiahole Beach, Kualoa Beach", "", "images/location/nkaneohe.jpg");
-      Location kaaawa = new Location("Ka'a'awa", 0, 0, "Kahana Bay Beach, Swanzy Beach, Ka'a'awa Beach, Kalae'o'io Beach", "", "images/location/kaaawa.jpg");
-      Location punaluu = new Location("Punalu'u", 0, 0, "Punalu'u Beach, Kaluanui Beach", "", "images/location/punaluu.jpg");
+      Location southKaneoheBay = new Location("South Kaneohe Bay", 0, 0, "Kaneohe Beach, "
+          + "Fish Ponds, Coconut Island", "", "images/location/skaneohe.jpg");
+      Location northKaneoheBay = new Location("North Kaneohe Bay", 0, 0, "Waiahole Beach, "
+          + "Kualoa Beach", "", "images/location/nkaneohe.jpg");
+      Location kaaawa = new Location("Ka'a'awa", 0, 0, "Kahana Bay Beach, Swanzy Beach, "
+          + "Ka'a'awa Beach, Kalae'o'io Beach", "", "images/location/kaaawa.jpg");
+      Location punaluu = new Location("Punalu'u", 0, 0, "Punalu'u Beach, "
+          + "Kaluanui Beach", "", "images/location/punaluu.jpg");
       Location hauula = new Location("Hau'ula", 0, 0, "Hau'ula Beach", "", "images/location/hauula.jpg");
-      Location laie = new Location("La'ie", 0, 0, "Kokololio Beach, Pounders Beach, La'ie Point, Hukilau Beach", "", "images/location/laie.jpg");
+      Location laie = new Location("La'ie", 0, 0, "Kokololio Beach, "
+          + "Pounders Beach, La'ie Point, Hukilau Beach", "", "images/location/laie.jpg");
       Location kahuku = new Location("Kahuku", 0, 0, "Kahuku Beach", "", "images/location/kahuku.jpg");
-      Location kahukuPoint = new Location("Kahuku Point", 0, 0, "Kaihalulu Beach", "", "images/location/kahukupoint.png");
-      Location kawelaBay = new Location("Kawela Bay", 0, 0, "Bayview Beach, Turtle Bay, Kawela Bay, Waiale'e Beach", "", "images/location/kawela.jpg");
+      Location kahukuPoint = new Location("Kahuku Point", 0, 0, "Kaihalulu Beach",
+          "", "images/location/kahukupoint.png");
+      Location kawelaBay = new Location("Kawela Bay", 0, 0, "Bayview Beach, "
+          + "Turtle Bay, Kawela Bay, Waiale'e Beach", "", "images/location/kawela.jpg");
       Location sunsetPoint = new Location("Sunset Point", 0, 0, "Sunset Beach", "", "images/location/sunset.jpg");
-      Location pupukea = new Location("Pupukea", 0, 0, "Ehukai Beach, Banzai Pipeline, Shark's Cove, Pupukea Beach", "", "images/location/pupukea.jpg");
-      Location waimeaBay = new Location("Waimea Bay", 0, 0, "Three Tables, Waimea Bay, Uppers Beach", "", "images/location/waimea.jpg");
-      Location haleiwa = new Location("Haleiwa", 0, 0, "Papa'iloa Beach, Police Beach, Pua'ena Point Beach, Hale'iwa Beach, Hale'iwa Ali'i Beach", "", "images/location/haleiwa.jpg");
+      Location pupukea = new Location("Pupukea", 0, 0, "Ehukai Beach, "
+          + "Banzai Pipeline, Shark's Cove, Pupukea Beach", "", "images/location/pupukea.jpg");
+      Location waimeaBay = new Location("Waimea Bay", 0, 0, "Three "
+          + "Tables, Waimea Bay, Uppers Beach", "", "images/location/waimea.jpg");
+      Location haleiwa = new Location("Haleiwa", 0, 0, "Papa'iloa "
+          + "Beach, Police Beach, Pua'ena Point Beach, Hale'iwa Beach, "
+          + "Hale'iwa Ali'i Beach", "", "images/location/haleiwa.jpg");
       Location waialua = new Location("Waialua", 0, 0, "Kaiaka Bay", "", "images/location/waialua.jpg");
-      Location mokuleia = new Location("Mokule'ia", 0, 0, "Makaleha Beach, Mokule'ia Beach", "", "images/location/mokuleia.jpg");
+      Location mokuleia = new Location("Mokule'ia", 0, 0, "Makaleha Beach, "
+          + "Mokule'ia Beach", "", "images/location/mokuleia.jpg");
       Location kaena = new Location("Kaena Point", 0, 0, "Kaena Point, Yokohama Bay", "", "images/location/kaena.jpg");
       Location makua = new Location("Makua", 0, 0, "Makua Beach", "", "images/location/makua.jpg");
-      Location makaha = new Location("Makaha", 0, 0, "Makaha Beach, Turtle Beach Makaha Mauna Lahilahi Beach", "", "images/location/makaha.jpg");
+      Location makaha = new Location("Makaha", 0, 0, "Makaha Beach, "
+          + "Turtle Beach Makaha Mauna Lahilahi Beach", "", "images/location/makaha.jpg");
       Location waianae = new Location("Waianae", 0, 0, "Lualualei Beach", "", "images/location/waianae.jpg");
       Location maili = new Location("Maili", 0, 0, "Maili Beach", "", "images/location/maili.jpg");
-      Location nanakuli = new Location("Nanakuli", 0, 0, "Ulehawa Beach, Nanakuli Beach", "", "images/location/nanakuli.jpg");
+      Location nanakuli = new Location("Nanakuli", 0, 0, "Ulehawa Beach, "
+          + "Nanakuli Beach", "", "images/location/nanakuli.jpg");
       Location koolina = new Location("Ko Olina", 0, 0, "Ko Olina Beach", "", "images/location/koolina.jpg");
-      Location barbersPoint = new Location("Barbers Point", 0, 0, "Barbers Point Beach", "", "images/location/barber.jpg");
+      Location barbersPoint = new Location("Barbers Point", 0, 0, "Barbers Point Beach",
+          "", "images/location/barber.jpg");
       Location ewa = new Location("Ewa", 0, 0, "Ewa Beach", "", "images/location/ewa.jpg");
-      Location sandIsland = new Location("Sand Island", 0, 0, "Sand Island Beach, Ke'ehi Lagoon Beach", "", "images/location/sand.jpg");
+      Location sandIsland = new Location("Sand Island", 0, 0, "Sand Island Beach, "
+          + "Ke'ehi Lagoon Beach", "", "images/location/sand.jpg");
 
       // Add the locations to the database.
       LocationDB.addLocation(waikikiBeach);

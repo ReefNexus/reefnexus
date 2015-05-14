@@ -282,8 +282,10 @@ public class Fish extends Model {
   public static List<Fish> searchFish(String common, String family, String genus, String species) {
     if (common.equals("") && family.equals("") && genus.equals("") && species.equals("")) {
       return null;
-    } else {
-      return find().where().ilike("commonName", "%" + common + "%").ilike("family", "%" + family + "%").ilike("genus", "%" + genus + "%").ilike("species", "%" + species + "%").findList();
+    }
+    else {
+      return find().where().ilike("commonName", "%" + common + "%").ilike("family", "%"
+          + family + "%").ilike("genus", "%" + genus + "%").ilike("species", "%" + species + "%").findList();
     }
   }
 
