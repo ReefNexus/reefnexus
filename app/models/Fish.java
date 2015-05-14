@@ -282,7 +282,7 @@ public class Fish extends Model {
   }
 
   public static List<Fish> searchFish(String common, String family, String genus, String species) {
-    return find().where().ilike("commonName", "%" + common + "%").ilike("family", "%" + family + "%").ilike("genus", "%" + genus + "%").findList();
+    return find().where().ilike("commonName", "%" + common + "%").ilike("family", "%" + family + "%").ilike("genus", "%" + genus + "%").ilike("species", "%" + species + "%").findList();
   }
 
 }

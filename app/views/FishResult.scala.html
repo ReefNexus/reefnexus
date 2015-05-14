@@ -4,14 +4,37 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 searchResults">
+      <div class="col-md-2">
+        &nbsp
+      </div>
+      <div class="col-md-8 search-results">
         <div class="well well-sm">
-        @for(fish <- genusList) {
-          @fish.getCommonName()
-        }
+          <h3>Search Results</h3>
+          <table id="fish-results" class="table sortable">
+            <thead>
+              <tr>
+                <th class = "fish-result header"><u><a href="#">Common Name</a></u></th>
+                <th><u><a href="#">Family</a></u></th>
+                <th><u><a href="#">Scientific Name</a></u></th>
+              </tr>
+            </thead>
+            <tbody>
+            @for(fish <- genusList) {
+              <tr class="fish-results">
+                <td><a class="fish-href" href="@routes.Application.fishProfile(fish.getId())">@fish.getCommonName()</a></td>
+                <td>@fish.getFamily()</td>
+                <td>@fish.getGenus() @fish.getSpecies()</td>
+              </tr>
+            }
+            </tbody>
+          </table>
         </div>
+      </div>
+      <div class="col-md-2">
+        &nbsp
       </div>
     </div>
   </div>
 
 }
+

@@ -44,7 +44,7 @@ public class Global extends GlobalSettings {
       Location hauula = new Location("Hau'ula", 0, 0, "Hau'ula Beach", "", "images/location/hauula.jpg");
       Location laie = new Location("La'ie", 0, 0, "Kokololio Beach, Pounders Beach, La'ie Point, Hukilau Beach", "", "images/location/laie.jpg");
       Location kahuku = new Location("Kahuku", 0, 0, "Kahuku Beach", "", "images/location/kahuku.jpg");
-      Location kahukuPoint = new Location("Kahuku Point", 0, 0, "Kaihalulu Beach", "", "images/location/kahukupoint.jpg");
+      Location kahukuPoint = new Location("Kahuku Point", 0, 0, "Kaihalulu Beach", "", "images/location/kahukupoint.png");
       Location kawelaBay = new Location("Kawela Bay", 0, 0, "Bayview Beach, Turtle Bay, Kawela Bay, Waiale'e Beach", "", "images/location/kawela.jpg");
       Location sunsetPoint = new Location("Sunset Point", 0, 0, "Sunset Beach", "", "images/location/sunset.jpg");
       Location pupukea = new Location("Pupukea", 0, 0, "Ehukai Beach, Banzai Pipeline, Shark's Cove, Pupukea Beach", "", "images/location/pupukea.jpg");
@@ -55,7 +55,6 @@ public class Global extends GlobalSettings {
       Location kaena = new Location("Kaena Point", 0, 0, "Kaena Point, Yokohama Bay", "", "images/location/kaena.jpg");
       Location makua = new Location("Makua", 0, 0, "Makua Beach", "", "images/location/makua.jpg");
       Location makaha = new Location("Makaha", 0, 0, "Makaha Beach, Turtle Beach Makaha Mauna Lahilahi Beach", "", "images/location/makaha.jpg");
-      Location pokai = new Location("Poka'i Bay", 0, 0, "Poka'i Bay", "", "images/location/pokai.jpg");
       Location waianae = new Location("Waianae", 0, 0, "Lualualei Beach", "", "images/location/waianae.jpg");
       Location maili = new Location("Maili", 0, 0, "Maili Beach", "", "images/location/maili.jpg");
       Location nanakuli = new Location("Nanakuli", 0, 0, "Ulehawa Beach, Nanakuli Beach", "", "images/location/nanakuli.jpg");
@@ -95,7 +94,6 @@ public class Global extends GlobalSettings {
       LocationDB.addLocation(mokuleia);
       LocationDB.addLocation(makua);
       LocationDB.addLocation(makaha);
-      LocationDB.addLocation(pokai);
       LocationDB.addLocation(waianae);
       LocationDB.addLocation(maili);
       LocationDB.addLocation(nanakuli);
@@ -136,7 +134,6 @@ public class Global extends GlobalSettings {
       mokuleia.setCoordinates(new String[]{"21.580247,-158.157380"});
       makua.setCoordinates(new String[]{"21.533620,-158.230250"});
       makaha.setCoordinates(new String[]{"21.532995,-158.230131"});
-      pokai.setCoordinates(new String[]{"21.444479,-158.189656"});
       waianae.setCoordinates(new String[]{"21.434533,-158.185622"});
       maili.setCoordinates(new String[]{"21.418746,-158.178475"});
       nanakuli.setCoordinates(new String[]{"21.388323,-158.154157"});
@@ -197,161 +194,161 @@ public class Global extends GlobalSettings {
 
       // Fishes from Wikipedia
       FishDB.addFish(new FishFormData("Agile Chromis", "Chromis", "agilis",
-          "Pomacentridae", null, ""));
+          "Pomacentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Needlefish", "Strongylura", "gigantea",
-          "Belonidae", null, ""));
+          "Belonidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Crocodile Needlefish", "Ablennes", "hians",
-          "Belonidae", null, ""));
+          "Belonidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Flatsided Needlefish", "Tylosurus", "crocodilus",
-          "Belonidae", null, ""));
+          "Belonidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Keeltail Needlefish", "Platybelone", "argalus",
-          "Belonidae", null, ""));
+          "Belonidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Albacore Tuna", "Thunnus", "alalunga",
-          "Scombridae", null, ""));
+          "Scombridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Yellowfin Tuna", "Thunnus", "albacares",
-          "Scombridae", null, ""));
+          "Scombridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Skipjack Tuna", "Katsuwonus", "pelamis",
-          "Scombridae", null, ""));
+          "Scombridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Bigeye Scad", "Selar", "crumenophthalmus",
-          "Carangidae", null, ""));
+          "Carangidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Squirrelfish", "Flammeo", "scythrops",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Bluestripe Squirrelfish", "Sargocentron", "tiere",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Crown Squirrelfish", "Sargocentron", "diadema",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Dwarf Squirrelfish", "Sargocentron", "iota",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Hawaiian Squirrelfish", "Sargocentron", "xantherythrum",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Longjaw Squirrelfish", "Sargocentron", "spiniferum",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Peppered Squirrelfish", "Sargocentron", "punctatissimum",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Spotfin Squirrelfish", "Neoniphon", "sammara",
-          "Holocentridae", null, ""));
+          "Holocentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Ambon Toby", "Canthigaster", "amboinensis",
-          "Tetraodontidae", null, ""));
+          "Tetraodontidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Sailfin Tang", "Zebrasoma", "veliferum",
-          "Acanthuridae", null, ""));
+          "Acanthuridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Whitespotted Surgeonfish", "Acanthurus", "guttatus",
-          "Acanthuridae", null, ""));
+          "Acanthuridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Arc-eye Hawkfish", "Paracirrhites", "arcatus",
-          "Cirrhitidae", null, ""));
+          "Cirrhitidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Moana Kali", "Parupeneus", "cyclostomus",
-          "Priacanthidae", null, ""));
+          "Priacanthidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Ladyfish", "Elops", "hawaiensis",
-          "Elopidae", null, ""));
+          "Elopidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Milkfish", "Chanos", "chanos",
-          "Chanidae", null, ""));
+          "Chanidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Hogfish", "Bodianus", "bilunulatus",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Hawaiian Hogfish", "Bodianus", "albotaeniatus",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Atlantic Blue Marlin", "Makaira", "nigricans",
-          "Istiophoridae", null, ""));
+          "Istiophoridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Sailfish", "Istiophorus", "platypterus",
-          "Istiophoridae", null, ""));
+          "Istiophoridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Black Marlin", "Makaira", "indica",
-          "Istiophoridae", null, ""));
+          "Istiophoridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Swordfish", "Xiphins", "gladius",
-          "Xiphiidae", null, ""));
+          "Xiphiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Ball's Pipefish", "Cosmocampus", "balli",
-          "Syngnathidae", null, ""));
+          "Syngnathidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Bandit Angelfish", "Apolemichthys", "arcuatus",
-          "Pentacerotidae", null, ""));
+          "Pentacerotidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Barred Conger", "Ariosoma", "fasciatus",
-          "Congridae", null, ""));
+          "Congridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Barred Knifejaw", "Oplegnathus", "fasciatus",
-          "Oplegnathidae", null, ""));
+          "Oplegnathidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Barred Tidepool Goby", "Kelloggella", "oligolepis",
-          "Gobiidae", null, ""));
+          "Gobiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Belted Wrasse", "Stethojulis", "balteata",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Bicolor Anthias", "Pseudanthias", "bicolor",
-          "Serranidae", null, ""));
+          "Serranidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Black Coral Goby", "Bryaninops", "tigris",
-          "Gobiidae", null, ""));
+          "Gobiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Black Surgeonfish", "Acanthurus", "hawaiiensis",
-          "Acanthuridae", null, ""));
+          "Acanthuridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Blackchin Tilapia", "Sarotherodon", "melanotheron",
-          "Cirrhitidae", null, ""));
+          "Cirrhitidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Blackfin Barracuda", "Sphyraena", "qenie",
-          "Sphyraenidae", null, ""));
+          "Sphyraenidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Blackfin Chromis", "Chromis", "vanderbilti",
-          "Pomacentridae", null, ""));
+          "Pomacentridae", null, "images/fish/"));
         FishDB.addFish(new FishFormData("Blacklip Butterflyfish", "Chaetodon", "kleinii",
-          "Chaetodontidae", null, ""));
+          "Chaetodontidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Blue-eye Damselfish", "Plectroglyphidodon", "johnstonianus",
-          "Pomacentridae", null, ""));
+          "Pomacentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Blueline Triggerfish", "Xanthichthys", "caeruleolineatus",
-          "Balistidae", null, ""));
+          "Balistidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Bluestripe Pipefish", "Doryhamphus", "excisus",
-          "Syngnathidae", null, ""));
+          "Syngnathidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Boreham's Sole", "Aseraggodes", "borehami",
-          "Soleidae", null, ""));
+          "Soleidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Bright-eye Damselfish", "Plectroglyphidodon", "imparipennis",
-          "Pomacentridae", null, ""));
+          "Pomacentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("White Trevally", "Pseudocaranx", "dentex",
-          "Carangidae", null, ""));
+          "Carangidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Chevron Butterflyfish", "Chaetodon", "trifascialis",
-          "Chaetodontidae", null, ""));
+          "Chaetodontidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Chocolate Dip Chromis", "Chromis", "hanui",
-          "Pomacentridae", null, ""));
+          "Pomacentridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Cloudy Goby", "Opua", "nephodes",
-          "Gobiidae", null, ""));
+          "Gobiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Commerson's Frogfish", "Antennarius", "commerson",
-          "Antennariidae", null, ""));
+          "Antennariidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Cookiecutter Shark", "Isistius", "brasilliensis",
-          "Dalatiidae", null, ""));
+          "Dalatiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Coral Scorpionfish", "Scorpaenodes", "corallinus",
-          "Scorpaenidae", null, ""));
+          "Scorpaenidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Gilded Triggerfish", "Xanthichthys", "mento",
-          "Balistidae", null, ""));
+          "Balistidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Curious Wormfish", "Gunnellichthys", "curiosis",
-          "Microdesmidae", null, ""));
+          "Microdesmidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Cushion Star Pearlfish", "Carapus", "mourlani",
-          "Carapidae", null, ""));
+          "Carapidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Beardfish", "Polymixia", "berndti",
-          "Polymixiidae", null, ""));
+          "Polymixiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Striated Wrasse", "Pseudocheilinus", "evanidus",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Divine Pygmy Goby", "Eviota", "epiphanes",
-          "Gobiidae", null, ""));
+          "Gobiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Dwarf Scorpionfish", "Scorpaenodes", "fowleri",
-          "Scorpaenidae", null, ""));
+          "Scorpaenidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Earle's Splitfin Anthias", "Luzonicthys", "earlei",
-          "Serranidae", null, ""));
+          "Serranidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Edmondson's Pipefish", "Halicampus", "edmonsoni",
-          "Syngnathidae", null, ""));
+          "Syngnathidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Squirrelfish Snapper", "Etelis", "carbunculus",
-          "Lutjanidae", null, ""));
+          "Lutjanidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Eight-lined Wrasse", "Pseudocheilinus", "octotaenia",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Elegant Anthias", "Caprodon", "unicolor",
-          "Serranidae", null, ""));
+          "Serranidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Elegant Coris", "Coris", "venusta",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Ewa Fang Blenny", "Plagiotremus", "ewaensis",
-          "Blenniidae", null, ""));
+          "Blenniidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Exclamation Point Dragonet", "Synchiropus", "corallinus",
-          "Callionymidae", null, ""));
+          "Callionymidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Eyebar Goby", "Gnatholepis", "anjerensis",
-          "Gobiidae", null, ""));
+          "Gobiidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Finescale Triggerfish", "Balistes", "polylepis",
-          "Balistidae", null, ""));
+          "Balistidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Fire Dartfish", "Nemateleotris", "magnifica",
-          "Ptereleotridae", null, ""));
+          "Ptereleotridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Fisher's Angelfish", "Centropyge", "fisheri",
-          "Pomacanthidae", null, ""));
+          "Pomacanthidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Fivestripe Wrasse", "Thalassoma", "quinquevittatum",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Flagtail Tilefish", "Malacanthus", "brevirostris",
-          "Malacanthidae", null, ""));
+          "Malacanthidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Flame Angelfish", "Centropyge", "loriculus",
-          "Pomacanthidae", null, ""));
+          "Pomacanthidae", null, "images/fish/"));
       FishDB.addFish(new FishFormData("Flame Wrasse", "Cirrhilabrus", "jordani",
-          "Labridae", null, ""));
+          "Labridae", null, "images/fish/"));
 
 
 
