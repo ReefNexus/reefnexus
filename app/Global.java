@@ -508,6 +508,143 @@ public class Global extends GlobalSettings {
       southKaneoheBay.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 4333);
       southKaneoheBay.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 88);
 
+      kaaawa.addNumberOfFish(FishDB.getFish("Oval Butterflyfish"), 20);
+      kaaawa.addNumberOfFish(FishDB.getFish("Brick Soldierfish"), 19);
+      kaaawa.addNumberOfFish(FishDB.getFish("Great Barracuda"), 15);
+      kaaawa.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 14);
+      kaaawa.addNumberOfFish(FishDB.getFish("Great White Shark"), 13);
+      kaaawa.addNumberOfFish(FishDB.getFish("Longnose Hawkfish"), 5);
+      kaaawa.addNumberOfFish(FishDB.getFish("Fisher's Seahorse"), 4);
+      kaaawa.addNumberOfFish(FishDB.getFish("Moorish Idol"), 3);
+      kaaawa.addNumberOfFish(FishDB.getFish("Hawaiian Freckled Frogfish"), 2);
+      kaaawa.addNumberOfFish(FishDB.getFish("Hawaiian Yellow Anthias"), 1);
+
+      punaluu.addNumberOfFish(FishDB.getFish("Great Barracuda"), 141);
+      punaluu.addNumberOfFish(FishDB.getFish("Moorish Idol"), 5435);
+      punaluu.addNumberOfFish(FishDB.getFish("Fisher's Seahorse"), 3535);
+      punaluu.addNumberOfFish(FishDB.getFish("Hawaiian Flagtail"), 13);
+      punaluu.addNumberOfFish(FishDB.getFish("Brown Tang"), 14);
+      punaluu.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 41414);
+      punaluu.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 323);
+      punaluu.addNumberOfFish(FishDB.getFish("Viper Moray"), 453);
+      punaluu.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 543);
+      punaluu.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 353);
+
+      hauula.addNumberOfFish(FishDB.getFish("Great Barracuda"), 200);
+      hauula.addNumberOfFish(FishDB.getFish("Moorish Idol"), 130);
+      hauula.addNumberOfFish(FishDB.getFish("Fisher's Seahorse"), 122);
+      hauula.addNumberOfFish(FishDB.getFish("Ember Parrotfish"), 55);
+      hauula.addNumberOfFish(FishDB.getFish("Brown Tang"), 33);
+      hauula.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 30);
+      hauula.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 14);
+      hauula.addNumberOfFish(FishDB.getFish("Viper Moray"), 13);
+      hauula.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 12);
+      hauula.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 11);
+
+      laie.addNumberOfFish(FishDB.getFish("Great Barracuda"), 1000);
+      laie.addNumberOfFish(FishDB.getFish("Brown Tang"), 5);
+
+      kahuku.addNumberOfFish(FishDB.getFish("Hawaiian Sergeant"), 99);
+      kahuku.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 300);
+      kahuku.addNumberOfFish(FishDB.getFish("Hawaiian Flagtail"), 30);
+      kahuku.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 22);
+      kahuku.addNumberOfFish(FishDB.getFish("Brown Tang"), 12);
+      kahuku.addNumberOfFish(FishDB.getFish("Bluestripe Snapper"), 13);
+      kahuku.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 1000);
+      kahuku.addNumberOfFish(FishDB.getFish("Viper Moray"), 3);
+      kahuku.addNumberOfFish(FishDB.getFish("Hawaiian Yellow Anthias"), 2);
+      kahuku.addNumberOfFish(FishDB.getFish("Longnose Hawkfish"), 1);
+
+      kahukuPoint.addNumberOfFish(FishDB.getFish("Great White Shark"), 1235);
+      kahukuPoint.addNumberOfFish(FishDB.getFish("Great Barracuda"), 678);
+      kahukuPoint.addNumberOfFish(FishDB.getFish("Viper Moray"), 99);
+      kahukuPoint.addNumberOfFish(FishDB.getFish("Giant Grouper"), 300);
+
+      kawelaBay.addNumberOfFish(FishDB.getFish("Giant Grouper"), 11);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Bluestripe Snapper"), 13);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 15);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Viper Moray"), 3);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Hawaiian Yellow Anthias"), 2);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Longnose Hawkfish"), 4);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Brown Tang"), 55);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 21);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 65);
+      kawelaBay.addNumberOfFish(FishDB.getFish("Viper Moray"), 3);
+
+      sunsetPoint.addNumberOfFish(FishDB.getFish("Hawaiian Flagtail"), 764);
+      sunsetPoint.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 636);
+      sunsetPoint.addNumberOfFish(FishDB.getFish("Viper Moray"), 222);
+      sunsetPoint.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 434);
+      sunsetPoint.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 221);
+
+      pupukea.addNumberOfFish(FishDB.getFish("Oval Butterflyfish"), 242);
+      pupukea.addNumberOfFish(FishDB.getFish("Brick Soldierfish"), 141);
+      pupukea.addNumberOfFish(FishDB.getFish("Great Barracuda"), 525);
+      pupukea.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 656);
+      pupukea.addNumberOfFish(FishDB.getFish("Great White Shark"), 4242);
+
+      waimeaBay.addNumberOfFish(FishDB.getFish("Bluestripe Snapper"), 1);
+      waimeaBay.addNumberOfFish(FishDB.getFish("Great Barracuda"), 2);
+      waimeaBay.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 3);
+      waimeaBay.addNumberOfFish(FishDB.getFish("Great White Shark"), 4);
+      waimeaBay.addNumberOfFish(FishDB.getFish("Panther Flounder"), 5);
+
+      haleiwa.addNumberOfFish(FishDB.getFish("Bluestripe Snapper"), 6);
+      haleiwa.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 7);
+      haleiwa.addNumberOfFish(FishDB.getFish("Viper Moray"), 8);
+      haleiwa.addNumberOfFish(FishDB.getFish("Hawaiian Yellow Anthias"), 9);
+      haleiwa.addNumberOfFish(FishDB.getFish("Longnose Hawkfish"), 50);
+
+      waialua.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 20001);
+
+      mokuleia.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 9869);
+      mokuleia.addNumberOfFish(FishDB.getFish("Viper Moray"), 747);
+      mokuleia.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 52);
+      mokuleia.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 5252);
+      mokuleia.addNumberOfFish(FishDB.getFish("Great Barracuda"), 141);
+      mokuleia.addNumberOfFish(FishDB.getFish("Brown Tang"), 414);
+
+      makua.addNumberOfFish(FishDB.getFish("Oval Butterflyfish"), 431);
+      makua.addNumberOfFish(FishDB.getFish("Brick Soldierfish"), 43);
+      makaha.addNumberOfFish(FishDB.getFish("Great Barracuda"), 24);
+      makaha.addNumberOfFish(FishDB.getFish("Panther Flounder"), 14);
+      makaha.addNumberOfFish(FishDB.getFish("Great White Shark"), 13);
+
+      waianae.addNumberOfFish(FishDB.getFish("Great Barracuda"), 141);
+      waianae.addNumberOfFish(FishDB.getFish("Moorish Idol"), 5435);
+      waianae.addNumberOfFish(FishDB.getFish("Fisher's Seahorse"), 3535);
+      waianae.addNumberOfFish(FishDB.getFish("Hawaiian Flagtail"), 13);
+      waianae.addNumberOfFish(FishDB.getFish("Brown Tang"), 14);
+      waianae.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 41414);
+      waianae.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 323);
+      waianae.addNumberOfFish(FishDB.getFish("Viper Moray"), 453);
+      waianae.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 543);
+      waianae.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 353);
+
+      maili.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 9869);
+      maili.addNumberOfFish(FishDB.getFish("Viper Moray"), 747);
+
+      nanakuli.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 52);
+      nanakuli.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 5252);
+      nanakuli.addNumberOfFish(FishDB.getFish("Great Barracuda"), 141);
+      nanakuli.addNumberOfFish(FishDB.getFish("Brown Tang"), 414);
+      nanakuli.addNumberOfFish(FishDB.getFish("Oval Butterflyfish"), 431);
+
+      koolina.addNumberOfFish(FishDB.getFish("Brick Soldierfish"), 43);
+      koolina.addNumberOfFish(FishDB.getFish("Great Barracuda"), 24);
+      koolina.addNumberOfFish(FishDB.getFish("Great White Shark"), 13);
+
+      barbersPoint.addNumberOfFish(FishDB.getFish("Great Barracuda"), 200);
+      barbersPoint.addNumberOfFish(FishDB.getFish("Moorish Idol"), 130);
+      barbersPoint.addNumberOfFish(FishDB.getFish("Fisher's Seahorse"), 122);
+      ewa.addNumberOfFish(FishDB.getFish("Ember Parrotfish"), 55);
+      ewa.addNumberOfFish(FishDB.getFish("Brown Tang"), 33);
+      ewa.addNumberOfFish(FishDB.getFish("Reef Triggerfish"), 30);
+      ewa.addNumberOfFish(FishDB.getFish("Yellowstripe Goatfish"), 14);
+      ewa.addNumberOfFish(FishDB.getFish("Viper Moray"), 13);
+      ewa.addNumberOfFish(FishDB.getFish("Bluefin Trevally"), 12);
+      ewa.addNumberOfFish(FishDB.getFish("Christmas Wrasse"), 11);
+
     }
     else {
       for (Location l : LocationDB.getLocations()) {
