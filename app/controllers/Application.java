@@ -151,6 +151,15 @@ public class Application extends Controller {
     }
   }
 
+  /**
+   * Return results for fish search with four parameters.
+   *
+   * @param common Common name.
+   * @param family Family.
+   * @param genus Genus.
+   * @param species Species.
+   * @return The page with corresponding results.
+   */
   public static Result fishResult(String common, String family, String genus, String species) {
     return ok(
         FishResult.render(

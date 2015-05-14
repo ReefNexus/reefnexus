@@ -32,7 +32,6 @@ public class Fish extends Model {
 
   /**
    * Creates a new empty Fish instance.
-   *
    */
 
   public Fish() {
@@ -151,7 +150,6 @@ public class Fish extends Model {
    * Indicates how many fish were added.
    *
    * @return A long equal to the number of fish added.
-   *
    */
 
   public long getNumAdded() {
@@ -161,8 +159,7 @@ public class Fish extends Model {
   /**
    * Sets the common name of this Fish.
    *
-   * @param commonName    The String containing the common name to assign to this Fish.
-   *
+   * @param commonName The String containing the common name to assign to this Fish.
    */
 
   public void setCommonName(String commonName) {
@@ -172,8 +169,7 @@ public class Fish extends Model {
   /**
    * Sets the genus of this Fish.
    *
-   * @param genus    The String containing the genus to assign to this Fish.
-   *
+   * @param genus The String containing the genus to assign to this Fish.
    */
 
   public void setGenus(String genus) {
@@ -183,8 +179,7 @@ public class Fish extends Model {
   /**
    * Sets the species of this Fish.
    *
-   * @param species    The String containing the species to assign to this Fish.
-   *
+   * @param species The String containing the species to assign to this Fish.
    */
 
   public void setSpecies(String species) {
@@ -194,8 +189,7 @@ public class Fish extends Model {
   /**
    * Sets the scientific name of this Fish.
    *
-   * @param scientific    The String containing the scientific name to assign to this Fish.
-   *
+   * @param scientific The String containing the scientific name to assign to this Fish.
    */
 
   public void setScientific(String scientific) {
@@ -205,8 +199,7 @@ public class Fish extends Model {
   /**
    * Sets the family name of this Fish.
    *
-   * @param family    The String containing the family name to assign to this Fish.
-   *
+   * @param family The String containing the family name to assign to this Fish.
    */
 
   public void setFamily(String family) {
@@ -216,8 +209,7 @@ public class Fish extends Model {
   /**
    * Sets the locations that this Fish is found in.
    *
-   * @param locations    The List<Location> containing the Locations that this Fish can be found in.
-   *
+   * @param locations The List<Location> containing the Locations that this Fish can be found in.
    */
 
   public void setLocations(List<Location> locations) {
@@ -227,8 +219,7 @@ public class Fish extends Model {
   /**
    * Sets the image for this Fish.
    *
-   * @param image    The String containing the path to the image of this Fish.
-   *
+   * @param image The String containing the path to the image of this Fish.
    */
 
   public void setImage(String image) {
@@ -237,11 +228,10 @@ public class Fish extends Model {
 
   /**
    * Sets the number of fish added.
-   *
+   * <p>
    * This has no real use other than satisfying EBean requirements.
    *
-   * @param numAdded    The long equal to the number of fish added.
-   *
+   * @param numAdded The long equal to the number of fish added.
    */
 
   public void setNumAdded(long numAdded) {
@@ -251,8 +241,7 @@ public class Fish extends Model {
   /**
    * Sets the ID of this Fish.
    *
-   * @param id    The long equal to the ID to assign to this Fish.
-   *
+   * @param id The long equal to the ID to assign to this Fish.
    */
 
   public void setId(long id) {
@@ -262,8 +251,7 @@ public class Fish extends Model {
   /**
    * Adds a Location that this Fish is found in.
    *
-   * @param location    The Location to add to this Fish instance.
-   *
+   * @param location The Location to add to this Fish instance.
    */
 
   public void addLocation(Location location) {
@@ -275,14 +263,28 @@ public class Fish extends Model {
 
   /**
    * The EBean ORM finder method for database queries.
+   *
    * @return The finder method.
    */
   public static Finder<Long, Fish> find() {
     return new Finder<Long, Fish>(Long.class, Fish.class);
   }
 
+  /**
+   * Search method for fish database matching four parameters.
+   *
+   * @param common  Common name.
+   * @param family  Family name.
+   * @param genus   Genus.
+   * @param species Species.
+   * @return The List with corresponding fish results.
+   */
   public static List<Fish> searchFish(String common, String family, String genus, String species) {
-    return find().where().ilike("commonName", "%" + common + "%").ilike("family", "%" + family + "%").ilike("genus", "%" + genus + "%").ilike("species", "%" + species + "%").findList();
+    if (common.equals("") && family.equals("") && genus.equals("") && species.equals("")) {
+      return null;
+    } else {
+      return find().where().ilike("commonName", "%" + common + "%").ilike("family", "%" + family + "%").ilike("genus", "%" + genus + "%").ilike("species", "%" + species + "%").findList();
+    }
   }
 
 }

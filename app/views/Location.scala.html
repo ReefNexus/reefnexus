@@ -43,7 +43,7 @@
 
                 <!-- Manually done since there is no field set up for this -->
               <select id="location-select" class="center-block">
-                <option value="-1"></option>
+                <option select="selected">Select Location...</option>
                 @for(location <- LocationDB.getLocations()) {
                   <option value="@location.getId()">@location.getName()</option>
                 }

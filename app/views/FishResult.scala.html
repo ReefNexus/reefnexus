@@ -19,12 +19,16 @@
               </tr>
             </thead>
             <tbody>
-            @for(fish <- genusList) {
-              <tr class="fish-results">
-                <td><a class="fish-href" href="@routes.Application.fishProfile(fish.getId())">@fish.getCommonName()</a></td>
-                <td>@fish.getFamily()</td>
-                <td>@fish.getGenus() @fish.getSpecies()</td>
-              </tr>
+            @if(genusList == null) {
+              <tr>Please enter at least one field!</tr>
+            } else {
+              @for(fish <- genusList) {
+                <tr class="fish-results">
+                  <td><a class="fish-href" href="@routes.Application.fishProfile(fish.getId())">@fish.getCommonName()</a></td>
+                  <td>@fish.getFamily()</td>
+                  <td>@fish.getGenus() @fish.getSpecies()</td>
+                </tr>
+              }
             }
             </tbody>
           </table>
@@ -37,4 +41,3 @@
   </div>
 
 }
-
