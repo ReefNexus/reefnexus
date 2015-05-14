@@ -1,6 +1,4 @@
-#reef nexus
-
-<img src="https://raw.githubusercontent.com/wengdg/reefnexus/master/docs/images/mockuppics/logo.JPG" width="50%"/>
+<img src="https://raw.githubusercontent.com/ReefNexus/reefnexus/master/public/images/reefnexus3.png" width="75%"/>
 
 <b>Reef Nexus</b> is a web application that offers insight on the relative occurrence of fish species within various locations.  Targeted towards ocean enthusiasts, the application takes crowd-sourced information to provide these censuses.  When users observe a particular fish species in an area, they can report the sighting to Reef Nexus where it will be contributed to the sighting rate in that area.  Within each locale in Reef Nexus, users can view the most commonly sighted fish species, and also fishes that do not occur frequently.  To aid in adding fish, or perhaps just for one's curiosity, a fish identification feature will also be added.
 
